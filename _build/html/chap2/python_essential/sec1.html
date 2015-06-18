@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5. Python Essentials(p48) &mdash; python_kobe 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="python_kobe 1.0 documentation" href="../../index.html" />
+    <link rel="next" title="6. Exercise1 Par3" href="test.html" />
+    <link rel="prev" title="4. Quantitative Economics with Python" href="../preface.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="test.html" title="6. Exercise1 Par3"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../preface.html" title="4. Quantitative Economics with Python"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">python_kobe 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="python-essentials-p48">
+<h1>5. Python Essentials(p48)<a class="headerlink" href="#python-essentials-p48" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://quant-econ.net/py/python_essentials.html#id3">Python_Essentials</a></p>
+<blockquote>
+<div></div></blockquote>
+<div class="section" id="data-type-p49">
+<h2>5.1. Data Type(p49)<a class="headerlink" href="#data-type-p49" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://quant-econ.net/py/python_essentials.html#id5">Data_Type</a> では，Pythonでよく使われるデータの種類について学びます．</p>
+<div class="section" id="primitive-data-types">
+<h3>5.1.1. Primitive Data Types<a class="headerlink" href="#primitive-data-types" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="bool-type">
+<h3>5.1.2. Bool Type<a class="headerlink" href="#bool-type" title="Permalink to this headline">¶</a></h3>
+<p>最も基本的なデータタイプはBool Typeです．</p>
+<p>これは，変数自体にTrueやFalseが入ります．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>という感じです．</p>
+<p>また，命題についても，True or Falseに変換されて変数に入ります．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">y</span> <span class="o">=</span> <span class="mi">100</span><span class="o">&lt;</span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>のようにすると，yにはFalseが入ります．</p>
+</div>
+<div class="section" id="data-type">
+<h3>5.1.3. Data typeの確認方法<a class="headerlink" href="#data-type" title="Permalink to this headline">¶</a></h3>
+<p>プログラムを書いていて，ある変数がどのようなデータタイプなのか,わからなくなることがあります．</p>
+<p>これ以降にも，様々なデータタイプが出てきますが，先にデータタイプの確認方法を学びましょう．</p>
+<p>ある，変数xがどのような    データタイプかを調べるためには:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>とします．</p>
+<p>もし，xが   Bool typeならば:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">bool</span>
+</pre></div>
+</div>
+<p>と出力されます．</p>
+</div>
+<div class="section" id="id1">
+<h3>5.1.4. Bool Typeの性質<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Bool Typeの変数にはTrueもしくはFalseが割り当てられますが，TrueとFalseにはそれぞれ，1と2という数字も割り当てられています．</p>
+<p>もしxがTrue，yがFalseならば:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">+</span><span class="n">Y</span>
+
+<span class="mi">1</span>
+</pre></div>
+</div>
+<p>となります．</p>
+</div>
+<div class="section" id="listbool">
+<h3>5.1.5. ListとBool<a class="headerlink" href="#listbool" title="Permalink to this headline">¶</a></h3>
+<p>この，Bool TypeはListの要素にもなります．</p>
+</div>
+<div class="section" id="list">
+<h3>5.1.6. Listとは<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
+<p>Listは様々なオブジェクトを格納できる列のことです．</p>
+<p>Listには，値や文字なども入れることができます．例えば，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bools</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>という感じです．先ほどの，TrueやFalseに1と0が割り当てられることを考えると，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">sum</span><span class="p">(</span><span class="n">bools</span><span class="p">)</span>
+
+<span class="mi">3</span>
+</pre></div>
+</div>
+<p>となります．このsum()のような命令のことを関数と呼びます．</p>
+<p>特に，このsum()は組み込み関数とよばれ，pythonにもともと入っています．</p>
+<p>ほかの組み込み関数については，<a class="reference external" href="http://docs.python.jp/2/library/functions.html#sum">公式の組み込み関数</a> を参照してください．</p>
+</div>
+<div class="section" id="id2">
+<h3>5.1.7. そのほかのデータータイプ<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>PythonにはBool Type以外にのデータタイプも存在します．</p>
+<p>例えば数字の，integersとfloatsの２つの種類のデータタイプがあります．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="nb">int</span>
+</pre></div>
+</div>
+<p>がinterger Typeであり，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">10.0</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="nb">float</span>
+</pre></div>
+</div>
+<p>となります．このintとfloatについては後に詳しい説明をします．</p>
+</div>
+<div class="section" id="id3">
+<h3>5.1.8. 注意<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>この，integerに関連する問題を一つ見てみましょう．</p>
+<p>Python 2x では，２つのinteger(整数)同士の割り算では，integerの部分だけを返します．</p>
+<p>つまり，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="mi">0</span>
+</pre></div>
+</div>
+<p>となります．</p>
+<p>ただし，integerとfloatや，floatとfloat同士の割り算では，少数以下も返されます．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mf">1.0</span><span class="o">/</span><span class="mf">2.0</span>
+
+<span class="mf">0.5</span>
+</pre></div>
+</div>
+<p>ですし，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mf">1.0</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="mf">0.5</span>
+</pre></div>
+</div>
+<p>となります．</p>
+<p>また，このような問題はPython 3xでは発生しません．</p>
+<p>しかし，この教科書はPyhton 2xを用いるので，読者はこのような問題に留意する必要があるでしょう．</p>
+</div>
+<div class="section" id="complex-type">
+<h3>5.1.9. complex Type<a class="headerlink" href="#complex-type" title="Permalink to this headline">¶</a></h3>
+<p>複素数も，PythonにおけるPrimitiveなデータタイプの一つです．</p>
+<p>Pythonでは，Complex Type と呼ばれます．</p>
+<p>Pythonで複素数を表現するには，組み込み関数のcomplex()を使います．:</p>
+<div class="highlight-python"><div class="highlight"><pre>complex(実部,虚部)
+</pre></div>
+</div>
+<p>のように指定します．また，Pythonでは複素数はjで表現されます．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>とすれば，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">*</span><span class="n">y</span>
+
+<span class="mi">5j</span>
+</pre></div>
+</div>
+<p>となります．</p>
+</div>
+<div class="section" id="containers-p50">
+<h3>5.1.10. Containers p50<a class="headerlink" href="#containers-p50" title="Permalink to this headline">¶</a></h3>
+<p>Pythonには様々なコンテナが存在します．
+コンテナは，データーを集めておくために使われます．</p>
+<p>例えば，先に説明した，listは組み込みコンテナといって，Pythonにもともと備わっています．</p>
+<p>listと同じような，組み込みコンテナとしてtuple（トゥープル，タプル）があります．</p>
+<p>この，tupleとlistの大きな違いの一つに，tupuleがimmutableであることが挙げられます．</p>
+<p>“tupleがimmutable”とは，tupleの値が変更できないことを意味します．</p>
+<p>一方で，“listはmutable”なので，値を変更することができます．</p>
+<p>以下に例を示します，まずlistはmutableすなわち持っている変数の数が増えたり，減ったり変わったりします．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>というlistを考え，この１行目の，1を変化させてみましょう．</p>
+<p>ところで，この行番号ですが，pythonでは，0から数えます．
+x[0]というようにすると，listであるxの0行目を指定できます．これを変更するには,:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>というようにします．確認すると，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span>
+
+<span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>というように，変更されていることがわかります．</p>
+<p>このように，listはmutablです．しかし，一方で，tupuleはimmutableです．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>にたいして，X[0]とすると，:</p>
+<div class="highlight-python"><div class="highlight"><pre>X[0] = 10
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-7-531149b57146&gt; in &lt;module&gt;()
+----&gt; 1 X[0] = 10
+
+TypeError: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+<p>となってしまいます</p>
+</div>
+<div class="section" id="mutable-immutable">
+<h3>5.1.11. もう少し，mutable とimmutableの話をしよう<a class="headerlink" href="#mutable-immutable" title="Permalink to this headline">¶</a></h3>
+<p>mutableなlistにも，immutableなリストにも，&#8221;unpacked&#8221;という操作を施すことができます．</p>
+<p>unpackedでは，それぞれの行を指定した変数に当てはめることができます．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">integers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">integers</span>
+</pre></div>
+</div>
+<p>とすると:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span>
+<span class="mi">10</span>
+
+<span class="n">y</span>
+<span class="mi">20</span>
+
+<span class="n">z</span>
+<span class="mi">30</span>
+</pre></div>
+</div>
+<p>というように割り当てられます．</p>
+<p>また，slice notetion という操作も，mutable,immutableのどちらにも施すことができます．</p>
+<p>例えば，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span> <span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>という，listの１行目から，最後の行までを抜き出したいときは，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>と指定します．</p>
+<p>また，ある行から，ある行までを抜き出したいとき，例えば，1-2行目を抜き出したいとき，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>というような指定の仕方をします．:</p>
+<div class="highlight-python"><div class="highlight"><pre>list[抜き出しを開始する行番号:抜き出しを終わる行番号＋1]
+</pre></div>
+</div>
+<p>という感じです．</p>
+<p>また，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>というようにすれば，最後の2行を抜き出すことができます．</p>
+<p>以上の一連の操作は，文字列に対しても行えて，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">&#39;kobe univ.&#39;</span>
+
+<span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+<span class="s">&#39;univ.&#39;</span>
+</pre></div>
+</div>
+<p>と抜き出せることができます．</p>
+<p>このような，最後の数行を抜き出すという操作は，全体を確認するには長すぎるデータの内容を確認するときに，有効な場合があります．</p>
+</div>
+<div class="section" id="sets-dictionaries">
+<h3>5.1.12. Sets と Dictionaries<a class="headerlink" href="#sets-dictionaries" title="Permalink to this headline">¶</a></h3>
+<p>先に，listとtupulという二種類のcontainerを紹介しました．</p>
+<p>次に，setとdictionaryという２つのcontainerについて説明します．</p>
+<p>まず，dictionariesは，listと似ていますが，要素がkeyと言われる変数とヒモ付されている点が異なります．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Frodo&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span> <span class="p">:</span> <span class="mi">33</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>ここでは，&#8217;name&#8217;と&#8217;age&#8217;がkeyになっています．</p>
+<p>こうすることで，作ったdictionaryに対して，keyを指定することで，ヒモ付けされた情報を抜き出すことができます．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">d</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span>
+<span class="mi">33</span>
+</pre></div>
+</div>
+<p>次に，setというコンテナについて説明します．</p>
+<p>set はその名の通り， 集合のcontainerです．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>当然，type(s1)は</p>
+<blockquote>
+<div>type(s1)
+set</div></blockquote>
+<p>です．</p>
+<p>もう1つ，べつのs2というsetを考えてみましょう．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;b&#39;</span><span class="p">,</span>  <span class="s">&#39;c&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>setに対して，行える演算の一つに，issubset()があります．</p>
+<p>s1. issubset(s2)としたとき，s1がs2の部分集合の場合，Trueを返し，そうでないとき，Falseと返します．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s1</span><span class="o">.</span> <span class="n">issubset</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="bp">False</span>
+</pre></div>
+</div>
+<p>他にも，issubsetはset同士の共通部分を返します．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s1</span><span class="o">.</span> <span class="n">intersection</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="p">{</span><span class="s">&#39;b&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>同じような，演算として，2つの集合の間の異なる要素を返す，difference() があります．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s1</span><span class="o">.</span> <span class="n">difference</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>また，setは重複する要素を持ちません．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s3</span>  <span class="o">=</span> <span class="p">{</span><span class="s">&#39;b&#39;</span><span class="p">,</span>  <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>としても，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s3</span>
+<span class="p">{</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>となります．</p>
+</div>
+</div>
+<div class="section" id="import-p53">
+<h2>5.2. import (p53)<a class="headerlink" href="#import-p53" title="Permalink to this headline">¶</a></h2>
+<p>Pythonはその基本に，</p>
+<p>-　small core language</p>
+<p>-　extra functionality in separate libraries or modules</p>
+<p>を持ちます．</p>
+<p>例えば，平方根を計算する関数は，Pythonにはありません．（表現がアヤシイ）</p>
+<p>この場合，moduleから関数をimportします．例えば，mathをimportしてみましょう．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="mf">2.0</span>
+</pre></div>
+</div>
+<p>となります．</p>
+<p>他にも，numpy(ナンパイ)にも同じような関数が入っていますが，nampyはlistに対しても同じ計算を行える点が異なります．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">64</span><span class="p">])</span>
+<span class="n">array</span><span class="p">([</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>ためしに，mathで同じ計算をしてみると，:</p>
+<div class="highlight-python"><div class="highlight"><pre>math.sqrt([1,4,16,64])
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-2-50876051fb1b&gt; in &lt;module&gt;()
+----&gt; 1 math.sqrt([1,4,16,64])
+
+TypeError: a float is required
+</pre></div>
+</div>
+</div>
+<div class="section" id="input-and-output">
+<h2>5.3. Input and Output<a class="headerlink" href="#input-and-output" title="Permalink to this headline">¶</a></h2>
+<p>Pythonで分析を行う上で，テキストファイルを読み込んだり，作成したりする必要性が出てきます．</p>
+<p>まずは，newfile.txtというファイルを読み込んでみましょう．:</p>
+<div class="highlight-python"><div class="highlight"><pre>(ここは飛ばしてる・・・・)
+</pre></div>
+</div>
+</div>
+<div class="section" id="iterating">
+<h2>5.4. Iterating<a class="headerlink" href="#iterating" title="Permalink to this headline">¶</a></h2>
+<p>computingにおける，最も重要なtaskの一つに，繰り返しを用いた処理があります．</p>
+<p>Pythonの強みの一つは，そのシンプルさと柔軟性にあります．</p>
+<p>例えば，繰り返しの処理は&#8217;for&#8217;と&#8217;in&#8217;を使って，表現します．</p>
+<p>その一例として，&#8217;us_cities.txt&#8217;という都市とその人口のデータの処理をしてみましょう．:</p>
+<div class="highlight-python"><div class="highlight"><pre>new york: 8244910
+los angeles: 3819702
+chicago: 2707120
+houston: 2145146
+philadelphia: 1536471
+phoenix: 1469471
+san antonio: 1359758
+san diego: 1326179
+dallas: 1223229
+</pre></div>
+</div>
+<p>都市とその人口の間には，&#8217;:&#8217;があるので，それを基準にして，都市名と人口を切り離します．</p>
+<p>人口には，1000ごろに&#8217;,&#8217;で区切りましょう．</p>
+<p>まずは，データを読み込みます．</p>
+<p>&#8216;us_cities.txt&#8217;を，同じディレクトリに置いて，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;us_cities.txt&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>とします．次に，繰り返し処理を施します，:</p>
+<div class="highlight-python"><div class="highlight"><pre>for line in data_file :                                                   # data_fileの中で，line(行)ごとに処理を行う
+city, population = line.split(&#39;:&#39;)            # Tupleをunpackする
+city = city.title()                           # 都市のの頭文字を大文字にする
+population = &#39;{0:,}&#39;.format(int(population))  # 数字に&#39;,&#39;を入れる
+print(city.ljust(15) + population)
+</pre></div>
+</div>
+<p>tilte()は単語の先頭を大文字に，する組み込み関数です．</p>
+<p>例えば，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;But cOme ye bAck wHen Summers in the meaDow.&#39;</span><span class="o">.</span><span class="n">tilte</span><span class="p">()</span>
+
+<span class="s">&#39;But Come Ye Back When Summers In The Meadow.&#39;</span>
+</pre></div>
+</div>
+<p>となります．</p>
+<div class="section" id="looping-without-indices">
+<h3>5.4.1. Looping without Indices<a class="headerlink" href="#looping-without-indices" title="Permalink to this headline">¶</a></h3>
+<p>気付いている人もいると思いますが，Pythonでは，ループ処理(looping)を行うときindexを使わない方が好まれます．</p>
+<p>例えば，:</p>
+<div class="highlight-python"><div class="highlight"><pre>for x in x_values:
+print  X *X
+</pre></div>
+</div>
+<p>というコードのほうが，:</p>
+<div class="highlight-python"><div class="highlight"><pre>for i in range(len(x_values)):
+    print x_values[i] 8 x_values[i]
+</pre></div>
+</div>
+<p>というコードよりも良いことが，２つを比べてみればわかると思います．</p>
+<p>Pythonでは，1つ目のコードのように，変数に対して&#8217;i&#8217;のようなindexを付けずにループ(looping)処理をシンプルにします．</p>
+<p>その例の一つとして，&#8217;zip()&#8217;という関数を説明しましょう.</p>
+<p>&#8216;zip()&#8217;は２つの列の要素を対応させていく関数です．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">zip</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">))</span>
+<span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>というように，この場合，２つのtupleを要素ごとに組み合わせて,tupleを作り，listをつくります．</p>
+<p>この関数を使って，県庁所在地を対応させるコードを書いてみましょう．</p>
+<p>（教科書では，国と首都を対応させるコードですが，ここで紹介するのもと同じものです）</p>
+<p>まずは，２つのデータ，都道府県のデータ;prefectures，県庁所在地のデータ;citiesを用意します．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">prefectures</span> <span class="o">=</span><span class="p">(</span><span class="s">&#39;北海道(ほっかいどう)&#39;</span><span class="p">,</span><span class="s">&#39;青森県(あおもり)&#39;</span><span class="p">,</span><span class="s">&#39;岩手県(いわて)&#39;</span><span class="p">,</span><span class="s">&#39;宮城県(みやぎ)&#39;</span><span class="p">)</span>
+
+<span class="n">cities</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;札幌(さっぽろ)&#39;</span><span class="p">,</span><span class="s">&#39;青森(あおもり)&#39;</span><span class="p">,</span><span class="s">&#39;盛岡(もりおか)&#39;</span><span class="p">,</span><span class="s">&#39;仙台(せんだい)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>次に，この２つをzipで対応させていきます．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">prefectures</span> <span class="o">=</span><span class="p">(</span><span class="s">&#39;北海道(ほっかいどう)&#39;</span><span class="p">,</span><span class="s">&#39;青森県(あおもり)&#39;</span><span class="p">,</span><span class="s">&#39;岩手県(いわて)&#39;</span><span class="p">,</span><span class="s">&#39;宮城県(みやぎ)&#39;</span><span class="p">)</span>
+<span class="n">cities</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;札幌(さっぽろ)&#39;</span><span class="p">,</span><span class="s">&#39;青森(あおもり)&#39;</span><span class="p">,</span><span class="s">&#39;盛岡(もりおか)&#39;</span><span class="p">,</span><span class="s">&#39;仙台(せんだい)&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">prefecture</span><span class="p">,</span> <span class="n">city</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prefectures</span><span class="p">,</span> <span class="n">cities</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">&#39;{0}の県庁所在地は，{1}です&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prefecture</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>すると，出力は，:</p>
+<div class="highlight-python"><div class="highlight"><pre>北海道(ほっかいどう)の県庁所在地は，札幌(さっぽろ)です
+青森県(あおもり)の県庁所在地は，青森(あおもり)です
+岩手県(いわて)の県庁所在地は，盛岡(もりおか)です
+宮城県(みやぎ)の県庁所在地は，仙台(せんだい)です
+</pre></div>
+</div>
+<p>&#8216;{0}の県庁所在地は，{1}です&#8217;の&#8217;{}&#8217;は&#8217;zip()&#8217;で作った，対応を当てはめていく場所です．</p>
+<p>&#8216;{0}&#8217;と書くと，そこに，&#8217;zip(0, 1)&#8217;とした第0番目の要素が入ります．</p>
+<p>&#8216;{0}&#8217;の中に，何も書かなかった場合は&#8217;zip(0, 1)&#8217;の要素の順番通りに変数が当てはめられていきます．</p>
+<p>例えば，</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;{}の県庁所在地は，{}です&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prefecture</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>としても，結果は変わらず，:</p>
+<div class="highlight-python"><div class="highlight"><pre>北海道(ほっかいどう)の県庁所在地は，札幌(さっぽろ)です
+青森県(あおもり)の県庁所在地は，青森(あおもり)です
+岩手県(いわて)の県庁所在地は，盛岡(もりおか)です
+宮城県(みやぎ)の県庁所在地は，仙台(せんだい)です
+</pre></div>
+</div>
+<p>となります．</p>
+<p>また．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;{1}の県庁所在地は，{0}です&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prefecture</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>とすれば，:</p>
+<div class="highlight-python"><div class="highlight"><pre>札幌(さっぽろ)の県庁所在地は，北海道(ほっかいどう)です
+青森(あおもり)の県庁所在地は，青森県(あおもり)です
+盛岡(もりおか)の県庁所在地は，岩手県(いわて)です
+仙台(せんだい)の県庁所在地は，宮城県(みやぎ)です
+</pre></div>
+</div>
+<p>となり，都道府県と県庁所在地の順番が入れ替わります．</p>
+</div>
+<div class="section" id="zip-dictionaries">
+<h3>5.4.2. zip()とdictionaries<a class="headerlink" href="#zip-dictionaries" title="Permalink to this headline">¶</a></h3>
+<p>zip()はdictionariesを作るのに，便利です．</p>
+<p>例えば，:</p>
+<div class="highlight-python"><div class="highlight"><pre>names = [&#39;Tom&#39;, &#39;John&#39;]
+ marks = [&#39;E&#39;, &#39;F&#39;]
+
+dict(zip(names, marks))
+{&#39;John&#39;: &#39;F&#39;, &#39;Tom&#39;: &#39;E&#39;}
+</pre></div>
+</div>
+<p>というように，簡単にdictionary type のデータを作ることが出来ました．</p>
+</div>
+<div class="section" id="index">
+<h3>5.4.3. それでも．indexが必要な時は<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<p>indexがなくても，ループ処理ができるといっても，indexが必要な時があります．</p>
+<p>そのような場合は，&#8217;enumerate()&#8217;を用いて，indexを割り当てていきましょう．:</p>
+<div class="highlight-python"><div class="highlight"><pre>prefecture_list=[&#39;北海道(ほっかいどう)&#39;,&#39;青森県(あおもり)&#39;,&#39;岩手県(いわて)&#39;,&#39;宮城県(みやぎ)&#39;]
+for index, prefecture in enumerate(prefecture_list):
+
+print &#39;日本の東から{0}番目の都道府県は，{1}です&#39;.format(index, prefecture)
+</pre></div>
+</div>
+<p>とすれば，:</p>
+<div class="highlight-python"><div class="highlight"><pre>日本の東から0番目の都道府県は，北海道(ほっかいどう)です
+日本の東から1番目の都道府県は，青森県(あおもり)です
+日本の東から2番目の都道府県は，岩手県(いわて)です
+日本の東から3番目の都道府県は，宮城県(みやぎ)です
+</pre></div>
+</div>
+<p>と出力されます．ここから，&#8217;{0}&#8217;にindexが割り当てられていることがわかります．</p>
+<p>ところで，この，&#8217;enumerate()&#8217;では，indexの開始番号を指定することができましょう．</p>
+<p>&#8216;日本の東から0番目の都道府県&#8217;という日本語は，違和感があるので，&#8217;enumerate(prefecture_list,1)&#8217;とすれば．:</p>
+<div class="highlight-python"><div class="highlight"><pre>for index, prefecture in enumerate(prefecture_list,1):
+        print &#39;日本の東から{0}番目の都道府県は，{1}です&#39;.format(index, prefecture)
+
+日本の東から1番目の都道府県は，北海道(ほっかいどう)です
+日本の東から2番目の都道府県は，青森県(あおもり)です
+日本の東から3番目の都道府県は，岩手県(いわて)です
+日本の東から4番目の都道府県は，宮城県(みやぎ)です
+</pre></div>
+</div>
+<p>というように出力されることから，indexが1から割り当てられていることがわかります．</p>
+</div>
+</div>
+<div class="section" id="comparisons-and-logical-operators">
+<h2>5.5. Comparisons and Logical Operators<a class="headerlink" href="#comparisons-and-logical-operators" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="comparisons">
+<h3>5.5.1. Comparisons<a class="headerlink" href="#comparisons" title="Permalink to this headline">¶</a></h3>
+<p>Booolean values(True or False で評価されるvalues) として，処理されるものはたくさんあります．</p>
+<p>ここでは，代表的なものを紹介します．</p>
+<p>まずは，不等式．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span>
+
+<span class="n">a</span><span class="o">&lt;=</span><span class="n">b</span><span class="o">&lt;</span><span class="n">c</span><span class="o">&lt;</span><span class="n">d</span><span class="o">&lt;</span><span class="n">e</span><span class="o">&lt;</span><span class="n">f</span>
+<span class="bp">True</span>
+</pre></div>
+</div>
+<p>等式は，Pythonでは，&#8217;==&#8217;で表現されます．</p>
+<blockquote>
+<div><p>x=1</p>
+<p>x==20
+False</p>
+</div></blockquote>
+<p>ノットイコール　(neq)       は，&#8217;!=&#8217;で表現されます．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">1</span><span class="o">!=</span><span class="mi">20</span>
+<span class="bp">True</span>
+</pre></div>
+</div>
+<p>&#8216;if&#8217;を使うと，ある条件が満たされるかどうかで，場合分けすることができます．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">=</span> <span class="s">&#39;yes&#39;</span> <span class="k">if</span> <span class="mi">5</span><span class="o">&gt;</span><span class="mi">2</span> <span class="k">else</span> <span class="s">&#39;no&#39;</span>
+
+<span class="n">x</span>
+<span class="s">&#39;yes&#39;</span>
+</pre></div>
+</div>
+<p>この条件式には，Pythonで認められているものであればどんなものでも良いです．</p>
+<p>&#8216;if&#8217;のあとに，つねに成立するような命題をいれてみます．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">=</span> <span class="s">&#39;yes&#39;</span> <span class="k">if</span> <span class="mi">42</span> <span class="k">else</span> <span class="s">&#39;no&#39;</span>
+
+<span class="n">x</span>
+<span class="s">&#39;yes&#39;</span>
+</pre></div>
+</div>
+<p>常に満たされない，ものとして，ifのあとに空集合を入れてみましょう．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">=</span> <span class="s">&#39;yes&#39;</span> <span class="k">if</span> <span class="p">[]</span> <span class="k">else</span> <span class="s">&#39;no&#39;</span>
+
+<span class="n">x</span>
+<span class="s">&#39;no&#39;</span>
+</pre></div>
+</div>
+<p>また，ifの後に&#8216;0&#8217;を入れても同じ結果になります．</p>
+<p>つまり，&#8216;0&#8217;だけではなく，&#8217;[]&#8217;にもFalseが割り当てられているということです．</p>
+<p>&#8216;bool()&#8217;を用いて，確認してみましょう．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">([]))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+
+<span class="bp">False</span>
+<span class="bp">True</span>
+<span class="bp">False</span>
+<span class="bp">True</span>
+</pre></div>
+</div>
+<p>条件式はandを用いて，複数の命題を組み合わせることもできます．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">1</span><span class="o">&lt;</span><span class="mi">2</span>  <span class="ow">and</span>  <span class="s">&#39;あ&#39;</span>  <span class="ow">in</span>  <span class="s">&#39;あきら&#39;</span>
+
+<span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="more-functions">
+<h2>5.6. More Functions<a class="headerlink" href="#more-functions" title="Permalink to this headline">¶</a></h2>
+<p>今まで紹介していないfunctionとして，max(), min(), ramge()などがあります．</p>
+<p>range()引数に指定した長さのlistを作ります．例えば，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>となり，指定しない場合は0から始まるlistを作ります．</p>
+<p>始めと終わりの数字を指定することもできます，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>次に，&#8217;max()&#8217;はlistやtupleといった引数の最大値を返す関数です．今までの，条件式や&#8217;range()&#8217;を組み合わせて例を作ると:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">max</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span><span class="o">&gt;</span><span class="mi">98</span>
+
+<span class="bp">True</span>
+</pre></div>
+</div>
+<p>となります．&#8217;range(100)&#8217;は0から99までのlistを作るので，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">max</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span><span class="o">&gt;</span><span class="mi">99</span>
+
+<span class="bp">False</span>
+</pre></div>
+</div>
+<p>となることが分かります．</p>
+<p>最後に，&#8217;str()&#8217;は引数に指定した値の文字列を作ります．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">str</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="s">&#39;12&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="why-write-functions">
+<h2>5.7. Why Write Functions?<a class="headerlink" href="#why-write-functions" title="Permalink to this headline">¶</a></h2>
+<p>関数(function)を書くことで，コードを明瞭に書くことができます．</p>
+<p>なぜなら，</p>
+<ul class="simple">
+<li>ロジックごとにまとまりを作れる</li>
+<li>一度書けば，そのコードを何回も呼び出して使える</li>
+</ul>
+<p>からです．</p>
+<p>functionの定義の仕方を示しましょう．</p>
+<p>引数の正負を調べる関数を定義します:</p>
+<div class="highlight-python"><div class="highlight"><pre>def f(x):
+if x &lt; 0:
+        return &#39;nagetive&#39;
+return &#39;nonnegative&#39;
+</pre></div>
+</div>
+<p>とすれば，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="s">&#39;nagetive&#39;</span>
+</pre></div>
+</div>
+<p>&#8216;lamba&#8217;を使うと，一行でfunctionを書くこともできます．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>  <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>とすると，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="mi">25</span>
+</pre></div>
+</div>
+<p>のような関数を定義できます．</p>
+<p>しかし，functionの内容を明確化するためにも，&#8217;def&#8217;をつかったfunctionの定義を用いるほうが望ましいでしょう．</p>
+<blockquote>
+<div></div></blockquote>
+</div>
+<div class="section" id="exercises">
+<h2>5.8. Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise1-par1">
+<h3>5.8.1. Exercise1 Par1<a class="headerlink" href="#exercise1-par1" title="Permalink to this headline">¶</a></h3>
+<p>zipを使って内積を求める問題</p>
+<p><em>解答</em></p>
+<p>適当なlistの内積を求める:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">5.0</span><span class="p">,</span><span class="mf">8.0</span><span class="p">,</span><span class="mf">13.0</span><span class="p">,</span><span class="mf">21.0</span><span class="p">,</span><span class="mf">34.0</span><span class="p">,</span><span class="mf">55.0</span><span class="p">,</span><span class="mi">89</span><span class="p">]</span>
+<span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mf">21.0</span><span class="p">,</span><span class="mf">34.0</span><span class="p">,</span><span class="mf">55.0</span><span class="p">,</span><span class="mf">89.0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>の内積を求めてみよう:</p>
+<div class="highlight-python"><div class="highlight"><pre>S=0                                             #Sを0にしておく
+for a,b in zip(x,y):    #zip()でx,yの要素をa,bに入れる
+S=S + a*b　                      #for を使って各要素を足しあわせていく
+print(S)                                #Sの値を出す
+
+12816.0
+</pre></div>
+</div>
+<p>問題では&#8217;zip()&#8217;を用いたが，一行で書くこともできる．</p>
+<p>&#8216;sum()&#8217;の中に条件式を入れることもできるので:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+
+<span class="mf">12816.0</span>
+</pre></div>
+</div>
+<p>とかける．</p>
+</div>
+<div class="section" id="exercise1-par2">
+<h3>5.8.2. Exercise1 Par2<a class="headerlink" href="#exercise1-par2" title="Permalink to this headline">¶</a></h3>
+<p>一行で0から99の偶数の数を計算する.</p>
+<p>ちなみに，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">%</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>はxを2で割った余りを計算することがヒントです．</p>
+<p>まず，コードの内容を把握するために，複数行で書いてみる．:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="mi">50</span>
+</pre></div>
+</div>
+<p>これを，一行にまとめる．</p>
+<p>Exercise1 Par1のように&#8217;sum()&#8217;を用いて表現する．</p>
+<p>&#8216;range(100)&#8217;のなかで，&#8217;x%2==0&#8217;がtrueの回数を数えればいいので,:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<span class="mi">50</span>
+</pre></div>
+</div>
+<p>xが偶数の時に&#8217;x%2&#8217;が0になることを利用する方法もある．</p>
+<p>0にはFalseが割り当てられるので，xが偶数なら&#8217;not x%2&#8217;は&#8217;True&#8217;になる．</p>
+<p>&#8216;True&#8217;には1が割り当てられているので，:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">sum</span><span class="p">(</span><span class="ow">not</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+
+<span class="mi">50</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise1-par3">
+<h3>5.8.3. Exercise1 Par3<a class="headerlink" href="#exercise1-par3" title="Permalink to this headline">¶</a></h3>
+<p>&#8216;pairs = ((2, 5), (4, 2), (9, 8), (12, 10))&#8217;というリストのtupleの(a,b)のうち,a,bのどちらもが偶数のtupleの数を数える．</p>
+<p>(a,b)のa,bに関してそれぞれ条件式をかくので，(a,b)を分ける必要がある．</p>
+<p>それは，:</p>
+<div class="highlight-python"><div class="highlight"><pre>for a,b in pairs
+</pre></div>
+</div>
+<p>とすればよい．あとは条件式をかいてそれが満たされる回数を数えれば良いので，:</p>
+<div class="highlight-python"><div class="highlight"><pre>pairs=((2,5),(4,2),(9,8),(12,10))
+
+n = 0
+for a,b in pairs:
+if a%2==0 and b%2==0:
+        n=n+1
+print(n)
+
+2
+</pre></div>
+</div>
+<p>とすれば良い．</p>
+<p>これも，一行でかけて,:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="n">pairs</span> <span class="k">if</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">b</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span> <span class="p">)</span>
+
+<span class="mi">2</span>
+</pre></div>
+</div>
+<p>となる．</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5. Python Essentials(p48)</a><ul>
+<li><a class="reference internal" href="#data-type-p49">5.1. Data Type(p49)</a><ul>
+<li><a class="reference internal" href="#primitive-data-types">5.1.1. Primitive Data Types</a></li>
+<li><a class="reference internal" href="#bool-type">5.1.2. Bool Type</a></li>
+<li><a class="reference internal" href="#data-type">5.1.3. Data typeの確認方法</a></li>
+<li><a class="reference internal" href="#id1">5.1.4. Bool Typeの性質</a></li>
+<li><a class="reference internal" href="#listbool">5.1.5. ListとBool</a></li>
+<li><a class="reference internal" href="#list">5.1.6. Listとは</a></li>
+<li><a class="reference internal" href="#id2">5.1.7. そのほかのデータータイプ</a></li>
+<li><a class="reference internal" href="#id3">5.1.8. 注意</a></li>
+<li><a class="reference internal" href="#complex-type">5.1.9. complex Type</a></li>
+<li><a class="reference internal" href="#containers-p50">5.1.10. Containers p50</a></li>
+<li><a class="reference internal" href="#mutable-immutable">5.1.11. もう少し，mutable とimmutableの話をしよう</a></li>
+<li><a class="reference internal" href="#sets-dictionaries">5.1.12. Sets と Dictionaries</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#import-p53">5.2. import (p53)</a></li>
+<li><a class="reference internal" href="#input-and-output">5.3. Input and Output</a></li>
+<li><a class="reference internal" href="#iterating">5.4. Iterating</a><ul>
+<li><a class="reference internal" href="#looping-without-indices">5.4.1. Looping without Indices</a></li>
+<li><a class="reference internal" href="#zip-dictionaries">5.4.2. zip()とdictionaries</a></li>
+<li><a class="reference internal" href="#index">5.4.3. それでも．indexが必要な時は</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#comparisons-and-logical-operators">5.5. Comparisons and Logical Operators</a><ul>
+<li><a class="reference internal" href="#comparisons">5.5.1. Comparisons</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-functions">5.6. More Functions</a></li>
+<li><a class="reference internal" href="#why-write-functions">5.7. Why Write Functions?</a></li>
+<li><a class="reference internal" href="#exercises">5.8. Exercises</a><ul>
+<li><a class="reference internal" href="#exercise1-par1">5.8.1. Exercise1 Par1</a></li>
+<li><a class="reference internal" href="#exercise1-par2">5.8.2. Exercise1 Par2</a></li>
+<li><a class="reference internal" href="#exercise1-par3">5.8.3. Exercise1 Par3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../preface.html"
+                        title="previous chapter">4. Quantitative Economics with Python</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="test.html"
+                        title="next chapter">6. Exercise1 Par3</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/chap2/python_essential/sec1.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="test.html" title="6. Exercise1 Par3"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../preface.html" title="4. Quantitative Economics with Python"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">python_kobe 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, akira.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

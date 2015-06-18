@@ -1,0 +1,19 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Gitの使い方について}{3}{chapter.1}
+\contentsline {chapter}{\numberline {2}pythonを勉強する周辺環境}{5}{chapter.2}
+\contentsline {chapter}{\numberline {3}これまでの取り決めの流れ}{7}{chapter.3}
+\contentsline {chapter}{\numberline {4}QUANTITATIVE ECONOMICS with Python}{9}{chapter.4}
+\contentsline {chapter}{\numberline {5}Python Essentials(p48)}{11}{chapter.5}
+\contentsline {section}{\numberline {5.1}Data Type(p49)}{11}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Primitive Data Types}{11}{subsection.5.1.1}
+\contentsline {subsubsection}{Bool Type}{11}{subsubsection*.3}
+\contentsline {subsubsection}{Data typeの確認方法}{11}{subsubsection*.4}
+\contentsline {subsubsection}{Bool Typeの性質}{12}{subsubsection*.5}
+\contentsline {subsubsection}{ListとBool}{12}{subsubsection*.6}
+\contentsline {subsubsection}{Listとは}{12}{subsubsection*.7}
+\contentsline {subsubsection}{そのほかのデータータイプ}{12}{subsubsection*.8}
+\contentsline {subsubsection}{注意}{13}{subsubsection*.9}
+\contentsline {subsubsection}{complex Type}{13}{subsubsection*.10}
+\contentsline {subsubsection}{Containers p50}{13}{subsubsection*.11}
+\contentsline {subsubsection}{もう少し，mutable とimmutableの話をしよう}{14}{subsubsection*.12}
+\contentsline {subsubsection}{Sets と Dictionaries}{15}{subsubsection*.13}

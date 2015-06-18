@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. Pythonを勉強する周辺環境 &mdash; python_kobe 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="python_kobe 1.0 documentation" href="../index.html" />
+    <link rel="next" title="3. これまでの取り決めの流れ" href="sec3.html" />
+    <link rel="prev" title="1. Gitの使い方について" href="sec1.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="sec3.html" title="3. これまでの取り決めの流れ"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sec1.html" title="1. Gitの使い方について"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">python_kobe 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="python">
+<h1>2. Pythonを勉強する周辺環境<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<p>Pythonの勉強会をするにあたって，周辺環境についても指導を頂きました．
+とりあえず，書き並べて，それぞれ別の章で詳しい説明を行う予定です．</p>
+<p><strong>Sphinx</strong></p>
+<p>Pythonで書かれたテキストエディタです．
+.rstファイルで，テキストを書くと，latexやhtmlでコンパイルしてくれる優れものです．</p>
+<p>.rstファイルの記法はreST(reStructuredText)記法に基いています．
+詳しくは, <a href="#id2"><span class="problematic" id="id3">公式のreStructuredText入門_</span></a> か， <a class="reference external" href="http://d.hatena.ne.jp/kk_Ataka/20111202/1322839748">Sphinxでドキュメントを書くためreST記法に入門した</a> を参照するといいと思います．</p>
+<blockquote>
+<div></div></blockquote>
+<p>（要議論）章立てについて</p>
+<p><strong>テキストエディタについて</strong></p>
+<ul class="simple">
+<li>sublime text</li>
+</ul>
+<p>を薦めて頂きました．使いやすそうです．
+今後，sphinxはsublime text で編集してみようと思います．
+Terminal から起動するには，pathを通す必要があるようです．
+（僕のMacでは，sublがコマンドに割り当てられています．）</p>
+<p><strong>Git Hub</strong></p>
+<p>GitHubとはバージョン管理システムである，Gitを使うサイトです．
+GitHubを使うことで，プログラムソースのバージョン管理が容易になります．</p>
+<p>共同研究やプロジェクトを行うには，今後，GitHubを使えるようになることが必須だろうと予測されるので，是非習熟したいです．</p>
+<p>この勉強会の教科書になっている，Quantitive EconomicのSolutionや，Libraryをつくるプロジェクトも <a class="reference external" href="https://github.com/QuantEcon/QuantEcon.py">GitHubで公開</a> されています．</p>
+<p>そして，そもそもこの勉強会の資料なども，Githubで <a class="reference external" href="https://github.com/Akira55/sphinx">公開してます</a> ．</p>
+<blockquote>
+<div></div></blockquote>
+<p><strong>JupyterノートブックをRSTに変換するプログラム</strong></p>
+<p>kenjisatoさんが，Jupyter ノートブックを RSTに変換するスクリプト notebookconvert.py を作りました.</p>
+<p>Makefile のあるディレクトリで:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python notebookconvert.py
+$ make html
+</pre></div>
+</div>
+<p>として出力すれば自動的に変換されます．</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sec1.html"
+                        title="previous chapter">1. Gitの使い方について</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sec3.html"
+                        title="next chapter">3. これまでの取り決めの流れ</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/chap1/sec2.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="sec3.html" title="3. これまでの取り決めの流れ"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sec1.html" title="1. Gitの使い方について"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">python_kobe 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, akira.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

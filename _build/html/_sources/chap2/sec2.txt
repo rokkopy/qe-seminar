@@ -1,0 +1,100 @@
+
+Python Essentials(p48)
+=======================
+
+Python_Essentials_
+
+
+	.. _Python_Essentials : http://quant-econ.net/py/python_essentials.html#id3 
+
+==========================
+Primitive Data Type(p49)
+==========================
+
+Primitive_Data_Type_ では，Pythonでよく使われるデータの種類について学びます．
+
+Bool Type
+-----------------
+
+
+最も基本的なデータタイプはBool型です．
+
+これは，変数自体にTrueやFalseが入ります．::
+
+	x = True
+
+という感じです．
+
+また，命題についても，True or Falseに変換されて変数に入ります．::
+
+	y = 100<10
+
+のようにすると，yにはFalseが入ります．
+
+---------------------
+Data typeの確認方法
+---------------------
+
+プログラムを書いていて，ある変数がどのようなデータタイプなのか,わからなくなることがあります．
+
+これ以降にも，様々なデータタイプが出てきますが，先にデータタイプの確認方法を学びましょう．
+
+ある，変数xがどのような	データタイプかを調べるためには::
+
+	type(x)
+
+とします．
+
+もし，xが	Bool typeならば::
+	
+	bool
+
+と出力されます．
+
+
+Bool Typeの性質
+--------------------
+
+Bool Typeの変数にはTrueもしくはFalseが割り当てられますが，TrueとFalseにはそれぞれ，1と2という数字も割り当てられています．
+
+もしxがTrue，yがFalseならば::
+
+	x+Y
+	
+	1
+
+となります．
+
+
+ListとBool
+--------------------
+
+
+この，Bool TypeはListの要素にもなります．
+
+----------
+Listとは
+----------
+
+Listは様々なオブジェクトを格納できる列のことです．
+
+Listには，値や文字なども入れることができます．例えば，::
+
+	bools = [True, True, False, True]  
+
+という感じです．先ほどの，TrueやFalseに1と0が割り当てられることを考えると，::
+
+	sum(bools)
+
+	3
+
+となります．このsum()のような命令のことを関数と呼びます．
+
+
+特に，このsum()は組み込み関数とよばれ，pythonにもともと入っています．
+
+ほかの組み込み関数については，公式の組み込み関数_ を参照してください．
+
+
+	.. _公式の組み込み関数 : http://docs.python.jp/2/library/functions.html#sum
+	.. _Primitive_Data_Type :	http://quant-econ.net/py/python_essentials.html#id5
