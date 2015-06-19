@@ -1,0 +1,41 @@
+language: python
+python:
+  - 2.7
+
+notifications:
+  email: false
+
+branches:
+  only:
+    - master
+
+before_install:
+  - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+  - chmod +x miniconda.sh
+  - ./miniconda.sh -b
+  - export PATH=/home/travis/miniconda/bin:$PATH
+  - conda update --yes conda
+  - sudo rm -rf /dev/shm
+  - sudo ln -s /run/shm /dev/shm
+install:
+  - conda install --yes python=$TRAVIS_PYTHON_VERSION ipython numpy scipy matplotlib nose pandas pip sympy pytables statsmodels numba
+  - pip install sphinx
+before_script:
+  - openssl aes-256-cbc ...
+  - chmod go-rwx .travisdeploykey
+  - eval `ssh-agent -s`
+  - ssh-add .travisdeploykey
+  - git config user.name "Travis-CI"
+  - git config user.email "noreply@travis-ci.org"
+  - COMMIT_MESSAGE="Publishing site on `date "+%Y-%m-%d %H:%M:%S"` from `git log -n 1 --format='commit %h - %s'`"
+script:
+  - set -e
+  - git checkout -b master
+  - make
+  - git add -f _build/html
+  - 'git commit -m "${COMMIT_MESSAGE}"'
+  - git subtree push --prefix _build/html https://github.com/rokkopy/qe-seminar.git gh-pages
+branches:
+  only:
+    - master
+
