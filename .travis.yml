@@ -34,7 +34,7 @@ script:
   - make html
   - git add -f _build/html
   - 'git commit -m "${COMMIT_MESSAGE}"'
-  - git subtree push --prefix _build/html https://github.com/rokkopy/qe-seminar.git gh-pages
+  - git subtree push --prefix _build/html git@github.com:rokkopy/qe-seminar.git gh-pages
 branches:
   only:
     - master
