@@ -8,7 +8,8 @@ Contents:
    :maxdepth: 2
    :numbered:
 
-   chap1/sec1
+   notetaking/index
+   .. chap1/sec1
    chap1/sec2
    chap1/sec3
 
