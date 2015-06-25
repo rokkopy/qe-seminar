@@ -1,6 +1,7 @@
 
-Python Essentials(p48)
-=======================
+
+ Python Essentials(p48)
+========================
 
 Python_Essentials_
 
@@ -49,7 +50,7 @@ Data typeの確認方法
 
 とします．
 
-もし，xが	Bool typeならば::
+もし，xが	Bool typeならば::s
 	
 	bool
 
