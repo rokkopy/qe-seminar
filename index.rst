@@ -15,4 +15,4 @@ Contents:
 
    chap2/preface
    chap2/python_essential/sec1
-   chap2/python_essential/test
+   

@@ -16,5 +16,13 @@ Quantitive_Economic_ の教材を薦めて行く過程で，プログラミン�
 	
 		の２点の理由が挙げられます．
 
+
+勉強会でのGit Hubの使用法
+--------------------------
+勉強会ではSphinxで講義ノートを作成して，Git Hubでバージョン管理しながら更新していきます．
+
+（詳しい手順については更新していきます）
+	
+
 	
 	.. _Quantitive_Economic : http://quant-econ.net/
