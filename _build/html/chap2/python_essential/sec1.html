@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>5. Python Essentials(p48) &mdash; python_kobe 1.0 documentation</title>
+    <title>5. Data Type(p49) &mdash; python_kobe 1.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="python_kobe 1.0 documentation" href="../../index.html" />
-    <link rel="next" title="6. Exercise1 Par3" href="test.html" />
+    <link rel="next" title="13. Exercise1 Par3" href="test.html" />
     <link rel="prev" title="4. Quantitative Economics with Python" href="../preface.html" /> 
   </head>
   <body role="document">
@@ -37,7 +37,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="test.html" title="6. Exercise1 Par3"
+          <a href="test.html" title="13. Exercise1 Par3"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../preface.html" title="4. Quantitative Economics with Python"
@@ -51,19 +51,20 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="python-essentials-p48">
-<h1>5. Python Essentials(p48)<a class="headerlink" href="#python-essentials-p48" title="Permalink to this headline">¶</a></h1>
+  <blockquote>
+<div>Python Essentials(p48)</div></blockquote>
+<hr class="docutils" />
 <p><a class="reference external" href="http://quant-econ.net/py/python_essentials.html#id3">Python_Essentials</a></p>
 <blockquote>
 <div></div></blockquote>
 <div class="section" id="data-type-p49">
-<h2>5.1. Data Type(p49)<a class="headerlink" href="#data-type-p49" title="Permalink to this headline">¶</a></h2>
+<h1>5. Data Type(p49)<a class="headerlink" href="#data-type-p49" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="http://quant-econ.net/py/python_essentials.html#id5">Data_Type</a> では，Pythonでよく使われるデータの種類について学びます．</p>
 <div class="section" id="primitive-data-types">
-<h3>5.1.1. Primitive Data Types<a class="headerlink" href="#primitive-data-types" title="Permalink to this headline">¶</a></h3>
+<h2>5.1. Primitive Data Types<a class="headerlink" href="#primitive-data-types" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="bool-type">
-<h3>5.1.2. Bool Type<a class="headerlink" href="#bool-type" title="Permalink to this headline">¶</a></h3>
+<h2>5.2. Bool Type<a class="headerlink" href="#bool-type" title="Permalink to this headline">¶</a></h2>
 <p>最も基本的なデータタイプはBool Typeです．</p>
 <p>これは，変数自体にTrueやFalseが入ります．:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="bp">True</span>
@@ -77,7 +78,7 @@
 <p>のようにすると，yにはFalseが入ります．</p>
 </div>
 <div class="section" id="data-type">
-<h3>5.1.3. Data typeの確認方法<a class="headerlink" href="#data-type" title="Permalink to this headline">¶</a></h3>
+<h2>5.3. Data typeの確認方法<a class="headerlink" href="#data-type" title="Permalink to this headline">¶</a></h2>
 <p>プログラムを書いていて，ある変数がどのようなデータタイプなのか,わからなくなることがあります．</p>
 <p>これ以降にも，様々なデータタイプが出てきますが，先にデータタイプの確認方法を学びましょう．</p>
 <p>ある，変数xがどのような    データタイプかを調べるためには:</p>
@@ -85,14 +86,13 @@
 </pre></div>
 </div>
 <p>とします．</p>
-<p>もし，xが   Bool typeならば:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="nb">bool</span>
-</pre></div>
-</div>
+<p>もし，xが   Bool typeならば::s</p>
+<blockquote>
+<div>bool</div></blockquote>
 <p>と出力されます．</p>
 </div>
 <div class="section" id="id1">
-<h3>5.1.4. Bool Typeの性質<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h2>5.4. Bool Typeの性質<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Bool Typeの変数にはTrueもしくはFalseが割り当てられますが，TrueとFalseにはそれぞれ，1と2という数字も割り当てられています．</p>
 <p>もしxがTrue，yがFalseならば:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">+</span><span class="n">Y</span>
@@ -103,11 +103,11 @@
 <p>となります．</p>
 </div>
 <div class="section" id="listbool">
-<h3>5.1.5. ListとBool<a class="headerlink" href="#listbool" title="Permalink to this headline">¶</a></h3>
+<h2>5.5. ListとBool<a class="headerlink" href="#listbool" title="Permalink to this headline">¶</a></h2>
 <p>この，Bool TypeはListの要素にもなります．</p>
 </div>
 <div class="section" id="list">
-<h3>5.1.6. Listとは<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
+<h2>5.6. Listとは<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
 <p>Listは様々なオブジェクトを格納できる列のことです．</p>
 <p>Listには，値や文字なども入れることができます．例えば，:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">bools</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span>
@@ -124,7 +124,7 @@
 <p>ほかの組み込み関数については，<a class="reference external" href="http://docs.python.jp/2/library/functions.html#sum">公式の組み込み関数</a> を参照してください．</p>
 </div>
 <div class="section" id="id2">
-<h3>5.1.7. そのほかのデータータイプ<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h2>5.7. そのほかのデータータイプ<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>PythonにはBool Type以外にのデータタイプも存在します．</p>
 <p>例えば数字の，integersとfloatsの２つの種類のデータタイプがあります．:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
@@ -143,7 +143,7 @@
 <p>となります．このintとfloatについては後に詳しい説明をします．</p>
 </div>
 <div class="section" id="id3">
-<h3>5.1.8. 注意<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h2>5.8. 注意<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>この，integerに関連する問題を一つ見てみましょう．</p>
 <p>Python 2x では，２つのinteger(整数)同士の割り算では，integerの部分だけを返します．</p>
 <p>つまり，:</p>
@@ -170,7 +170,7 @@
 <p>しかし，この教科書はPyhton 2xを用いるので，読者はこのような問題に留意する必要があるでしょう．</p>
 </div>
 <div class="section" id="complex-type">
-<h3>5.1.9. complex Type<a class="headerlink" href="#complex-type" title="Permalink to this headline">¶</a></h3>
+<h2>5.9. complex Type<a class="headerlink" href="#complex-type" title="Permalink to this headline">¶</a></h2>
 <p>複素数も，PythonにおけるPrimitiveなデータタイプの一つです．</p>
 <p>Pythonでは，Complex Type と呼ばれます．</p>
 <p>Pythonで複素数を表現するには，組み込み関数のcomplex()を使います．:</p>
@@ -191,7 +191,7 @@
 <p>となります．</p>
 </div>
 <div class="section" id="containers-p50">
-<h3>5.1.10. Containers p50<a class="headerlink" href="#containers-p50" title="Permalink to this headline">¶</a></h3>
+<h2>5.10. Containers p50<a class="headerlink" href="#containers-p50" title="Permalink to this headline">¶</a></h2>
 <p>Pythonには様々なコンテナが存在します．
 コンテナは，データーを集めておくために使われます．</p>
 <p>例えば，先に説明した，listは組み込みコンテナといって，Pythonにもともと備わっています．</p>
@@ -234,7 +234,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 <p>となってしまいます</p>
 </div>
 <div class="section" id="mutable-immutable">
-<h3>5.1.11. もう少し，mutable とimmutableの話をしよう<a class="headerlink" href="#mutable-immutable" title="Permalink to this headline">¶</a></h3>
+<h2>5.11. もう少し，mutable とimmutableの話をしよう<a class="headerlink" href="#mutable-immutable" title="Permalink to this headline">¶</a></h2>
 <p>mutableなlistにも，immutableなリストにも，&#8221;unpacked&#8221;という操作を施すことができます．</p>
 <p>unpackedでは，それぞれの行を指定した変数に当てはめることができます．:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">integers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
@@ -291,7 +291,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 <p>このような，最後の数行を抜き出すという操作は，全体を確認するには長すぎるデータの内容を確認するときに，有効な場合があります．</p>
 </div>
 <div class="section" id="sets-dictionaries">
-<h3>5.1.12. Sets と Dictionaries<a class="headerlink" href="#sets-dictionaries" title="Permalink to this headline">¶</a></h3>
+<h2>5.12. Sets と Dictionaries<a class="headerlink" href="#sets-dictionaries" title="Permalink to this headline">¶</a></h2>
 <p>先に，listとtupulという二種類のcontainerを紹介しました．</p>
 <p>次に，setとdictionaryという２つのcontainerについて説明します．</p>
 <p>まず，dictionariesは，listと似ていますが，要素がkeyと言われる変数とヒモ付されている点が異なります．:</p>
@@ -347,7 +347,7 @@ set</div></blockquote>
 </div>
 </div>
 <div class="section" id="import-p53">
-<h2>5.2. import (p53)<a class="headerlink" href="#import-p53" title="Permalink to this headline">¶</a></h2>
+<h1>6. import (p53)<a class="headerlink" href="#import-p53" title="Permalink to this headline">¶</a></h1>
 <p>Pythonはその基本に，</p>
 <p>-　small core language</p>
 <p>-　extra functionality in separate libraries or modules</p>
@@ -379,7 +379,7 @@ TypeError: a float is required
 </div>
 </div>
 <div class="section" id="input-and-output">
-<h2>5.3. Input and Output<a class="headerlink" href="#input-and-output" title="Permalink to this headline">¶</a></h2>
+<h1>7. Input and Output<a class="headerlink" href="#input-and-output" title="Permalink to this headline">¶</a></h1>
 <p>Pythonで分析を行う上で，テキストファイルを読み込んだり，作成したりする必要性が出てきます．</p>
 <p>まずは，newfile.txtというファイルを読み込んでみましょう．:</p>
 <div class="highlight-python"><div class="highlight"><pre>(ここは飛ばしてる・・・・)
@@ -387,7 +387,7 @@ TypeError: a float is required
 </div>
 </div>
 <div class="section" id="iterating">
-<h2>5.4. Iterating<a class="headerlink" href="#iterating" title="Permalink to this headline">¶</a></h2>
+<h1>8. Iterating<a class="headerlink" href="#iterating" title="Permalink to this headline">¶</a></h1>
 <p>computingにおける，最も重要なtaskの一つに，繰り返しを用いた処理があります．</p>
 <p>Pythonの強みの一つは，そのシンプルさと柔軟性にあります．</p>
 <p>例えば，繰り返しの処理は&#8217;for&#8217;と&#8217;in&#8217;を使って，表現します．</p>
@@ -427,7 +427,7 @@ print(city.ljust(15) + population)
 </div>
 <p>となります．</p>
 <div class="section" id="looping-without-indices">
-<h3>5.4.1. Looping without Indices<a class="headerlink" href="#looping-without-indices" title="Permalink to this headline">¶</a></h3>
+<h2>8.1. Looping without Indices<a class="headerlink" href="#looping-without-indices" title="Permalink to this headline">¶</a></h2>
 <p>気付いている人もいると思いますが，Pythonでは，ループ処理(looping)を行うときindexを使わない方が好まれます．</p>
 <p>例えば，:</p>
 <div class="highlight-python"><div class="highlight"><pre>for x in x_values:
@@ -457,11 +457,11 @@ print  X *X
 </pre></div>
 </div>
 <p>次に，この２つをzipで対応させていきます．:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">prefectures</span> <span class="o">=</span><span class="p">(</span><span class="s">&#39;北海道(ほっかいどう)&#39;</span><span class="p">,</span><span class="s">&#39;青森県(あおもり)&#39;</span><span class="p">,</span><span class="s">&#39;岩手県(いわて)&#39;</span><span class="p">,</span><span class="s">&#39;宮城県(みやぎ)&#39;</span><span class="p">)</span>
-<span class="n">cities</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;札幌(さっぽろ)&#39;</span><span class="p">,</span><span class="s">&#39;青森(あおもり)&#39;</span><span class="p">,</span><span class="s">&#39;盛岡(もりおか)&#39;</span><span class="p">,</span><span class="s">&#39;仙台(せんだい)&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre>prefectures =(&#39;北海道(ほっかいどう)&#39;,&#39;青森県(あおもり)&#39;,&#39;岩手県(いわて)&#39;,&#39;宮城県(みやぎ)&#39;)
+cities = (&#39;札幌(さっぽろ)&#39;,&#39;青森(あおもり)&#39;,&#39;盛岡(もりおか)&#39;,&#39;仙台(せんだい)&#39;)
 
-<span class="k">for</span> <span class="n">prefecture</span><span class="p">,</span> <span class="n">city</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prefectures</span><span class="p">,</span> <span class="n">cities</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s">&#39;{0}の県庁所在地は，{1}です&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prefecture</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span>
+for prefecture, city in zip(prefectures, cities):
+        print &#39;{0}の県庁所在地は，{1}です&#39;.format(prefecture, city)
 </pre></div>
 </div>
 <p>すると，出力は，:</p>
@@ -475,7 +475,7 @@ print  X *X
 <p>&#8216;{0}&#8217;と書くと，そこに，&#8217;zip(0, 1)&#8217;とした第0番目の要素が入ります．</p>
 <p>&#8216;{0}&#8217;の中に，何も書かなかった場合は&#8217;zip(0, 1)&#8217;の要素の順番通りに変数が当てはめられていきます．</p>
 <p>例えば，</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;{}の県庁所在地は，{}です&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prefecture</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre>print &#39;{}の県庁所在地は，{}です&#39;.format(prefecture, city)
 </pre></div>
 </div>
 <p>としても，結果は変わらず，:</p>
@@ -487,7 +487,7 @@ print  X *X
 </div>
 <p>となります．</p>
 <p>また．:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;{1}の県庁所在地は，{0}です&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prefecture</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre>print &#39;{1}の県庁所在地は，{0}です&#39;.format(prefecture, city)
 </pre></div>
 </div>
 <p>とすれば，:</p>
@@ -500,7 +500,7 @@ print  X *X
 <p>となり，都道府県と県庁所在地の順番が入れ替わります．</p>
 </div>
 <div class="section" id="zip-dictionaries">
-<h3>5.4.2. zip()とdictionaries<a class="headerlink" href="#zip-dictionaries" title="Permalink to this headline">¶</a></h3>
+<h2>8.2. zip()とdictionaries<a class="headerlink" href="#zip-dictionaries" title="Permalink to this headline">¶</a></h2>
 <p>zip()はdictionariesを作るのに，便利です．</p>
 <p>例えば，:</p>
 <div class="highlight-python"><div class="highlight"><pre>names = [&#39;Tom&#39;, &#39;John&#39;]
@@ -513,7 +513,7 @@ dict(zip(names, marks))
 <p>というように，簡単にdictionary type のデータを作ることが出来ました．</p>
 </div>
 <div class="section" id="index">
-<h3>5.4.3. それでも．indexが必要な時は<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<h2>8.3. それでも．indexが必要な時は<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h2>
 <p>indexがなくても，ループ処理ができるといっても，indexが必要な時があります．</p>
 <p>そのような場合は，&#8217;enumerate()&#8217;を用いて，indexを割り当てていきましょう．:</p>
 <div class="highlight-python"><div class="highlight"><pre>prefecture_list=[&#39;北海道(ほっかいどう)&#39;,&#39;青森県(あおもり)&#39;,&#39;岩手県(いわて)&#39;,&#39;宮城県(みやぎ)&#39;]
@@ -545,9 +545,9 @@ print &#39;日本の東から{0}番目の都道府県は，{1}です&#39;.format
 </div>
 </div>
 <div class="section" id="comparisons-and-logical-operators">
-<h2>5.5. Comparisons and Logical Operators<a class="headerlink" href="#comparisons-and-logical-operators" title="Permalink to this headline">¶</a></h2>
+<h1>9. Comparisons and Logical Operators<a class="headerlink" href="#comparisons-and-logical-operators" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="comparisons">
-<h3>5.5.1. Comparisons<a class="headerlink" href="#comparisons" title="Permalink to this headline">¶</a></h3>
+<h2>9.1. Comparisons<a class="headerlink" href="#comparisons" title="Permalink to this headline">¶</a></h2>
 <p>Booolean values(True or False で評価されるvalues) として，処理されるものはたくさんあります．</p>
 <p>ここでは，代表的なものを紹介します．</p>
 <p>まずは，不等式．:</p>
@@ -613,7 +613,7 @@ False</p>
 </div>
 </div>
 <div class="section" id="more-functions">
-<h2>5.6. More Functions<a class="headerlink" href="#more-functions" title="Permalink to this headline">¶</a></h2>
+<h1>10. More Functions<a class="headerlink" href="#more-functions" title="Permalink to this headline">¶</a></h1>
 <p>今まで紹介していないfunctionとして，max(), min(), ramge()などがあります．</p>
 <p>range()引数に指定した長さのlistを作ります．例えば，:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -649,7 +649,7 @@ False</p>
 </div>
 </div>
 <div class="section" id="why-write-functions">
-<h2>5.7. Why Write Functions?<a class="headerlink" href="#why-write-functions" title="Permalink to this headline">¶</a></h2>
+<h1>11. Why Write Functions?<a class="headerlink" href="#why-write-functions" title="Permalink to this headline">¶</a></h1>
 <p>関数(function)を書くことで，コードを明瞭に書くことができます．</p>
 <p>なぜなら，</p>
 <ul class="simple">
@@ -686,9 +686,9 @@ return &#39;nonnegative&#39;
 <div></div></blockquote>
 </div>
 <div class="section" id="exercises">
-<h2>5.8. Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<h1>12. Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercise1-par1">
-<h3>5.8.1. Exercise1 Par1<a class="headerlink" href="#exercise1-par1" title="Permalink to this headline">¶</a></h3>
+<h2>12.1. Exercise1 Par1<a class="headerlink" href="#exercise1-par1" title="Permalink to this headline">¶</a></h2>
 <p>zipを使って内積を求める問題</p>
 <p><em>解答</em></p>
 <p>適当なlistの内積を求める:</p>
@@ -715,7 +715,7 @@ print(S)                                #Sの値を出す
 <p>とかける．</p>
 </div>
 <div class="section" id="exercise1-par2">
-<h3>5.8.2. Exercise1 Par2<a class="headerlink" href="#exercise1-par2" title="Permalink to this headline">¶</a></h3>
+<h2>12.2. Exercise1 Par2<a class="headerlink" href="#exercise1-par2" title="Permalink to this headline">¶</a></h2>
 <p>一行で0から99の偶数の数を計算する.</p>
 <p>ちなみに，:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">%</span><span class="mi">2</span>
@@ -749,7 +749,7 @@ print(S)                                #Sの値を出す
 </div>
 </div>
 <div class="section" id="exercise1-par3">
-<h3>5.8.3. Exercise1 Par3<a class="headerlink" href="#exercise1-par3" title="Permalink to this headline">¶</a></h3>
+<h2>12.3. Exercise1 Par3<a class="headerlink" href="#exercise1-par3" title="Permalink to this headline">¶</a></h2>
 <p>&#8216;pairs = ((2, 5), (4, 2), (9, 8), (12, 10))&#8217;というリストのtupleの(a,b)のうち,a,bのどちらもが偶数のtupleの数を数える．</p>
 <p>(a,b)のa,bに関してそれぞれ条件式をかくので，(a,b)を分ける必要がある．</p>
 <p>それは，:</p>
@@ -778,7 +778,6 @@ print(n)
 <p>となる．</p>
 </div>
 </div>
-</div>
 
 
           </div>
@@ -788,42 +787,39 @@ print(n)
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">5. Python Essentials(p48)</a><ul>
-<li><a class="reference internal" href="#data-type-p49">5.1. Data Type(p49)</a><ul>
-<li><a class="reference internal" href="#primitive-data-types">5.1.1. Primitive Data Types</a></li>
-<li><a class="reference internal" href="#bool-type">5.1.2. Bool Type</a></li>
-<li><a class="reference internal" href="#data-type">5.1.3. Data typeの確認方法</a></li>
-<li><a class="reference internal" href="#id1">5.1.4. Bool Typeの性質</a></li>
-<li><a class="reference internal" href="#listbool">5.1.5. ListとBool</a></li>
-<li><a class="reference internal" href="#list">5.1.6. Listとは</a></li>
-<li><a class="reference internal" href="#id2">5.1.7. そのほかのデータータイプ</a></li>
-<li><a class="reference internal" href="#id3">5.1.8. 注意</a></li>
-<li><a class="reference internal" href="#complex-type">5.1.9. complex Type</a></li>
-<li><a class="reference internal" href="#containers-p50">5.1.10. Containers p50</a></li>
-<li><a class="reference internal" href="#mutable-immutable">5.1.11. もう少し，mutable とimmutableの話をしよう</a></li>
-<li><a class="reference internal" href="#sets-dictionaries">5.1.12. Sets と Dictionaries</a></li>
+<li><a class="reference internal" href="#">5. Data Type(p49)</a><ul>
+<li><a class="reference internal" href="#primitive-data-types">5.1. Primitive Data Types</a></li>
+<li><a class="reference internal" href="#bool-type">5.2. Bool Type</a></li>
+<li><a class="reference internal" href="#data-type">5.3. Data typeの確認方法</a></li>
+<li><a class="reference internal" href="#id1">5.4. Bool Typeの性質</a></li>
+<li><a class="reference internal" href="#listbool">5.5. ListとBool</a></li>
+<li><a class="reference internal" href="#list">5.6. Listとは</a></li>
+<li><a class="reference internal" href="#id2">5.7. そのほかのデータータイプ</a></li>
+<li><a class="reference internal" href="#id3">5.8. 注意</a></li>
+<li><a class="reference internal" href="#complex-type">5.9. complex Type</a></li>
+<li><a class="reference internal" href="#containers-p50">5.10. Containers p50</a></li>
+<li><a class="reference internal" href="#mutable-immutable">5.11. もう少し，mutable とimmutableの話をしよう</a></li>
+<li><a class="reference internal" href="#sets-dictionaries">5.12. Sets と Dictionaries</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#import-p53">5.2. import (p53)</a></li>
-<li><a class="reference internal" href="#input-and-output">5.3. Input and Output</a></li>
-<li><a class="reference internal" href="#iterating">5.4. Iterating</a><ul>
-<li><a class="reference internal" href="#looping-without-indices">5.4.1. Looping without Indices</a></li>
-<li><a class="reference internal" href="#zip-dictionaries">5.4.2. zip()とdictionaries</a></li>
-<li><a class="reference internal" href="#index">5.4.3. それでも．indexが必要な時は</a></li>
+<li><a class="reference internal" href="#import-p53">6. import (p53)</a></li>
+<li><a class="reference internal" href="#input-and-output">7. Input and Output</a></li>
+<li><a class="reference internal" href="#iterating">8. Iterating</a><ul>
+<li><a class="reference internal" href="#looping-without-indices">8.1. Looping without Indices</a></li>
+<li><a class="reference internal" href="#zip-dictionaries">8.2. zip()とdictionaries</a></li>
+<li><a class="reference internal" href="#index">8.3. それでも．indexが必要な時は</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#comparisons-and-logical-operators">5.5. Comparisons and Logical Operators</a><ul>
-<li><a class="reference internal" href="#comparisons">5.5.1. Comparisons</a></li>
+<li><a class="reference internal" href="#comparisons-and-logical-operators">9. Comparisons and Logical Operators</a><ul>
+<li><a class="reference internal" href="#comparisons">9.1. Comparisons</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#more-functions">5.6. More Functions</a></li>
-<li><a class="reference internal" href="#why-write-functions">5.7. Why Write Functions?</a></li>
-<li><a class="reference internal" href="#exercises">5.8. Exercises</a><ul>
-<li><a class="reference internal" href="#exercise1-par1">5.8.1. Exercise1 Par1</a></li>
-<li><a class="reference internal" href="#exercise1-par2">5.8.2. Exercise1 Par2</a></li>
-<li><a class="reference internal" href="#exercise1-par3">5.8.3. Exercise1 Par3</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#more-functions">10. More Functions</a></li>
+<li><a class="reference internal" href="#why-write-functions">11. Why Write Functions?</a></li>
+<li><a class="reference internal" href="#exercises">12. Exercises</a><ul>
+<li><a class="reference internal" href="#exercise1-par1">12.1. Exercise1 Par1</a></li>
+<li><a class="reference internal" href="#exercise1-par2">12.2. Exercise1 Par2</a></li>
+<li><a class="reference internal" href="#exercise1-par3">12.3. Exercise1 Par3</a></li>
 </ul>
 </li>
 </ul>
@@ -833,7 +829,7 @@ print(n)
                         title="previous chapter">4. Quantitative Economics with Python</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="test.html"
-                        title="next chapter">6. Exercise1 Par3</a></p>
+                        title="next chapter">13. Exercise1 Par3</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -865,7 +861,7 @@ print(n)
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="test.html" title="6. Exercise1 Par3"
+          <a href="test.html" title="13. Exercise1 Par3"
              >next</a> |</li>
         <li class="right" >
           <a href="../preface.html" title="4. Quantitative Economics with Python"
