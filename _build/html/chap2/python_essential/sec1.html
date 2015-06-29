@@ -26,7 +26,6 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="python_kobe 1.0 documentation" href="../../index.html" />
-    <link rel="next" title="13. Exercise1 Par3" href="test.html" />
     <link rel="prev" title="4. Quantitative Economics with Python" href="../preface.html" /> 
   </head>
   <body role="document">
@@ -36,9 +35,6 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="test.html" title="13. Exercise1 Par3"
-             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../preface.html" title="4. Quantitative Economics with Python"
              accesskey="P">previous</a> |</li>
@@ -66,41 +62,42 @@
 <div class="section" id="bool-type">
 <h2>5.2. Bool Type<a class="headerlink" href="#bool-type" title="Permalink to this headline">¶</a></h2>
 <p>最も基本的なデータタイプはBool Typeです．</p>
-<p>これは，変数自体にTrueやFalseが入ります．:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="bp">True</span>
+<p>これは，変数自体に <code class="docutils literal"><span class="pre">True</span></code> や <code class="docutils literal"><span class="pre">False</span></code> が入ります．</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="n">x</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </div>
 <p>という感じです．</p>
-<p>また，命題についても，True or Falseに変換されて変数に入ります．:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">y</span> <span class="o">=</span> <span class="mi">100</span><span class="o">&lt;</span><span class="mi">10</span>
+<p>また，命題についても，<code class="docutils literal"><span class="pre">True</span></code> or <code class="docutils literal"><span class="pre">False</span></code> に変換されて変数に入ります.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [2]: </span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="gp">In [3]: </span><span class="n">y</span>
+<span class="gh">Out[3]: </span><span class="go">False</span>
 </pre></div>
 </div>
-<p>のようにすると，yにはFalseが入ります．</p>
 </div>
 <div class="section" id="data-type">
 <h2>5.3. Data typeの確認方法<a class="headerlink" href="#data-type" title="Permalink to this headline">¶</a></h2>
-<p>プログラムを書いていて，ある変数がどのようなデータタイプなのか,わからなくなることがあります．</p>
+<p>プログラムを書いていて，ある変数がどのようなデータタイプなのか,
+わからなくなることがあります．</p>
 <p>これ以降にも，様々なデータタイプが出てきますが，先にデータタイプの確認方法を学びましょう．</p>
-<p>ある，変数xがどのような    データタイプかを調べるためには:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<p>ある変数 <code class="docutils literal"><span class="pre">x</span></code> がどのようなデータタイプかを調べるためには組込み関数
+<code class="docutils literal"><span class="pre">type()</span></code> を使います.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [4]: </span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gh">Out[4]: </span><span class="go">bool</span>
 </pre></div>
 </div>
-<p>とします．</p>
-<p>もし，xが   Bool typeならば::s</p>
-<blockquote>
-<div>bool</div></blockquote>
-<p>と出力されます．</p>
 </div>
 <div class="section" id="id1">
-<h2>5.4. Bool Typeの性質<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Bool Typeの変数にはTrueもしくはFalseが割り当てられますが，TrueとFalseにはそれぞれ，1と2という数字も割り当てられています．</p>
-<p>もしxがTrue，yがFalseならば:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">+</span><span class="n">Y</span>
+<h2>5.4. <code class="docutils literal"><span class="pre">bool</span></code> Typeの性質<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">bool</span></code> Typeの変数には <code class="docutils literal"><span class="pre">True</span></code> もしくは <code class="docutils literal"><span class="pre">False</span></code> が割り当てられますが，
+<code class="docutils literal"><span class="pre">True``と</span> <span class="pre">``False</span></code> にはそれぞれ，<code class="docutils literal"><span class="pre">1</span></code> と <code class="docutils literal"><span class="pre">0</span></code>
+という数字も割り当てられています</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [5]: </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span>
 
-<span class="mi">1</span>
+<span class="gp">In [6]: </span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="gh">Out[6]: </span><span class="go">1</span>
 </pre></div>
 </div>
-<p>となります．</p>
 </div>
 <div class="section" id="listbool">
 <h2>5.5. ListとBool<a class="headerlink" href="#listbool" title="Permalink to this headline">¶</a></h2>
@@ -791,7 +788,7 @@ print(n)
 <li><a class="reference internal" href="#primitive-data-types">5.1. Primitive Data Types</a></li>
 <li><a class="reference internal" href="#bool-type">5.2. Bool Type</a></li>
 <li><a class="reference internal" href="#data-type">5.3. Data typeの確認方法</a></li>
-<li><a class="reference internal" href="#id1">5.4. Bool Typeの性質</a></li>
+<li><a class="reference internal" href="#id1">5.4. <code class="docutils literal"><span class="pre">bool</span></code> Typeの性質</a></li>
 <li><a class="reference internal" href="#listbool">5.5. ListとBool</a></li>
 <li><a class="reference internal" href="#list">5.6. Listとは</a></li>
 <li><a class="reference internal" href="#id2">5.7. そのほかのデータータイプ</a></li>
@@ -827,9 +824,6 @@ print(n)
   <h4>Previous topic</h4>
   <p class="topless"><a href="../preface.html"
                         title="previous chapter">4. Quantitative Economics with Python</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="test.html"
-                        title="next chapter">13. Exercise1 Par3</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -860,9 +854,6 @@ print(n)
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="test.html" title="13. Exercise1 Par3"
-             >next</a> |</li>
         <li class="right" >
           <a href="../preface.html" title="4. Quantitative Economics with Python"
              >previous</a> |</li>

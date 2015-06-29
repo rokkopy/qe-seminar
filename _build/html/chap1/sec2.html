@@ -27,7 +27,7 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="python_kobe 1.0 documentation" href="../index.html" />
     <link rel="next" title="3. これまでの取り決めの流れ" href="sec3.html" />
-    <link rel="prev" title="1. Gitの使い方について" href="sec1.html" /> 
+    <link rel="prev" title="1. セミナーノート作成の手引き" href="../notetaking/index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -40,7 +40,7 @@
           <a href="sec3.html" title="3. これまでの取り決めの流れ"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="sec1.html" title="1. Gitの使い方について"
+          <a href="../notetaking/index.html" title="1. セミナーノート作成の手引き"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">python_kobe 1.0 documentation</a> &raquo;</li> 
       </ul>
@@ -55,15 +55,37 @@
 <h1>2. Pythonを勉強する周辺環境<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
 <p>Pythonの勉強会をするにあたって，周辺環境についても指導を頂きました．
 とりあえず，書き並べて，それぞれ別の章で詳しい説明を行う予定です．</p>
-<p><strong>Sphinx</strong></p>
+<div class="section" id="sphinx">
+<h2>2.1. Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h2>
 <p>Pythonで書かれたテキストエディタです．
 .rstファイルで，テキストを書くと，latexやhtmlでコンパイルしてくれる優れものです．</p>
 <p>.rstファイルの記法はreST(reStructuredText)記法に基いています．
-詳しくは, <a href="#id2"><span class="problematic" id="id3">公式のreStructuredText入門_</span></a> か， <a class="reference external" href="http://d.hatena.ne.jp/kk_Ataka/20111202/1322839748">Sphinxでドキュメントを書くためreST記法に入門した</a> を参照するといいと思います．</p>
+詳しくは, <a href="#id4"><span class="problematic" id="id5">公式のreStructuredText入門_</span></a> か， <a class="reference external" href="http://d.hatena.ne.jp/kk_Ataka/20111202/1322839748">Sphinxでドキュメントを書くためreST記法に入門した</a> を参照するといいと思います．</p>
 <blockquote>
 <div></div></blockquote>
-<p>（要議論）章立てについて</p>
-<p><strong>テキストエディタについて</strong></p>
+<div class="section" id="restractured-text">
+<h3>2.1.1. reStractured Text 記法の慣習<a class="headerlink" href="#restractured-text" title="Permalink to this headline">¶</a></h3>
+<p>Sphinx ではどのような章や説の区切りかたをしても，自動的にhtmlで言えば&lt;h1-6&gt;に変換されていくのですが，こういうのは一般的な慣習に従っていくのが誤解を招かずに良いでしょう．
+．</p>
+<p>参考にしたのは，<a href="#id6"><span class="problematic" id="id7">Sphinxの公式サイトのチュートリアル_</span></a> でズバリそのものが書いてある．</p>
+<blockquote>
+<div><ul class="simple">
+<li># 部: オーバーライン付き</li>
+<li><ul class="first">
+<li>章: オーバーライン付き</li>
+</ul>
+</li>
+<li>=, セクション</li>
+<li>-, サブセクション</li>
+<li>^, サブサブセクション</li>
+<li>&#8221;, パラグラフ</li>
+</ul>
+</div></blockquote>
+<p>これに従っていのがよいと思います．</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>2.2. テキストエディタについて<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>sublime text</li>
 </ul>
@@ -79,7 +101,9 @@ GitHubを使うことで，プログラムソースのバージョン管理が�
 <p>そして，そもそもこの勉強会の資料なども，Githubで <a class="reference external" href="https://github.com/Akira55/sphinx">公開してます</a> ．</p>
 <blockquote>
 <div></div></blockquote>
-<p><strong>JupyterノートブックをRSTに変換するプログラム</strong></p>
+</div>
+<div class="section" id="jupyterrst">
+<h2>2.3. JupyterノートブックをRSTに変換するプログラム<a class="headerlink" href="#jupyterrst" title="Permalink to this headline">¶</a></h2>
 <p>kenjisatoさんが，Jupyter ノートブックを RSTに変換するスクリプト notebookconvert.py を作りました.</p>
 <p>Makefile のあるディレクトリで:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ python notebookconvert.py
@@ -88,6 +112,7 @@ $ make html
 </div>
 <p>として出力すれば自動的に変換されます．</p>
 </div>
+</div>
 
 
           </div>
@@ -95,9 +120,22 @@ $ make html
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2. Pythonを勉強する周辺環境</a><ul>
+<li><a class="reference internal" href="#sphinx">2.1. Sphinx</a><ul>
+<li><a class="reference internal" href="#restractured-text">2.1.1. reStractured Text 記法の慣習</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">2.2. テキストエディタについて</a></li>
+<li><a class="reference internal" href="#jupyterrst">2.3. JupyterノートブックをRSTに変換するプログラム</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="sec1.html"
-                        title="previous chapter">1. Gitの使い方について</a></p>
+  <p class="topless"><a href="../notetaking/index.html"
+                        title="previous chapter">1. セミナーノート作成の手引き</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="sec3.html"
                         title="next chapter">3. これまでの取り決めの流れ</a></p>
@@ -135,7 +173,7 @@ $ make html
           <a href="sec3.html" title="3. これまでの取り決めの流れ"
              >next</a> |</li>
         <li class="right" >
-          <a href="sec1.html" title="1. Gitの使い方について"
+          <a href="../notetaking/index.html" title="1. セミナーノート作成の手引き"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">python_kobe 1.0 documentation</a> &raquo;</li> 
       </ul>
