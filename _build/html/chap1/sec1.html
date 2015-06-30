@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,8 +8,11 @@
     
     <title>Gitの使い方について &mdash; python_kobe 1.0 documentation</title>
     
-    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.2.0/journal/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     
     <script type="text/javascript">
@@ -25,24 +28,166 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="python_kobe 1.0 documentation" href="../index.html" /> 
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="python_kobe 1.0 documentation" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
   </head>
   <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">python_kobe 1.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          ROKKOPY</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
             
+                <li><a href="../https://github.com/rokkopy/qe-seminar.html">Repo</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../notetaking/index.html">1. セミナーノート作成の手引き</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notetaking/index.html#id2">1.1. はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notetaking/index.html#id3">1.2. 使用ツール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notetaking/index.html#git">1.3. Git のワークフロー &amp; 用語集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notetaking/index.html#sphinx">1.4. Sphinx</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sec2.html">2. Pythonを勉強する周辺環境</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sec2.html#sphinx">2.1. Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec2.html#id2">2.2. テキストエディタについて</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec2.html#jupyterrst">2.3. JupyterノートブックをRSTに変換するプログラム</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sec3.html">3. これまでの取り決めの流れ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sec3.html#git-hub">3.1. 勉強会でのGit Hubの使用法</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2/preface.html">4. Quantitative Economics with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2/python_essential/sec1.html">5. Data Type(p49)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#primitive-data-types">5.1. Primitive Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#bool-type">5.2. Bool Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#data-type">5.3. Data typeの確認方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#id1">5.4. <code class="docutils literal"><span class="pre">bool</span></code> Typeの性質</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#listbool">5.5. ListとBool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#list">5.6. Listとは</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#id2">5.7. そのほかのデータータイプ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#id3">5.8. 注意</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#complex-type">5.9. complex Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#containers-p50">5.10. Containers p50</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#mutable-immutable">5.11. もう少し，mutable とimmutableの話をしよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#sets-dictionaries">5.12. Sets と Dictionaries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2/python_essential/sec1.html#import-p53">6. import (p53)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2/python_essential/sec1.html#input-and-output">7. Input and Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2/python_essential/sec1.html#iterating">8. Iterating</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#looping-without-indices">8.1. Looping without Indices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#zip-dictionaries">8.2. zip()とdictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#index">8.3. それでも．indexが必要な時は</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2/python_essential/sec1.html#comparisons-and-logical-operators">9. Comparisons and Logical Operators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#comparisons">9.1. Comparisons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2/python_essential/sec1.html#more-functions">10. More Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2/python_essential/sec1.html#why-write-functions">11. Why Write Functions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2/python_essential/sec1.html#exercises">12. Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#exercise1-par1">12.1. Exercise1 Par1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#exercise1-par2">12.2. Exercise1 Par2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chap2/python_essential/sec1.html#exercise1-par3">12.3. Exercise1 Par3</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Gitの使い方について</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Gitの使い方について</a></li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../_sources/chap1/sec1.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
   <div class="section" id="git">
 <h1>Gitの使い方について<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
 <p>GitHubでpullしたり，branchを作ってそれをローカルで再現する方法がややこしいのでまとめのメモを残しておきます．</p>
@@ -88,47 +233,21 @@
 </div>
 
 
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/chap1/sec1.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
+      
+  </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../index.html">python_kobe 1.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-        &copy; Copyright 2015, akira.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
-    </div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, akira.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
   </body>
 </html>
