@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1. セミナーノート作成の手引き &mdash; python_kobe 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="python_kobe 1.0 documentation" href="../index.html" />
+    <link rel="next" title="2. Pythonを勉強する周辺環境" href="../chap1/sec2.html" />
+    <link rel="prev" title="神戸大学経済学研究科 小林ゼミ python勉強会" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../chap1/sec2.html" title="2. Pythonを勉強する周辺環境"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="神戸大学経済学研究科 小林ゼミ python勉強会"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">python_kobe 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>1. セミナーノート作成の手引き<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Kenji Sato &lt;<a class="reference external" href="mailto:mail&#37;&#52;&#48;kenjisato&#46;jp">mail<span>&#64;</span>kenjisato<span>&#46;</span>jp</a>&gt;</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>1.1. はじめに<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>この資料は, 神戸大学経済学研究科小林ゼミ・Python勉強会参加者がセミナーノートを作成
+するワークフローを統一するために作成しています. 特に Git の学習曲線は急勾配なので,
+最初はとまどうことも多いかもしれませんが, 間違いを恐れずに手を動かしましょう.
+破壊的な間違いは回避されるよう設計されています.</p>
+</div>
+<div class="section" id="id3">
+<h2>1.2. 使用ツール<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>このセミナーでは, セミナーノートを Sphinx で作成し, ソースコードを Github で管理・
+公開しています. セミナーノートのレポジトリは</p>
+<p><a class="reference external" href="https://github.com/rokkopy/qe-seminar">https://github.com/rokkopy/qe-seminar</a></p>
+<p>にあります. ソースコードは自動的にHTMLに変換され, 結果が次のURLでホストされています</p>
+<p><a class="reference external" href="http://rokkopy.github.io/qe-seminar/">http://rokkopy.github.io/qe-seminar/</a></p>
+</div>
+<div class="section" id="git">
+<h2>1.3. Git のワークフロー &amp; 用語集<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<p>このセミナーノートは, フォーク型ワークフローを使って管理していきます. Atlassian
+によるGit チュートリアルの該当部分に目を通しておいてください.</p>
+<p><a class="reference external" href="https://www.atlassian.com/ja/git/workflows#!workflow-forking">https://www.atlassian.com/ja/git/workflows#!workflow-forking</a></p>
+<p>以下, ワークフローについて概略を説明する中で, 用語の解説をしていきます. 実際に作業をしながら理解してください.  <strong>手を動かさないかぎり決して身につきません!</strong></p>
+<div class="section" id="id4">
+<h3>1.3.1. レポジトリ<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Git でファイル更新履歴を管理しているディレクトリ (フォルダ) を Git レポジトリといいます.
+自分のPC内のディレクトリがGitで管理されている場合, それを <strong>ローカルレポジトリ</strong> と
+いいます. それ以外のレポジトリは <strong>リモートレポジトリ</strong> です. 以下では便宜上 GitHub
+に保存されているレポジトリをリモートレポジトリと呼びます.</p>
+</div>
+<div class="section" id="id5">
+<h3>1.3.2. フォーク<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>あるプロジェクトのファイルと更新履歴は (普通は) 1つのリモートレポジトリが中央管理し
+ています. この中央管理レポジトリを便宜的に <strong>upstream</strong> レポジトリと呼びましょう.
+upstream レポジトリの管理者をメンテナ (maitainer) と呼びます.</p>
+<p>プロジェクトの開発に貢献しようとする人 (貢献者, contributor) はまず upstream を
+<strong>フォーク</strong> します. フォークとは, 他の人のアカウントで管理されているリモートレポジトリ
+をコピーし, 自分の管理下にあるリモートレポジトリを作る作業です. 次に説明する
+<strong>クローン</strong> をサーバー上で行うということでもあります.</p>
+<p>GitHub ではウェブのインターフェースでフォークを行います. セミナーのレポジトリ</p>
+<p><a class="reference external" href="https://github.com/rokkopy/qe-seminar">https://github.com/rokkopy/qe-seminar</a></p>
+<p>にアクセスし, Fork ボタンを押してみましょう. (下図参照)</p>
+<a class="reference internal image-reference" href="../_images/fork.png"><img alt="Fork Button" src="../_images/fork.png" style="width: 630.0px; height: 198.6px;" /></a>
+</div>
+<div class="section" id="id6">
+<h3>1.3.3. クローン<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>フォークを行なった結果, 自分が管理しているリモートレポジトリとして <strong>upstream</strong> の
+コピーが作成されました.</p>
+<a class="reference internal image-reference" href="../_images/origin.png"><img alt="origin" src="../_images/origin.png" style="width: 632.4px; height: 381.0px;" /></a>
+<p>このリモートレポジトリを便宜的に <strong>origin</strong> レポジトリと呼びましょう.
+今後の作業は,</p>
+<ul class="simple">
+<li>origin を更新する (プッシュ)</li>
+<li>origin -&gt; upstream に更新を反映するよう申請する (プルリクエスト)</li>
+</ul>
+<p>という2段階の作業によって行います.</p>
+<p>作業の第一段階を進めるために, origin レポジトリを手元のPCにコピーしましょう.
+Git ではレポジトリのダウンロード (コピー) をクローンといいます.
+現在公開されている最新版のファイルだけでなく, 過去の履歴も含めてまるごとコピーされます.</p>
+<p>適当なディレクトリで次のコマンド (git&#64; ... 以下は上図の赤枠内を参照):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git clone git@github.com:[YOUR USERNAME]/qe-seminar.git
+</pre></div>
+</div>
+<p>を実行すると, カレントディレクトリに qe-seminar というディレクトリ (ローカルレポジ
+トリ) が作成されます. このディレクトリの名前は変更しても問題ありません.</p>
+</div>
+<div class="section" id="add-commit">
+<h3>1.3.4. add &amp; commit<a class="headerlink" href="#add-commit" title="Permalink to this headline">¶</a></h3>
+<p>これで, プロジェクトに手を加える準備が整いました.
+Git レポジトリ内では,</p>
+<ul class="simple">
+<li>ファイルの追加・編集</li>
+<li>$ git add コマンドの実行 (変更したファイルを git に記録するように指示)</li>
+<li>$ git commit コマンドの実行 (変更を履歴として残す)</li>
+</ul>
+<p>を繰り返します. 作業中のファイルが保存されるローカルレポジトリでは,
+変更履歴は細かく残しておくほうがよいでしょう. リモートに反映させるときには
+あまり細かい履歴が残ると困るケースもあるので (逡巡が見えてしまう ... ),
+ローカルの履歴を書き換える操作が可能です.
+当面そのような履歴の美しさにこだわる必要はないでしょう.</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code> はコミットに含める (インデックス) するファイルとして登録する操作です.
+<code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></code> はインデックスされたファイルについて変更を履歴として保存する操作です.
+<code class="docutils literal"><span class="pre">add</span></code> されていないファイル (例えば自分のためのメモみたいなファイルとか) は無視して,
+本当に必要な変更だけを記録することができます.</p>
+<p>コミットには必ずメッセージが要求されます. メッセージを入力する簡単な方法は,</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git commit -m &quot;Message Here&quot;
+</pre></div>
+</div>
+<p>とやることです. どんな変更を記録したいかが分かる簡潔なコメントを書きましょう.</p>
+<p>Git のコマンドをまったく触ったことがないという方は,
+まず手始めに tryGit の15分コースを実践してみてください.</p>
+<p><a class="reference external" href="https://try.github.io/levels/1/challenges/1">https://try.github.io/levels/1/challenges/1</a></p>
+<p>また, <a class="reference external" href="https://www.atlassian.com/ja/git/tutorial/git-basics">Atlassian Git チュートリアル 「Gitの基本」</a>
+に目を通しておいてください.</p>
+</div>
+<div class="section" id="id7">
+<h3>1.3.5. プル<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>もしかすると, 自分が作業をしている間にも他の人が作業して upstream
+(プロジェクトの中心となるリモートレポジトリ) が更新されているかもしれません.
+upstream の更新をこまめにチェックするというのは大切なことです.</p>
+<p>クローンしただけでは, upstream からフォークしたものだという情報が記録されていませんので,
+シェルコマンド:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git remote add upstream https://github.com/rokkopy/qe-seminar.git
+</pre></div>
+</div>
+<p>を実行して, upstream の情報をローカルレポジトリに追加しましょう. このようにしてから,
+作業中の変更をコミットし,</p>
+<blockquote>
+<div>$ git pull upstream</div></blockquote>
+<p>を実行してください. upstream の更新をローカルレポジトリに反映することができます.</p>
+<p>注意. プルというのはリモートのダウンロード (fetch) + マージ (merge) を同時に
+やるコマンドです. 他の人が更新したファイルと同じファイルを自分も更新していた場合には,
+<strong>コンフリクト</strong> が発生し, マージが失敗します. 失敗の状況を確認するために:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git status
+</pre></div>
+</div>
+<p>コマンドを実行し (このコマンドはレポジトリの状態を確認するために頻繁に使います),
+コンフリクトが発生しているファイルを認識しましょう.</p>
+<p>次のような部分があるはずです.:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+&lt;div id=&quot;footer&quot;&gt;contact : email.support@github.com&lt;/div&gt;
+=======
+&lt;div id=&quot;footer&quot;&gt;
+  please contact us at support@github.com
+&lt;/div&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; upstream/master
+</pre></div>
+</div>
+<p>======= の上部が手元にあったコードで, 下部が upstream にあったコードです.
+どちらのコードを残すべきかを検討し, コンフリクトを解消してください. コンフリクト
+解消のために使えるツールの解説を含め, 詳細は
+<a href="#id17"><span class="problematic" id="id18">`Pro Git 「ブランチとマージの基本」&lt;https://git-scm.com/book/ja/v1/Git-%e3%81%ae%e3%83%96%e3%83%a9%e3%83%b3%e3%83%81%e6%a9%9f%e8%83%bd-%e3%83%96%e3%83%a9%e3%83%b3%e3%83%81%e3%81%a8%e3%83%9e%e3%83%bc%e3%82%b8%e3%81%ae%e5%9f%ba%e6%9c%ac#%e3%83%9e%e3%83%bc%e3%82%b8%e6%99%82%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%95%e3%83%aa%e3%82%af%e3%83%88&gt;`_</span></a>
+を参照してください.</p>
+<p>コンフリクトが解消されたら, それを Git に伝えるために, git add と git commit を
+行います.</p>
+</div>
+<div class="section" id="id8">
+<h3>1.3.6. プッシュ<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>たくさんの試行錯誤と推敲, たくさんの <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code> と <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></code> を
+繰り返した結果, ローカルの内容をインターネットに公開してよいレベルに達しました.
+このとき, いきなり upstream に公開するのではなく, 一度 origin レポジトリ (自分が
+管理しているリモートレポジトリ) に公開するという手順を取ります. (フォーク型のワークフロー
+を採用していることを思い出してください).</p>
+<p>この段階で使うコマンドが <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code> です. <code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></code> を実行して, あなたの
+作業が upstream の最新版の成果に基づくものであることをもう一度確認してください.
+その後,</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git push origin master
+</pre></div>
+</div>
+<p>を実行します. これで, origin = upstream + あなたによる更新 という状態になりました.
+要するに, <strong>プッシュ</strong> というのは, 手元の更新をリモートレポジトリに反映させる作業です.</p>
+<p>補足. upstream は <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">upstream</span> <span class="pre">ADDRESS</span></code> とやりましたが,
+origin についてはクローンした時点で自動的に追加されていますので,
+このような操作は不要です. どのようなリモートレポジトリが登録されているか心配な人は,
+次のコマンドの結果を確認してください
+(<code class="docutils literal"><span class="pre">$</span></code> に続く行が入力してほしい行, それ以外はコマンドの出力):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git remote show
+origin
+upstream
+$ git remote show upstream
+* remote upstream
+Fetch URL: https://github.com/rokkopy/qe-seminar.git
+Push  URL: https://github.com/rokkopy/qe-seminar.git
+HEAD branch: master
+Remote branches:
+gh-pages tracked
+master   tracked
+Local ref configured for &#39;git push&#39;:
+master pushes to master (up to date)
+</pre></div>
+</div>
+<p>最後の部分は異なるかもしれませんが, だいたい上のような出力になるはずです.</p>
+</div>
+<div class="section" id="id9">
+<h3>1.3.7. プルリクエスト<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>今, origin は upstream よりも一歩先に進んだ状態になっています. このとき, メンテナに
+対して origin の情報を upstream に反映させるように促す行為が <strong>プルリクエスト</strong>
+と呼ばれるものです.</p>
+<p>これは, GitHub の origin のサイトにレポジトリページか upstream のレポジトリページ
+に行けばこれまでなかったボタンが現れているはずです.</p>
+<a class="reference internal image-reference" href="../_images/pr.png"><img alt="PR Button" src="../_images/pr.png" style="width: 634.1999999999999px; height: 180.0px;" /></a>
+<p>ボタンを押し, 修正に関するコメントを書いた上でプルリクエストを発行してください.
+メンテナーに通知され, コードレビューの後に問題がなければ upstream が更新 (マージ)
+されるでしょう. 問題があれば, GitHub 上でディスカッションを行い,
+マージ可能なレベルに達するまで必要な修正を施します.</p>
+</div>
+<div class="section" id="id10">
+<h3>1.3.8. おまけ: ビルド<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>このセミナーのビルド済みのノートは Github Pages で公開されています.
+これには Travis CI というサービスを利用しており, qe-smemina/master
+に対するプルリクエストがマージされた時点で, 自動的にビルド・公開されます.
+したがって, ノート作成者はプルリクエストを送って,コードレビュー後にマージをすればよく,
+サイトの公開に関する作業を気にする必要はありません.</p>
+</div>
+<div class="section" id="id11">
+<h3>1.3.9. まだ書いていないこと<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>ブランチについて</li>
+<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span></code> による履歴の修正</li>
+<li><code class="docutils literal"><span class="pre">github</span> <span class="pre">pages</span></code> に origin の内容をホストする方法</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h3>1.3.10. リンク集<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h4>1.3.10.1. 必ず読むべきサイト<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="https://www.atlassian.com/ja/git/tutorial">Git チュートリアルとトレーニング (Atlassian)</a></li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h4>1.3.10.2. 参考<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com">ProGit</a></li>
+<li><a class="reference external" href="http://www.backlog.jp/git-guide/">サルでも分かるGit入門</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="sphinx">
+<h2>1.4. Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx での記法 (ReST) は簡単に学ぶことができます. 例えば, Python の公式ドキュメント
+も Sphinx で書かれているので, そのソースコードを参考にすればよいでしょう.</p>
+<p><a class="reference external" href="https://docs.python.org/3/_sources/tutorial/introduction.txt">https://docs.python.org/3/_sources/tutorial/introduction.txt</a></p>
+<div class="section" id="id16">
+<h3>1.4.1. リンク<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://sphinx-doc.org/rest.html">http://sphinx-doc.org/rest.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1. セミナーノート作成の手引き</a><ul>
+<li><a class="reference internal" href="#id2">1.1. はじめに</a></li>
+<li><a class="reference internal" href="#id3">1.2. 使用ツール</a></li>
+<li><a class="reference internal" href="#git">1.3. Git のワークフロー &amp; 用語集</a><ul>
+<li><a class="reference internal" href="#id4">1.3.1. レポジトリ</a></li>
+<li><a class="reference internal" href="#id5">1.3.2. フォーク</a></li>
+<li><a class="reference internal" href="#id6">1.3.3. クローン</a></li>
+<li><a class="reference internal" href="#add-commit">1.3.4. add &amp; commit</a></li>
+<li><a class="reference internal" href="#id7">1.3.5. プル</a></li>
+<li><a class="reference internal" href="#id8">1.3.6. プッシュ</a></li>
+<li><a class="reference internal" href="#id9">1.3.7. プルリクエスト</a></li>
+<li><a class="reference internal" href="#id10">1.3.8. おまけ: ビルド</a></li>
+<li><a class="reference internal" href="#id11">1.3.9. まだ書いていないこと</a></li>
+<li><a class="reference internal" href="#id12">1.3.10. リンク集</a><ul>
+<li><a class="reference internal" href="#id13">1.3.10.1. 必ず読むべきサイト</a></li>
+<li><a class="reference internal" href="#id14">1.3.10.2. 参考</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sphinx">1.4. Sphinx</a><ul>
+<li><a class="reference internal" href="#id16">1.4.1. リンク</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">神戸大学経済学研究科　小林ゼミ　python勉強会</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../chap1/sec2.html"
+                        title="next chapter">2. Pythonを勉強する周辺環境</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/notetaking/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../chap1/sec2.html" title="2. Pythonを勉強する周辺環境"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="神戸大学経済学研究科 小林ゼミ python勉強会"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">python_kobe 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, akira.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>
