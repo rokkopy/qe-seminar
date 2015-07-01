@@ -1,8 +1,8 @@
-神戸大学経済学研究科　小林ゼミ　python勉強会
-================================================
+小林ゼミ Python勉強会
+=========================
 
+神戸大学 大学院経済学研究科
 
-Contents:
 
 .. toctree::
    :maxdepth: 2
@@ -15,4 +15,4 @@ Contents:
 
    chap2/preface
    chap2/python_essential/sec1
-   
+

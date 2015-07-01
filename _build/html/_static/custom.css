@@ -1,5 +1,22 @@
+form.navbar-form.navbar-right {
+    display: none;
+}
+
+.section {
+    font-size: 17px;
+    line-height: 160%;
+}
+
+h1, h2, h3 {
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+}
+
+img {
+    margin: 1.2em;
+}
+
 .pynb-result.highlight-python .highlight pre {
     background-color: #ffffff !important;
-
 }
 
