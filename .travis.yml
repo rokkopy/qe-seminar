@@ -19,7 +19,8 @@ before_install:
   - sudo ln -s /run/shm /dev/shm
 install:
   - conda install --yes python=$TRAVIS_PYTHON_VERSION ipython numpy scipy matplotlib nose pandas pip sympy pytables statsmodels numba
-  - pip install sphinx sphinx_bootstrap_theme
+  - pip install sphinx
+  - pip install sphinx_boostrap_theme
 before_script:
   - openssl aes-256-cbc -K $encrypted_b2b744bf86dc_key -iv $encrypted_b2b744bf86dc_iv -in .travisdeploykey.enc -out .travisdeploykey -d
   - chmod go-rwx .travisdeploykey
