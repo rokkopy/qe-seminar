@@ -33,7 +33,6 @@
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="python_kobe 1.0 documentation" href="../../index.html" />
-    <link rel="prev" title="5. Data Type" href="../python_essential/sec1.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -70,7 +69,7 @@
      href="../../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul class="current">
+      aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../../notetaking/index.html">1. セミナーノート作成の手引き</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../notetaking/index.html#id2">1.1. はじめに</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../notetaking/index.html#id3">1.2. 使用ツール</a></li>
@@ -127,12 +126,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#exercise4">12.6. Exercise4</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">13. Object Oriented Programming</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#defining-your-own-classes">13.1. Defining Your Own Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#special-methods">13.2. Special Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">13.3. Exercises</a></li>
-</ul>
-</li>
 </ul>
 </ul>
 </li>
@@ -172,10 +165,6 @@
             
               
                 
-  <li>
-    <a href="../python_essential/sec1.html" title="Previous Chapter: 5. Data Type"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 5. Data Type</span>
-    </a>
-  </li>
               
             
             
@@ -237,12 +226,12 @@
     <div class="col-md-9">
       
   <div class="section" id="object-oriented-programming">
-<h1>13. Object Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permalink to this headline">¶</a></h1>
+<h1>Object Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="defining-your-own-classes">
-<h2>13.1. Defining Your Own Classes<a class="headerlink" href="#defining-your-own-classes" title="Permalink to this headline">¶</a></h2>
+<h2>Defining Your Own Classes<a class="headerlink" href="#defining-your-own-classes" title="Permalink to this headline">¶</a></h2>
 <p>Pythonにおいて，最も重要な役割を果たすものの１つである，　<code class="docutils literal"><span class="pre">Class</span></code> について学びましょう.</p>
 <div class="section" id="class">
-<h3>13.1.1. 簡単なClassの例<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h3>
+<h3>簡単なClassの例<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h3>
 <p>まずは，最も簡単な <code class="docutils literal"><span class="pre">Class</span></code> を例にあげてみます．</p>
 <p>以下では，消費者のWealthを入力する， <code class="docutils literal"><span class="pre">Class</span></code> を考えます．:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Consumer</span><span class="p">:</span>
@@ -284,7 +273,7 @@
 </div>
 </div>
 <div class="section" id="id1">
-<h3>13.1.2. 用語についての説明<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>用語についての説明<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>class definition(クラスの定義)では， <code class="docutils literal"><span class="pre">class</span></code> をどのようなものにするかの設計図を書きます．</p>
 <p>そこでは，</p>
 <blockquote>
@@ -322,7 +311,7 @@
 <p>一行目では， <code class="docutils literal"><span class="pre">x</span></code> がインスタンスとして働きます．そして，特定のデータを持つ， <code class="docutils literal"><span class="pre">list</span></code> が格納されていることがわかると思います．それにたいして，組み込み関数の <code class="docutils literal"><span class="pre">sort()</span></code> を作用させ，中身を昇順に並べ替えます．xがどのようなデータを持つインスタンスかは， <code class="docutils literal"><span class="pre">__class__</span></code> というattributeを作用させることで調べることができます．また，先のように　<code class="docutils literal"><span class="pre">dir()</span></code> を使えば <code class="docutils literal"><span class="pre">x</span></code> のすべてのattributeをみることができます．</p>
 </div>
 <div class="section" id="class-another-consumer-class">
-<h3>13.1.3. もう少し複雑なClassの例(Another Consumer Class)<a class="headerlink" href="#class-another-consumer-class" title="Permalink to this headline">¶</a></h3>
+<h3>もう少し複雑なClassの例(Another Consumer Class)<a class="headerlink" href="#class-another-consumer-class" title="Permalink to this headline">¶</a></h3>
 <p>最初に定義した <code class="docutils literal"><span class="pre">class</span></code> よりも，複雑な <code class="docutils literal"><span class="pre">class</span></code> を定義してみましょう．</p>
 <p>その， <code class="docutils literal"><span class="pre">class</span></code> では， <code class="docutils literal"><span class="pre">consumer</span></code> が所得を獲得し，支出をおこないます．</p>
 <p>まずは，その定義を最初に提示して，詳しく内容をみてみましょう．</p>
@@ -378,7 +367,7 @@
 <p><em>書いていない項目がある</em></p>
 </div>
 <div class="section" id="the-solow-growth-model">
-<h3>13.1.4. The Solow Growth Model<a class="headerlink" href="#the-solow-growth-model" title="Permalink to this headline">¶</a></h3>
+<h3>The Solow Growth Model<a class="headerlink" href="#the-solow-growth-model" title="Permalink to this headline">¶</a></h3>
 <p><strong>ソローモデルの概要</strong></p>
 <p>ここでは，経済学を勉強する人なら，必ずといっていいほど勉強する，ソローモデルをシュミュレーションする，classを作ります．実は，QuantEcon package　には今から作るものよりも，高度なソローモデルのコードがありますが，ここでは簡易的なものを作ってみましょう．</p>
 <p>ソローモデルは，以下の様な式で表されることを思い出しましょう．</p>
@@ -482,7 +471,7 @@
 <a class="reference internal image-reference" href="../../_images/solow.png"><img alt="solow" src="../../_images/solow.png" style="width: 480.0px; height: 360.0px;" /></a>
 </div>
 <div class="section" id="a-market">
-<h3>13.1.5. A Market<a class="headerlink" href="#a-market" title="Permalink to this headline">¶</a></h3>
+<h3>A Market<a class="headerlink" href="#a-market" title="Permalink to this headline">¶</a></h3>
 <p><strong>class Marketですること</strong></p>
 <p>次は，市場をシュミュレーションする <code class="docutils literal"><span class="pre">class</span></code> をかいてみましょう．市場といっても，記述するのは需要関数と供給関数は線形の２本の方程式をグラフに描いて，余剰計算を行う簡単なものです．</p>
 <p>式にしてまうと，</p>
@@ -611,7 +600,7 @@
 <p>となって，死荷重が計算出来ました．</p>
 </div>
 <div class="section" id="chaos">
-<h3>13.1.6. Chaos<a class="headerlink" href="#chaos" title="Permalink to this headline">¶</a></h3>
+<h3>Chaos<a class="headerlink" href="#chaos" title="Permalink to this headline">¶</a></h3>
 <p><strong>class Chaosの説明</strong></p>
 <p>次は，Chaos（複雑系）をシミュレーションするclassをかいてみましょう．
 次の式はロジスティック写像と呼ばれ，人口や細菌の数といった生物の繁殖を記述した式です．数理生態学者のロバート・メイが，生態の個体数を調べるためにこの式を計算機で解いているときに，この式が，初期値によって，複雑な挙動を示すことを，見つけたそうです(<a class="reference external" href="http://www.kyoto-su.ac.jp/project/st/st11_01.html">参考文献 世界観を覆した数学理論</a>)．</p>
@@ -699,7 +688,7 @@
 </div>
 </div>
 <div class="section" id="special-methods">
-<h2>13.2. Special Methods<a class="headerlink" href="#special-methods" title="Permalink to this headline">¶</a></h2>
+<h2>Special Methods<a class="headerlink" href="#special-methods" title="Permalink to this headline">¶</a></h2>
 <p>Pythonで使える，ちょっとした小ワザ（tricks）を紹介しましょう． Exercisesでこの小ワザを使うので，最初はその内容が捉えにくく感じても，心配する必要はありません．</p>
 <p>それは，以下の様なものです．まず， <code class="docutils literal"><span class="pre">len()</span></code> を考えてみましょう．:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
@@ -743,9 +732,9 @@
 <p>この，小ワザを使って，以下の2題のExercisesを解いてみましょう．</p>
 </div>
 <div class="section" id="exercises">
-<h2>13.3. Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-1">
-<h3>13.3.1. Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
 <p>与えられた標本，<span class="math">\(\{X_i\}^{n}_{i=1}\)</span> に対する，the empirical cumulative distribution function(経験累積分布関数)を定義する問題.　一般的に，ECDFと呼ばれるようです．</p>
 <p>ECDFは以下の様な関数です．</p>
 <div class="math">
@@ -810,7 +799,7 @@
 <p><code class="docutils literal"><span class="pre">for</span></code> のなかの，条件分岐の <code class="docutils literal"><span class="pre">if</span></code> の <code class="docutils literal"><span class="pre">else:</span></code> 以下ですが，本質的には必要ありません．<code class="docutils literal"><span class="pre">if</span></code> の条件式を満たしていなければ何もしないからです．今回は，練習のため，ECDFの動き“基準以上なら0をたす”という部分を意識して書きました．本来はこのような，無用なコードは避けるべきでしょう．</p>
 </div>
 <div class="section" id="exercise-2">
-<h3>13.3.2. Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
 <p>Polynomial（多項式）の再来です．前回のExercisesでもPolynomialは扱いましたので内容の説明は省きます．以下の様な関数です，</p>
 <div class="math">
 \[p(x)= a_{0} + a_{1}x + a_{2}x^{2}+ ... +a_{N}x^{N} = \sum^{N}_{m=0} a_{n}x^{n} \;\;\; (x\in\mathbb{R})\]</div>
