@@ -1,6 +1,4 @@
 
-
-
 Object Oriented Programming
 *****************************************
 
