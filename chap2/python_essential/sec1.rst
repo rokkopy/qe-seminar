@@ -1,4 +1,4 @@
-
+﻿
 
 
 Python Essentials(p48)
@@ -22,7 +22,7 @@ Bool Type
 -----------------
 
 
-最も基本的なデータタイプはBool Typeです．
+最も基本的なデータタイプは, Bool Typeです．
 
 これは，変数自体に ``True`` や ``False`` が入ります．
 
