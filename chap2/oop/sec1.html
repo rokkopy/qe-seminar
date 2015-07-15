@@ -319,15 +319,15 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span> <span class="o">=</span> <span class="n">new_wealth</span>
 </pre></div>
 </div>
-<p>最初の <tt class="docutils literal"><span class="pre">def</span> <span class="pre">__init__(self,</span> <span class="pre">w):</span></tt> ブロックでは，インスタンスの初期化を行っています．そでは， <tt class="docutils literal"><span class="pre">w</span></tt> というインスタンスが導入され， <tt class="docutils literal"><span class="pre">self.wealth</span> <span class="pre">=</span> <span class="pre">w</span></tt> で <tt class="docutils literal"><span class="pre">self.wealth</span></tt> に <tt class="docutils literal"><span class="pre">w</span></tt> が代入され， <a href="#id2"><span class="problematic" id="id3">``</span></a>class``　の中で自由に呼び出され，methodと作用し合います．</p>
-<p>次の， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">earn(self,</span> <span class="pre">y):</span></tt> は <tt class="docutils literal"><span class="pre">earn</span></tt> というmethodの定義を行っています． <tt class="docutils literal"><span class="pre">y</span></tt> という値を <a href="#id4"><span class="problematic" id="id5">``</span></a>self.wealth``　に足し合わせる操作が行われていることがわかるでしょう．文字通り，yという値をearnしているというわけです．</p>
-<p>最後に， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">spend(self,</span> <span class="pre">x):</span></tt> では，支出 <tt class="docutils literal"><span class="pre">x</span></tt> を行うmethodを定義しています．ここでは，自分の所得以上の支出を行わないように定義しているので，もし，支出した後の所得，つまり　<tt class="docutils literal"><span class="pre">self.wealth``　から，``x</span></tt>
-を差し引いた新たな値， <tt class="docutils literal"><span class="pre">new_wealth</span></tt> が負の値なら， <tt class="docutils literal"><span class="pre">&quot;Insufficent</span> <span class="pre">funds&quot;</span></tt> というメッセージを出すように出来ています．</p>
+<p>最初の <tt class="docutils literal"><span class="pre">def</span> <span class="pre">__init__(self,</span> <span class="pre">w):</span></tt> ブロックでは，インスタンスの初期化を行っています．そこでは， <tt class="docutils literal"><span class="pre">w</span></tt> というインスタンスが導入され， <tt class="docutils literal"><span class="pre">self.wealth</span> <span class="pre">=</span> <span class="pre">w</span></tt> で <tt class="docutils literal"><span class="pre">self.wealth</span></tt> に <tt class="docutils literal"><span class="pre">w</span></tt> が代入され， <a href="#id2"><span class="problematic" id="id3">``</span></a>class``　の中で自由に呼び出され，methodと作用し合います．</p>
+<p>次の， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">earn(self,</span> <span class="pre">y):</span></tt> は <tt class="docutils literal"><span class="pre">earn</span></tt> というmethodの定義を行っています． <tt class="docutils literal"><span class="pre">y</span></tt> という値を <tt class="docutils literal"><span class="pre">self.wealth</span></tt> に足し合わせる操作が行われていることがわかるでしょう．文字通り，yという値をearnしているというわけです．</p>
+<p>最後に， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">spend(self,</span> <span class="pre">x):</span></tt> では，支出 <tt class="docutils literal"><span class="pre">x</span></tt> を行うmethodを定義しています．ここでは，自分の所得以上の支出を行わないように定義しているので，もし，支出した後の所得，つまり
+<tt class="docutils literal"><span class="pre">self.wealth</span></tt> から， <tt class="docutils literal"><span class="pre">x</span></tt> を差し引いた新たな値， <tt class="docutils literal"><span class="pre">new_wealth</span></tt> が負の値なら， <tt class="docutils literal"><span class="pre">&quot;Insufficent</span> <span class="pre">funds&quot;</span></tt> というメッセージを出すように出来ています．</p>
 <p>それでは，実際にこの <tt class="docutils literal"><span class="pre">Consumer</span> <span class="pre">Class</span></tt> の動きを見てみましょう:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>で最初にインスタンを入れます．この時，当然ながら，所得は:</p>
+<p>で最初にインスタンスを入れます．この時，当然ながら所得は:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span><span class="o">.</span><span class="n">wealth</span>
 <span class="go">10</span>
 </pre></div>
@@ -349,12 +349,12 @@
 <span class="go">{&#39;wealth&#39;: 20}</span>
 </pre></div>
 </div>
-<p><em>書いていない項目がある</em></p>
+<p>..*書いていない項目がある*</p>
 </div>
 <div class="section" id="the-solow-growth-model">
 <h3>6.1.4. The Solow Growth Model<a class="headerlink" href="#the-solow-growth-model" title="Permalink to this headline">¶</a></h3>
 <p><strong>ソローモデルの概要</strong></p>
-<p>ここでは，経済学を勉強する人なら，必ずといっていいほど勉強する，ソローモデルをシュミュレーションする，classを作ります．実は，QuantEcon package　には今から作るものよりも，高度なソローモデルのコードがありますが，ここでは簡易的なものを作ってみましょう．</p>
+<p>ここでは，経済学を勉強する人なら必ずといっていいほど勉強する，ソローモデルをシュミュレーションするclassを作ります．実は，QuantEcon package　には今から作るものよりも，高度なソローモデルのコードがありますが，ここでは簡易的なものを作ってみましょう．</p>
 <p>ソローモデルは，以下の様な式で表されることを思い出しましょう．</p>
 <div class="math">
 \[k_{t+1} = \frac{s z k^{\alpha}_t}{1 + n}  + k_t \frac{1 - d}{1 + n}\]</div>
@@ -368,12 +368,12 @@
 <li>d は資本減耗率</li>
 </ul>
 </div></blockquote>
-<p>所で，ソローモデルでの分析では，定常状態が大きな役割を果たすのでした．</p>
+<p>ところで，ソローモデルでの分析では，定常状態が大きな役割を果たすのでした．</p>
 <p>ソローモデルにおける定常状態とは，</p>
 <div class="math">
 \[k_{t+1} = k_{t}=k\]</div>
 <p>となって，kが変化しなくなるような点のことでした．</p>
-<p>この，定常状態がどのような値になるのかは，外生的に与えられている変数がどのような値かによって決まります．逆にいうと，定常状態が変化は，外生変数の変化によってもたらされるのです．</p>
+<p>この定常状態がどのような値は，外生的に与えられている変数がどのような値かによって決まります．逆にいうと，外生変数の変化によって，定常状態の変化がもたらされるのです．</p>
 <p><strong>class solowの説明</strong></p>
 <p>ソローモデルのコードは以下のようなものです．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;</span>
@@ -425,10 +425,10 @@
 </pre></div>
 </div>
 <p>また，順にコードをみていきましょう．まず， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">__init__(self,</span> <span class="pre">n,</span> <span class="pre">s,</span> <span class="pre">d,</span> <span class="pre">alpha,</span> <span class="pre">z,</span> <span class="pre">k):</span></tt> ですが，インスタンスの初期化ですね．ここでは，6つのインスタンスが導入されています．</p>
-<p>次に， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">h(self,x):</span></tt> ですが，ここでは，これは，最初にあげたソローモデルの式を計算しています．式の　<span class="math">\(k_{t+1}\)</span> をhに， <span class="math">\(k_t\)</span> をxに置き換えると理解しやすいでしょう．イメージとしては，t期の状態の資本ｋをt+1の状態にアップデートするのが，hなのです．こうすることで,期間ごとの資本の値を計算し，グラフにプロットすることができます．</p>
+<p>次に， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">h(self,x):</span></tt> ですが，ここでは，これは，最初にあげたソローモデルの式を計算しています．式の　<span class="math">\(k_{t+1}\)</span> をhに， <span class="math">\(k_t\)</span> をxに置き換えると理解しやすいでしょう．イメージとしては，t期の状態の資本ｋをt+1の状態にアップデートするのが， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">h(self,x):</span></tt> です．こうすることで,期間ごとの資本の値を計算し，グラフにプロットすることができます．</p>
 <p>その，アップデートするmethodが <tt class="docutils literal"><span class="pre">def</span> <span class="pre">update(self):</span></tt> です．インスタンスの <tt class="docutils literal"><span class="pre">self.k</span></tt> を先に定義した <tt class="docutils literal"><span class="pre">h</span></tt> に入れます． <tt class="docutils literal"><span class="pre">class</span></tt> の中で定義したmethodを別のmethodの定義で使うときは，　<tt class="docutils literal"><span class="pre">self.h(self.k)</span></tt> と <tt class="docutils literal"><span class="pre">self</span></tt> を付けなくてはいけないことに注意してください．また，あるmethodの定義に，別の定義がなされたmethodを用いるときには特に先に定義しておく必要はありません．つまり，ここでは，
-<tt class="docutils literal"><span class="pre">def</span> <span class="pre">update(self):</span></tt> の前に必ず， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">update(self):</span></tt> を書かなくては行けないということはありません．pythonは,classの定義をすべて読み込んでから，classの内容を動かすからです．</p>
-<p>次の， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">steady_state(self):</span></tt> は定常状態を計算するmethodですこれは予め定常状態の式を計算したものを書いただけです．これは，先の <tt class="docutils literal"><span class="pre">h</span></tt> についても言えることですが，最初のソローモデルの式を書き換えたりした場合は正確な結果が出るわけでは無いことに注意してください．</p>
+<tt class="docutils literal"><span class="pre">def</span> <span class="pre">update(self):</span></tt> の前に必ず， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">update(self):</span></tt> を書かなくてはいけないということはありません．pythonは,classの定義をすべて読み込んでから，classの内容を動かすからです．</p>
+<p>次の， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">steady_state(self):</span></tt> は定常状態を計算するmethodですこれは予め定常状態の式を計算したものを書いただけです．これは，先の <tt class="docutils literal"><span class="pre">h</span></tt> についても言えることですが，最初のソローモデルの式を書き換えたりした場合は，正確な結果が出るわけでは無いことに注意してください．</p>
 <p>最後の， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">generate_sequence(self,</span> <span class="pre">t):</span></tt> はkの動きを計算した流列を作るメソッドです．どれくらいの長さを取るかを <tt class="docutils literal"><span class="pre">t</span></tt> で指定して， <tt class="docutils literal"><span class="pre">for</span></tt> で計算します．</p>
 <p><strong>ソローモデルのグラフを書いてみる</strong></p>
 <p>以上が，solow model　をシュミュレーションしたclassです．せっかくなので，これを計算して，定常状態に行き着くまでのグラフを書いてみましょう．</p>
@@ -518,10 +518,12 @@
     <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">az</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">bz</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">bz</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span>
 </pre></div>
 </div>
-<p>簡単に説明を加えておきます．基本的には予め計算しておいた，均衡の値を書き込んでいるだけです．余剰に関しても，三角形の面積で計算したものを書き込めば結果はでますが， <tt class="docutils literal"><span class="pre">from</span> <span class="pre">scipy.integrate</span> <span class="pre">import</span> <span class="pre">quad</span></tt>
+<p>簡単に説明を加えておきます．</p>
+<p>基本的には予め計算しておいた，均衡の値を書き込んでいるだけです．余剰に関しても，三角形の面積で計算したものを書き込めば結果はでますが， <tt class="docutils literal"><span class="pre">from</span> <span class="pre">scipy.integrate</span> <span class="pre">import</span> <span class="pre">quad</span></tt>
 として， <tt class="docutils literal"><span class="pre">scipy</span></tt> （さいふぁい）で積分計算をしています．</p>
 <p>順に， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">price(self):</span></tt> と　<tt class="docutils literal"><span class="pre">def</span> <span class="pre">quantity(self):</span></tt> は均衡の価格と数量の式を入れて計算するmethodが定義されていて， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">consumer_surp(self):</span></tt> と　<tt class="docutils literal"><span class="pre">def</span> <span class="pre">producer_surp(self):</span></tt> は消費者と生産者の余剰を積分計算しています． <tt class="docutils literal"><span class="pre">def</span> <span class="pre">taxrev(self):</span></tt> は税収です．tは重量税なので，均衡数量にtをかけて求めることができます．</p>
-<p><tt class="docutils literal"><span class="pre">def</span> <span class="pre">inverse_demand(self,x):</span></tt> と <tt class="docutils literal"><span class="pre">def</span> <span class="pre">inverse_supply(self,x):</span></tt> は逆需給関数です．これは，グラフを書きたいがために定義しておくmethodです．マーシャル以降，縦に価格，横にxを描き，価格から数量を読む，通常とは逆のグラフの読み方をするのが慣習になっていることを思い出してください．最後に， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">inverse_supply_no_tax(self,x):</span></tt> が税がなかった場合の供給曲線です．これを定義しておくことで，税を導入することによる死荷重を計算することができます</p>
+<p><tt class="docutils literal"><span class="pre">def</span> <span class="pre">inverse_demand(self,x):</span></tt> と <tt class="docutils literal"><span class="pre">def</span> <span class="pre">inverse_supply(self,x):</span></tt> は逆需給関数です．これは，グラフを書きたいがために定義しておくmethodです．マーシャル以降，縦に価格，横にxを描き，価格から数量を読む，通常とは逆のグラフの読み方をするのが慣習になっていることを思い出してください．</p>
+<p>最後に， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">inverse_supply_no_tax(self,x):</span></tt> が税がなかった場合の供給曲線です．これを定義しておくことで，税を導入することによる死荷重を計算することができます</p>
 <p><strong>class Marketで受給曲線のグラフをかく</strong></p>
 <p>このclassを使って，グラフを書き，余剰分析をしてみましょう．まずは，需給関数の内容を指定しておきます．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
@@ -562,7 +564,7 @@
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/market.png"><img alt="market" src="../../_images/market.png" style="width: 480.0px; height: 360.0px;" /></a>
-<p>先ほどの，ソローモデルのグラフを描いたときと同じ内容ですので，詳しい説明は省きます．しかし，いくつかコメントをする必要のある部分もあります． <tt class="docutils literal"><span class="pre">%matplotlib</span> <span class="pre">inline</span></tt> はたとえばipythonだと，ブラウザの中に画像を出力してくれるコードです．別ウインドウで表示させるよりも便利なことがあるので覚えておくといいでしょう．また， <tt class="docutils literal"><span class="pre">plot</span></tt> の線を指定することもできます． 例えば，<tt class="docutils literal"><span class="pre">#':o'のところを色々かえると線をしていできる</span></tt> と描いている行で， <tt class="docutils literal"><span class="pre">':o'</span></tt> を <tt class="docutils literal"><span class="pre">'+k'</span></tt> に変えてみてください．</p>
+<p>先ほどの，ソローモデルのグラフを描いたときと同じ内容ですので，詳しい説明は省きます．しかし，いくつかコメントをする必要のある部分もあります． <tt class="docutils literal"><span class="pre">%matplotlib</span> <span class="pre">inline</span></tt> はたとえばiPythonだと，ブラウザの中に画像を出力してくれるコードです．別ウインドウで表示させるよりも便利なことがあるので覚えておくといいでしょう．また， <tt class="docutils literal"><span class="pre">plot</span></tt> の線を指定することもできます． 例えば，<tt class="docutils literal"><span class="pre">#':o'のところを色々かえると線をしていできる</span></tt> と描いている行で， <tt class="docutils literal"><span class="pre">':o'</span></tt> を <tt class="docutils literal"><span class="pre">'+k'</span></tt> に変えてみてください．</p>
 <p><strong>class Marketを使って死荷重を計算する関数を定義してみる</strong></p>
 <p>せっかくなので，死荷重を計算してみましょう．classでは死荷重を計算するmethodは定義していませんでしたが，新しく関数を定義してあげてます．classを呼び出して，そのmethodを使って関数を新たに定義するわけです．そのために， <tt class="docutils literal"><span class="pre">from</span> <span class="pre">market</span> <span class="pre">import</span> <span class="pre">Market</span></tt> として，classを呼び出します．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">market</span> <span class="kn">import</span> <span class="n">Market</span>
@@ -776,7 +778,7 @@
         <span class="k">return</span> <span class="n">F_n</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">for</span></tt> のなかの，条件分岐の <tt class="docutils literal"><span class="pre">if</span></tt> の <tt class="docutils literal"><span class="pre">else:</span></tt> 以下ですが，本質的には必要ありません．<tt class="docutils literal"><span class="pre">if</span></tt> の条件式を満たしていなければ何もしないからです．今回は，練習のため，ECDFの動き“基準以上なら0をたす”という部分を意識して書きました．本来はこのような，無用なコードは避けるべきでしょう．</p>
+<p><tt class="docutils literal"><span class="pre">for</span></tt> のなかの，条件分岐の <tt class="docutils literal"><span class="pre">if</span></tt> の <tt class="docutils literal"><span class="pre">else:</span></tt> 以下ですが，本質的には必要ありません．<tt class="docutils literal"><span class="pre">if</span></tt> の条件式を満たしていなければ何もしないからです．今回は練習のため，ECDFの動き“基準以上なら0をたす”という部分を意識して書きました．本来はこのような，無用なコードは避けるべきでしょう．</p>
 </div>
 <div class="section" id="exercise-2">
 <h3>6.3.2. Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
