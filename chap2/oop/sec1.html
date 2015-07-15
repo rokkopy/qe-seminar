@@ -122,7 +122,7 @@
 <li><a class="reference internal" href="#">6. Object Oriented Programming</a><ul>
 <li><a class="reference internal" href="#defining-your-own-classes">6.1. Defining Your Own Classes</a><ul>
 <li><a class="reference internal" href="#class">6.1.1. 簡単なClassの例</a></li>
-<li><a class="reference internal" href="#id5">6.1.2. 用語についての説明</a></li>
+<li><a class="reference internal" href="#id1">6.1.2. 用語についての説明</a></li>
 <li><a class="reference internal" href="#class-another-consumer-class">6.1.3. もう少し複雑なClassの例(Another Consumer Class)</a></li>
 <li><a class="reference internal" href="#the-solow-growth-model">6.1.4. The Solow Growth Model</a></li>
 <li><a class="reference internal" href="#a-market">6.1.5. A Market</a></li>
@@ -177,7 +177,7 @@
 <li><a class="reference internal" href="#">6. Object Oriented Programming</a><ul>
 <li><a class="reference internal" href="#defining-your-own-classes">6.1. Defining Your Own Classes</a><ul>
 <li><a class="reference internal" href="#class">6.1.1. 簡単なClassの例</a></li>
-<li><a class="reference internal" href="#id5">6.1.2. 用語についての説明</a></li>
+<li><a class="reference internal" href="#id1">6.1.2. 用語についての説明</a></li>
 <li><a class="reference internal" href="#class-another-consumer-class">6.1.3. もう少し複雑なClassの例(Another Consumer Class)</a></li>
 <li><a class="reference internal" href="#the-solow-growth-model">6.1.4. The Solow Growth Model</a></li>
 <li><a class="reference internal" href="#a-market">6.1.5. A Market</a></li>
@@ -231,10 +231,10 @@
 </pre></div>
 </div>
 <p>最初に <tt class="docutils literal"><span class="pre">class</span></tt> と打ち込むのは，classを定義を宣言するためです．
-<a href="#id1"><span class="problematic" id="id2">``</span></a>pass``　は何もしない操作，null operationと呼ばれ，空の定義をするときに使います．</p>
-<p><tt class="docutils literal"><span class="pre">Class</span></tt> を定義する分では，インスタンスを定義しなくては行けませんが（インスタンスついては後述します），この例では，インスタンスの導入を後からしたかったので， <tt class="docutils literal"><span class="pre">pass</span></tt> を用いました．</p>
+<tt class="docutils literal"><span class="pre">pass</span></tt> は何もしない操作，null operationと呼ばれ，空の定義をするときに使います．</p>
+<p><tt class="docutils literal"><span class="pre">Class</span></tt> を定義する分には，インスタンスを定義しなくてはいけません（インスタンスついては後述します）．　しかし，この例では，インスタンスの導入を後からしたかったので， <tt class="docutils literal"><span class="pre">pass</span></tt> を用いました．</p>
 <p><strong>passの必要性</strong></p>
-<p>passの必要性は，以下の関数の定義の例を考えてみれば，実感できるでしょう．</p>
+<p><tt class="docutils literal"><span class="pre">pass</span></tt> の必要性は，以下の関数の定義の例を考えてみれば実感できるでしょう．</p>
 <p>関数をその定義を未定義のまま行います．:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">hoge</span><span class="p">):</span>
 <span class="go">    File &quot;&lt;ipython-input-4-6d64f3c8a06a&gt;&quot;, line 1</span>
@@ -243,7 +243,7 @@
 <span class="go">SyntaxError: unexpected EOF while parsing</span>
 </pre></div>
 </div>
-<p>とエラーがでてしまいますが，<a href="#id3"><span class="problematic" id="id4">``</span></a>pass``　をつかうと，</p>
+<p>とエラーがでてしまいますが， <tt class="docutils literal"><span class="pre">pass</span></tt> をつかうと，</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span> <span class="k">pass</span>
 </pre></div>
 </div>
@@ -256,14 +256,14 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3>6.1.2. 用語についての説明<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>class definition(クラスの定義)では， <tt class="docutils literal"><span class="pre">class</span></tt> をどのようなものにするかの設計図を書きます．</p>
+<div class="section" id="id1">
+<h3>6.1.2. 用語についての説明<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>class definition(クラスの定義)では， <tt class="docutils literal"><span class="pre">class</span></tt> の設計図を書きます．</p>
 <p>そこでは，</p>
 <blockquote>
 <div><ul class="simple">
 <li>どんなdataを格納するか</li>
-<li>どんなmethodを，格納したdataに対して働かせるか</li>
+<li>どんなmethodを格納したdataに対して働かせるか</li>
 </ul>
 </div></blockquote>
 <p>を定義します．</p>
@@ -292,7 +292,8 @@
 </pre></div>
 </div>
 <p>というような，働きをします．</p>
-<p>一行目では， <tt class="docutils literal"><span class="pre">x</span></tt> がインスタンスとして働きます．そして，特定のデータを持つ， <tt class="docutils literal"><span class="pre">list</span></tt> が格納されていることがわかると思います．それにたいして，組み込み関数の <tt class="docutils literal"><span class="pre">sort()</span></tt> を作用させ，中身を昇順に並べ替えます．xがどのようなデータを持つインスタンスかは， <tt class="docutils literal"><span class="pre">__class__</span></tt> というattributeを作用させることで調べることができます．また，先のように　<tt class="docutils literal"><span class="pre">dir()</span></tt> を使えば <tt class="docutils literal"><span class="pre">x</span></tt> のすべてのattributeをみることができます．</p>
+<p>一行目では， <tt class="docutils literal"><span class="pre">x</span></tt> がインスタンスとして働きます．そこでは，特定のデータを持つ， <tt class="docutils literal"><span class="pre">list</span></tt> が格納されていることがわかると思います．それに対して，組み込み関数の <tt class="docutils literal"><span class="pre">sort()</span></tt> を作用させ，中身を昇順に並べ替えます．</p>
+<p>xがどのようなデータを持つインスタンスかは， <tt class="docutils literal"><span class="pre">__class__</span></tt> というattributeを作用させることで調べることができます．また，先のように　<tt class="docutils literal"><span class="pre">dir()</span></tt> を使えば <tt class="docutils literal"><span class="pre">x</span></tt> のすべてのattributeをみることができます．</p>
 </div>
 <div class="section" id="class-another-consumer-class">
 <h3>6.1.3. もう少し複雑なClassの例(Another Consumer Class)<a class="headerlink" href="#class-another-consumer-class" title="Permalink to this headline">¶</a></h3>
@@ -318,8 +319,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span> <span class="o">=</span> <span class="n">new_wealth</span>
 </pre></div>
 </div>
-<p>最初の <tt class="docutils literal"><span class="pre">def</span> <span class="pre">__init__(self,</span> <span class="pre">w):</span></tt> ブロックでは，インスタンスの初期化を行っています．そでは， <tt class="docutils literal"><span class="pre">w</span></tt> というインスタンスが導入され， <tt class="docutils literal"><span class="pre">self.wealth</span> <span class="pre">=</span> <span class="pre">w</span></tt> で <tt class="docutils literal"><span class="pre">self.wealth</span></tt> に <tt class="docutils literal"><span class="pre">w</span></tt> が代入され， <a href="#id6"><span class="problematic" id="id7">``</span></a>class``　の中で自由に呼び出され，methodと作用し合います．</p>
-<p>次の， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">earn(self,</span> <span class="pre">y):</span></tt> は <tt class="docutils literal"><span class="pre">earn</span></tt> というmethodの定義を行っています． <tt class="docutils literal"><span class="pre">y</span></tt> という値を <a href="#id8"><span class="problematic" id="id9">``</span></a>self.wealth``　に足し合わせる操作が行われていることがわかるでしょう．文字通り，yという値をearnしているというわけです．</p>
+<p>最初の <tt class="docutils literal"><span class="pre">def</span> <span class="pre">__init__(self,</span> <span class="pre">w):</span></tt> ブロックでは，インスタンスの初期化を行っています．そでは， <tt class="docutils literal"><span class="pre">w</span></tt> というインスタンスが導入され， <tt class="docutils literal"><span class="pre">self.wealth</span> <span class="pre">=</span> <span class="pre">w</span></tt> で <tt class="docutils literal"><span class="pre">self.wealth</span></tt> に <tt class="docutils literal"><span class="pre">w</span></tt> が代入され， <a href="#id2"><span class="problematic" id="id3">``</span></a>class``　の中で自由に呼び出され，methodと作用し合います．</p>
+<p>次の， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">earn(self,</span> <span class="pre">y):</span></tt> は <tt class="docutils literal"><span class="pre">earn</span></tt> というmethodの定義を行っています． <tt class="docutils literal"><span class="pre">y</span></tt> という値を <a href="#id4"><span class="problematic" id="id5">``</span></a>self.wealth``　に足し合わせる操作が行われていることがわかるでしょう．文字通り，yという値をearnしているというわけです．</p>
 <p>最後に， <tt class="docutils literal"><span class="pre">def</span> <span class="pre">spend(self,</span> <span class="pre">x):</span></tt> では，支出 <tt class="docutils literal"><span class="pre">x</span></tt> を行うmethodを定義しています．ここでは，自分の所得以上の支出を行わないように定義しているので，もし，支出した後の所得，つまり　<tt class="docutils literal"><span class="pre">self.wealth``　から，``x</span></tt>
 を差し引いた新たな値， <tt class="docutils literal"><span class="pre">new_wealth</span></tt> が負の値なら， <tt class="docutils literal"><span class="pre">&quot;Insufficent</span> <span class="pre">funds&quot;</span></tt> というメッセージを出すように出来ています．</p>
 <p>それでは，実際にこの <tt class="docutils literal"><span class="pre">Consumer</span> <span class="pre">Class</span></tt> の動きを見てみましょう:</p>
