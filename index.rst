@@ -22,4 +22,5 @@ ROKKOPY
    chap2/preface
    chap2/python_essential/sec1
    chap2/oop/sec1
+   chap2/numpy/sec1
 
