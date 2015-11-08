@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>7. NumPy &mdash; python_kobe 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.3.4/yeti/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="python_kobe 1.0 documentation" href="../../index.html" />
+    <link rel="prev" title="6. Object Oriented Programming" href="../oop/sec1.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          ROKKOPY</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://github.com/rokkopy/qe-seminar">Repo</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../notetaking/index.html">1. セミナーノート作成の手引き</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notetaking/index.html#id2">1.1. はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notetaking/index.html#id3">1.2. 使用ツール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notetaking/index.html#git">1.3. Git のワークフロー &amp; 用語集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notetaking/index.html#sphinx">1.4. Sphinx</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chap1/sec2.html">2. Pythonを勉強する周辺環境</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chap1/sec2.html#sphinx">2.1. Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chap1/sec2.html#id2">2.2. テキストエディタについて</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chap1/sec2.html#jupyterrst">2.3. JupyterノートブックをRSTに変換するプログラム</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chap1/sec3.html">3. これまでの取り決めの流れ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chap1/sec3.html#git-hub">3.1. 勉強会でのGit Hubの使用法</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">4. Quantitative Economics with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_essential/sec1.html">5. Python Essentials(p48)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#data-type">5.1. Data Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#import">5.2. import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#input-and-output">5.3. Input and Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#iterating">5.4. Iterating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#comparisons-and-logical-operators">5.5. Comparisons and Logical Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#more-functions">5.6. More Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#why-write-functions">5.7. Why Write Functions?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#exercises">5.8. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../oop/sec1.html">6. Object Oriented Programming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../oop/sec1.html#defining-your-own-classes">6.1. Defining Your Own Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oop/sec1.html#special-methods">6.2. Special Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oop/sec1.html#exercises">6.3. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">7. NumPy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">7.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-numpy">7.2. Introduction to NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-arrays">7.3. NumPy　Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shape-and-dimension">7.4. Shape and Dimension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#array-indexing">7.5. Array Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#array-methods">7.6. Array　Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operations-on-arrays">7.7. Operations on Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comparisons">7.8. Comparisons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vectorized-functions">7.9. Vectorized Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-numpy-functions">7.10. Other NumPy Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#excercises">7.11. Excercises</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">7. NumPy</a><ul>
+<li><a class="reference internal" href="#overview">7.1. Overview</a></li>
+<li><a class="reference internal" href="#introduction-to-numpy">7.2. Introduction to NumPy</a></li>
+<li><a class="reference internal" href="#numpy-arrays">7.3. NumPy　Arrays</a></li>
+<li><a class="reference internal" href="#shape-and-dimension">7.4. Shape and Dimension</a><ul>
+<li><a class="reference internal" href="#shape">7.4.1. .shape</a></li>
+<li><a class="reference internal" href="#numpy-array">7.4.2. numpy.array</a></li>
+<li><a class="reference internal" href="#numpy-linespace">7.4.3. numpy.linespace</a></li>
+<li><a class="reference internal" href="#numpy-asarray-numpy-array">7.4.4. numpy.asarray() と　numpy.array()</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#array-indexing">7.5. Array Indexing</a></li>
+<li><a class="reference internal" href="#array-methods">7.6. Array　Methods</a></li>
+<li><a class="reference internal" href="#operations-on-arrays">7.7. Operations on Arrays</a></li>
+<li><a class="reference internal" href="#comparisons">7.8. Comparisons</a></li>
+<li><a class="reference internal" href="#vectorized-functions">7.9. Vectorized Functions</a></li>
+<li><a class="reference internal" href="#other-numpy-functions">7.10. Other NumPy Functions</a></li>
+<li><a class="reference internal" href="#excercises">7.11. Excercises</a><ul>
+<li><a class="reference internal" href="#excersise-1">7.11.1. Excersise 1</a></li>
+<li><a class="reference internal" href="#excersise-3">7.11.2. Excersise 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../oop/sec1.html" title="Previous Chapter: 6. Object Oriented Programming"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 6. Object Orient...</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">7. NumPy</a><ul>
+<li><a class="reference internal" href="#overview">7.1. Overview</a></li>
+<li><a class="reference internal" href="#introduction-to-numpy">7.2. Introduction to NumPy</a></li>
+<li><a class="reference internal" href="#numpy-arrays">7.3. NumPy　Arrays</a></li>
+<li><a class="reference internal" href="#shape-and-dimension">7.4. Shape and Dimension</a><ul>
+<li><a class="reference internal" href="#shape">7.4.1. .shape</a></li>
+<li><a class="reference internal" href="#numpy-array">7.4.2. numpy.array</a></li>
+<li><a class="reference internal" href="#numpy-linespace">7.4.3. numpy.linespace</a></li>
+<li><a class="reference internal" href="#numpy-asarray-numpy-array">7.4.4. numpy.asarray() と　numpy.array()</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#array-indexing">7.5. Array Indexing</a></li>
+<li><a class="reference internal" href="#array-methods">7.6. Array　Methods</a></li>
+<li><a class="reference internal" href="#operations-on-arrays">7.7. Operations on Arrays</a></li>
+<li><a class="reference internal" href="#comparisons">7.8. Comparisons</a></li>
+<li><a class="reference internal" href="#vectorized-functions">7.9. Vectorized Functions</a></li>
+<li><a class="reference internal" href="#other-numpy-functions">7.10. Other NumPy Functions</a></li>
+<li><a class="reference internal" href="#excercises">7.11. Excercises</a><ul>
+<li><a class="reference internal" href="#excersise-1">7.11.1. Excersise 1</a></li>
+<li><a class="reference internal" href="#excersise-3">7.11.2. Excersise 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../../_sources/chap2/numpy/sec1.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="numpy">
+<h1>7. NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h1>
+<p>今回はPythonの科学計算ライブラリの一つである，NumPyについて学びます．</p>
+<div class="section" id="overview">
+<h2>7.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>NumPyは最も使われているPythonの数値計算のためのライブラリです．</p>
+<ul class="simple">
+<li>研究，ファイナンス分野,産業といった分野で広く使用され</li>
+<li>matureで安定して，高速という特徴をもっています</li>
+</ul>
+<p>この章では，NumPyのarrayとその使い方について学習していきます．</p>
+</div>
+<div class="section" id="introduction-to-numpy">
+<h2>7.2. Introduction to NumPy<a class="headerlink" href="#introduction-to-numpy" title="Permalink to this headline">¶</a></h2>
+<p>Pythonやその他のインタプリタ言語は，コンパイル言語とくらべて比較的，速度が遅い傾向にあります．</p>
+<p>しかし，だからといってPythonが役立たずというわけではありません．NumPyやSciPyといった沢山の役立つ道具（resource）があるからです．また，NumPyのコードはCとFortranで書かれています．</p>
+<p>この講義の目標は，NumPyの基礎を速習することです．</p>
+</div>
+<div class="section" id="numpy-arrays">
+<h2>7.3. NumPy　Arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">¶</a></h2>
+<p>NumPyにおいて，最も重要な&#8217;data type&#8217;は &#8216;array&#8217;です．これは，&#8217;numpy.darray&#8217;と呼ばれます．たとえば，&#8217;numpy.zeros&#8217;は ゼロ0を要素にもった&#8217;numpy.darray&#8217;を返します．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="go">[ 0.  0.  0.]</span>
+<span class="go">    &lt;type &#39;numpy.ndarray&#39;&gt;</span>
+</pre></div>
+</div>
+<p>となります．ところで，この時，要素の0はfloat64型の数値であることも確認しておきましょう．</p>
+<p>また，NumPyのarrayはPythonにもともと備わっているlistと似ていますが，以下の２点が異なっています．</p>
+<ul class="simple">
+<li>データ型が同一でなければいけない</li>
+<li>そのデータ型はNumPyによって扱われているものではなくてはいけない</li>
+</ul>
+<p>そして，大抵のコンピューターではデフォルトのデータ型はfloat64です．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">numpy.float64</span>
+</pre></div>
+</div>
+<p>となって，float64型ですが，intやcomplexも用いることが出来ます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">numpy.int64</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">numpy.complex128</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shape-and-dimension">
+<h2>7.4. Shape and Dimension<a class="headerlink" href="#shape-and-dimension" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="shape">
+<h3>7.4.1. .shape<a class="headerlink" href="#shape" title="Permalink to this headline">¶</a></h3>
+<p>次に，shapeというmethodを学んでみましょう．</p>
+<p>shapeを使うことで，そのnumpy.darrayの次元を確認することが出来ます．</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="go">    &gt;&gt;&gt; z = np.zeros(10)</span>
+<span class="go">    &gt;&gt;&gt; z.shape</span>
+<span class="go">    (10,)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>この時，zは次元をもっていない，&#8221;flat&#8221; array と呼ばれます．次元を持っていないとは，つまり，行も列も持っていないということです．</p>
+<p>次元は&#8217;tuple&#8217;として表現されます．そして，逆にshapeを使って次元を変更させることもできます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="go">    &gt;&gt;&gt; z.shape = (10,1)</span>
+<span class="go">    &gt;&gt;&gt; print(z)</span>
+<span class="go">    [[ 0.]</span>
+<span class="go">     [ 0.]</span>
+<span class="go"> [ 0.]</span>
+<span class="go"> [ 0.]</span>
+<span class="go">     [ 0.]</span>
+<span class="go">     [ 0.]</span>
+<span class="go">     [ 0.]</span>
+<span class="go">     [ 0.]</span>
+<span class="go">     [ 0.]</span>
+<span class="go">     [ 0.]]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">    &gt;&gt;&gt; z.shape = (2,2)</span>
+<span class="go">    &gt;&gt;&gt; print(z)</span>
+<span class="go">    [[ 0.  0.]</span>
+<span class="go">     [ 0.  0.]]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="numpy-array">
+<h3>7.4.2. numpy.array<a class="headerlink" href="#numpy-array" title="Permalink to this headline">¶</a></h3>
+<p>そして，&#8217;numpy.array&#8217;は &#8216;list&#8217;，&#8217;tuples&#8217;，からarrayを作ることが出来ます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="go">    &gt;&gt;&gt; z = np.array([10, 20])</span>
+<span class="go">    &gt;&gt;&gt; z</span>
+<span class="go">    array([10, 20])</span>
+<span class="go">    &gt;&gt;&gt; type(z)</span>
+<span class="go">    numpy.ndarray</span>
+</pre></div>
+</div>
+<p>また，この時データ型を指定することも出来ます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="go">    &gt;&gt;&gt; z = np.array((10, 20), dtype=float)</span>
+<span class="go">    &gt;&gt;&gt; z</span>
+<span class="go">    array([ 10.,  20.])</span>
+</pre></div>
+</div>
+<p>に2×2行列を作るには以下のようにします</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="go">    &gt;&gt;&gt; z = np.array([[1, 2], [3, 4]])</span>
+<span class="go">    &gt;&gt;&gt; z</span>
+<span class="go">    array([[1, 2],</span>
+<span class="go">      [3, 4]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="numpy-linespace">
+<h3>7.4.3. numpy.linespace<a class="headerlink" href="#numpy-linespace" title="Permalink to this headline">¶</a></h3>
+<p>numpy.linespaceは指定した範囲の数字の間を指定した数の数字をつかって
+等間隔に並ぶarrayをつくるmethodです．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="go">    &gt;&gt;&gt; na = np.linspace(10, 20, 9)</span>
+<span class="go">    &gt;&gt;&gt; na</span>
+<span class="go">    array([ 10.  ,  11.25,  12.5 ,  13.75,  15.  ,  16.25,  17.5 ,  18.75,  20.  ])</span>
+</pre></div>
+</div>
+<p>同じ数字を指定した数だけ並べるarrayを作ることもできます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="go">    &gt;&gt;&gt; nb = np.linspace(10, 10, 9)</span>
+<span class="go">    &gt;&gt;&gt; nb</span>
+<span class="go">    array([ 10.,  10.,  10.,  10.,  10.,  10.,  10.,  10.,  10.])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="numpy-asarray-numpy-array">
+<h3>7.4.4. numpy.asarray() と　numpy.array()<a class="headerlink" href="#numpy-asarray-numpy-array" title="Permalink to this headline">¶</a></h3>
+<p>numpy.asarray() は作用させたオブジェクトを書き換えますが，numpy.array()はコピーを生成します．これは，id()をつかうとわかりやすいとおもいます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">na</span><span class="p">)</span>
+<span class="go">4377606624</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">na</span><span class="p">))</span>
+<span class="go">4377606624</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">na</span><span class="p">))</span>
+<span class="go">4377453232</span>
+</pre></div>
+</div>
+<p>となります．命題で述べてもいいかもしれません．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">na</span> <span class="ow">is</span> <span class="n">np</span><span class="o">.</span><span class="n">asarry</span><span class="p">(</span><span class="n">na</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">na</span> <span class="ow">is</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">na</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="array-indexing">
+<h2>7.5. Array Indexing<a class="headerlink" href="#array-indexing" title="Permalink to this headline">¶</a></h2>
+<p>arrayに対してはlistのように，indexをつかってアクセスができます．
+その指定の仕方は,listの場合と同じです．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span> <span class="c"># 特定の要素だけを抜き出す．</span>
+<span class="go">&lt;type &#39;numpy.float64&#39;&gt;</span>
+<span class="go">&lt;type &#39;numpy.ndarray&#39;&gt;</span>
+<span class="go">&lt;type &#39;numpy.float64&#39;&gt;</span>
+<span class="go">[ 1.   1.5]</span>
+</pre></div>
+</div>
+<p>また，tupleでindexを指定することが出来ます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+<span class="go">array([ 2. ,  3. ,  3.5])</span>
+</pre></div>
+</div>
+<p>また，data typeにはbool型も用いることもできます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
+<span class="go">array([False,  True,  True, False, False], dtype=bool)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="c">#trueだけ抜き出す</span>
+<span class="go">array([ 2.5,  3. ])</span>
+</pre></div>
+</div>
+<p>指定した範囲を書き換えることができます．</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="go">array([1, 0, 0])</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="array-methods">
+<h2>7.6. Array　Methods<a class="headerlink" href="#array-methods" title="Permalink to this headline">¶</a></h2>
+<p>numpyには他にも，arrayを操作するためのmethodがあります．</p>
+<p>様々なmethodがありますが，ざっと羅列して見ましょう．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">A</span><span class="o">.</span><span class="n">argmax</span><span class="p">()])</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="c">#累積和</span>
+<span class="go">array([ 4,  7,  9, 10])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">cumprod</span><span class="p">()</span> <span class="c">#累積積</span>
+<span class="go">array([ 4, 12, 24, 24])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>  <span class="c">#分散</span>
+<span class="go">1.25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>  <span class="c">#標準偏差</span>
+<span class="go">1.1180339887498949</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c">#転置</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">T</span>
+<span class="go">array([[4, 2],</span>
+<span class="go">  [3, 1]])</span>
+</pre></div>
+</div>
+<p>ほかにも，serchsortedはその値に一番近い要素のindexを返します．</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">        ,z.searchsorted(2.1)</span>
+<span class="go">        ,z.searchsorted(2.6))</span>
+<span class="go">[ 2.   2.5  3.   3.5  4. ]</span>
+<span class="go">(0, 1, 2)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="operations-on-arrays">
+<h2>7.7. Operations on Arrays<a class="headerlink" href="#operations-on-arrays" title="Permalink to this headline">¶</a></h2>
+<p>arrayに対しては四則演算を行うことが出来ます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="go">array([ 6,  8, 10, 12])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="go">array([ 5, 12, 21, 32])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="go">array([11, 12, 13, 14])</span>
+</pre></div>
+</div>
+<p>行列に対しても同じような操作をおこなうことができます，</p>
+<div class="highlight-python"><div class="highlight"><pre>    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
+    <span class="n">array</span><span class="p">([[</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">]])</span>
+<span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span> <span class="mf">12.</span><span class="p">,</span>  <span class="mf">12.</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mf">12.</span><span class="p">,</span>  <span class="mf">12.</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>&#8216;*&#8217;は行列の積ではなく要素ごとの積であることに注意してください．</p>
+<p>行列の積に対しては&#8217;numpy.dot()&#8217;を用います．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
+   <span class="p">[[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]</span>
+   <span class="p">[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]]</span>
+     <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="c">#.dot()を繋げて積をかさねられる</span>
+             <span class="p">[[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]</span>
+             <span class="p">[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>行列ではなく，ベクトルに対してnumpy.dot()を作用させると，内積を計算できます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="mi">50</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="comparisons">
+<h2>7.8. Comparisons<a class="headerlink" href="#comparisons" title="Permalink to this headline">¶</a></h2>
+<p>arrayに対して，== , !=, &gt;, &lt;, &gt;= and &lt;=.といった，比較を行うこともできます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">&gt;</span> <span class="mi">3</span>
+<span class="go">array([False, False,  True,  True,  True], dtype=bool)</span>
+</pre></div>
+</div>
+<p>この時，bool型のデータが返ってくることを利用して，3を超える要素だけを抜き出すことができます．</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="n">z</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">]</span>
+<span class="go">array([  5. ,   7.5,  10. ])</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="vectorized-functions">
+<h2>7.9. Vectorized Functions<a class="headerlink" href="#vectorized-functions" title="Permalink to this headline">¶</a></h2>
+<p>NumPyでは，log,exp,sinなどといった計算を備えています．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">y</span>
+<span class="n">array</span><span class="p">([</span>  <span class="mf">8.41470985e-001</span><span class="p">,</span>   <span class="mf">9.09297427e-001</span><span class="p">,</span>   <span class="mf">1.97626258e-323</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="other-numpy-functions">
+<h2>7.10. Other NumPy Functions<a class="headerlink" href="#other-numpy-functions" title="Permalink to this headline">¶</a></h2>
+<p>他にも，固有値や，逆行列，また確率的な操作を扱うことができます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>  <span class="c"># 固有値を計算</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">#逆行列を計算</span>
+<span class="go">array([[-2. ,  1. ],</span>
+<span class="go">　　[ 1.5, -0.5]])</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>  <span class="c"># 正規分布を生成</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>    <span class="c"># 二項分布から10000要素とる</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="go">5.016</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="excercises">
+<h2>7.11. Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="excersise-1">
+<h3>7.11.1. Excersise 1<a class="headerlink" href="#excersise-1" title="Permalink to this headline">¶</a></h3>
+<p>もう何回も出てきている，&#8217;polynominal&#8217;の計算をする関数をつくる問題です．
+以前のExcerciseでは，for loopを使って作成しましたが，NumPyを用いることでより高速な計算を実現しましょう．因みに，ヒントとして&#8217;numpy.cumprod()&#8217;を使いなさいとあります．</p>
+<p>前回と同じく，関数には基準値xと係数のlistであるcoeffが与えられているものとします．
+解答の方針としては，まず，&#8217;numpy.linespace(x,x,n-1)&#8217;で与えられたxをn-1個もつarrayを作成します．そして，そのarrayの最初に1を追加して，&#8217;numpy.cumprod()&#8217;で累乗していきます．最後は，&#8217;numpy.dot()&#8217;を用いいれば完成です．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">coeff</span><span class="p">):</span>
+   <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+   <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">coeff</span><span class="p">)</span>
+   <span class="n">x1_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="c">#xの要素が並んでいる</span>
+   <span class="n">X0_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">1.</span><span class="p">,],</span><span class="n">x1_n</span><span class="p">)</span><span class="c">#最初に1を入れてあげる</span>
+   <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumprod</span><span class="p">(</span><span class="n">X0_n</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">coeff</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="excersise-3">
+<h3>7.11.2. Excersise 3<a class="headerlink" href="#excersise-3" title="Permalink to this headline">¶</a></h3>
+<p>この問題も，今までやった問題をNumPyで書きなおしてスピードアップを図る問題です．</p>
+<p>改善させるのはECDFのclassですね．&#8217;&#8211;call&#8211;&#8217;部分を書き直せとあります．ここでも元々はfor loopがつかわれているのですが，NumPyで書き直すことでどのくらい高速化出来るのか興味深いところです．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">From Exercises 1</span>
+
+<span class="sd">The empirical cumulative function class</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">ECDF</span><span class="p">:</span>
+
+
+   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">observations</span><span class="p">):</span>
+         <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">         Initialize with given sample self.observations.</span>
+<span class="sd">         &quot;&quot;&quot;</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">observations</span> <span class="o">=</span> <span class="n">observations</span>
+
+   <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+
+         <span class="s">&quot;compute F_n&quot;</span>
+         <span class="s">&quot;criteria x&quot;</span>
+
+         <span class="c">#</span>
+         <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">         F_n = 0.0</span>
+<span class="sd">         s = 0.0</span>
+
+<span class="sd">         for i in self.observations:</span>
+<span class="sd">            if i &lt;= x:</span>
+<span class="sd">                s = 1.0 + s</span>
+<span class="sd">            else:</span>
+<span class="sd">                s = s</span>
+
+<span class="sd">         F_n = s/len(self.observations)</span>
+<span class="sd">         return F_n</span>
+<span class="sd">         &quot;&quot;&quot;</span>
+         <span class="c">#</span>
+
+         <span class="c">#numpyをimportしておく</span>
+         <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+         <span class="c">#要素の数 n = len(self.observations)</span>
+
+         <span class="c">#observatinの各要素と基準値xをそれぞれについて比べる，Aにはbool typeが入る</span>
+         <span class="c">#そのままではint型なので，&#39;.astype(np.float)&#39;でfloat型に変えておく</span>
+         <span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observations</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observations</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+
+         <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observations</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>解答の方針はこうです，ECDFは与えられた基準値x以下であれば1そうでないなら0を足していく試行をobsevationsに対して全て行い，その合計をobservationsの数で割ったものを返す関数です．この，基準と比べるという操作をNumPyのarray同士で行い，その合計の計算は&#8217;np.sum()&#8217;でおこないます．</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, akira.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
