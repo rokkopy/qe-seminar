@@ -150,8 +150,8 @@
 <li><a class="reference internal" href="#bisection">8.3.1. Bisection</a></li>
 <li><a class="reference internal" href="#the-newton-raphson-method">8.3.2. The Newton-Raphson Method</a></li>
 <li><a class="reference internal" href="#hybrid-methods">8.3.3. Hybrid Methods</a></li>
-<li><a class="reference internal" href="#id1">8.3.4. 不動点</a></li>
-<li><a class="reference internal" href="#id2">8.3.5. 最適化</a></li>
+<li><a class="reference internal" href="#fixed-point">8.3.4. Fixed Point</a></li>
+<li><a class="reference internal" href="#optimization">8.3.5. Optimization</a></li>
 </ul>
 </li>
 </ul>
@@ -204,8 +204,8 @@
 <li><a class="reference internal" href="#bisection">8.3.1. Bisection</a></li>
 <li><a class="reference internal" href="#the-newton-raphson-method">8.3.2. The Newton-Raphson Method</a></li>
 <li><a class="reference internal" href="#hybrid-methods">8.3.3. Hybrid Methods</a></li>
-<li><a class="reference internal" href="#id1">8.3.4. 不動点</a></li>
-<li><a class="reference internal" href="#id2">8.3.5. 最適化</a></li>
+<li><a class="reference internal" href="#fixed-point">8.3.4. Fixed Point</a></li>
+<li><a class="reference internal" href="#optimization">8.3.5. Optimization</a></li>
 </ul>
 </li>
 </ul>
@@ -400,8 +400,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h3>8.3.4. 不動点<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fixed-point">
+<h3>8.3.4. Fixed Point<a class="headerlink" href="#fixed-point" title="Permalink to this headline">¶</a></h3>
 <p>Scipyを用いて，不動点を探すことも出来ます．</p>
 <p>試してみましょう，</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fixed_point</span>
@@ -410,8 +410,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>8.3.5. 最適化<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="optimization">
+<h3>8.3.5. Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h3>
 <p>Scipyを用いて最小値を求める事もできます．同様に，最大値も求めることが出来ます．なぜなら，ある関数fの最小値が求まるということは，-fの最小値も求めることもでき，その値はfの最大値でもあるからです．</p>
 <p>この最小化は，根の探索とよく似ています．つまり，滑らかな関数であれば，その関数の最適な値を求めるということはその関数の１階微分の根を探すことと同じだからです．</p>
 <p>特に，目的関数に関する情報を持ってないのであれば，hybrid-methodを用いるのが良いでしょう.スカラー関数の，制約付き最適化問題の場合，hybrid-methodである <code class="docutils literal"><span class="pre">fminbound</span></code> が便利です．</p>
