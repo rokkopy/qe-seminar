@@ -381,10 +381,10 @@ arrayに対しては四則演算を行うことが出来ます．
 
 .. code-block:: python
 
-   import numpy as np
-   np.dot(A+1,B+5)
-      [[ 24.  24.]
-      [ 24.  24.]]
+	import numpy as np
+   	np.dot(A+1,B+5)
+		[[ 24.  24.]
+      	[ 24.  24.]]
 	np.dot(A+1,B+5).dot(A+2) #.dot()を繋げて積をかさねられる
 		[[ 144.  144.]
 		[ 144.  144.]]
