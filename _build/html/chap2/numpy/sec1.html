@@ -33,6 +33,7 @@
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="python_kobe 1.0 documentation" href="../../index.html" />
+    <link rel="next" title="8. SciPy" href="../scipy/sec1.html" />
     <link rel="prev" title="6. Object Oriented Programming" href="../oop/sec1.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -120,6 +121,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#excercises">7.11. Excercises</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../scipy/sec1.html">8. SciPy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scipy/sec1.html#scipy-versus-numpy">8.1. SciPy versus NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scipy/sec1.html#statistics">8.2. Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scipy/sec1.html#roots-and-fixed-points">8.3. Roots and Fixed Points</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -140,7 +147,7 @@
 <li><a class="reference internal" href="#shape-and-dimension">7.4. Shape and Dimension</a><ul>
 <li><a class="reference internal" href="#shape">7.4.1. .shape</a></li>
 <li><a class="reference internal" href="#numpy-array">7.4.2. numpy.array</a></li>
-<li><a class="reference internal" href="#numpy-linespace">7.4.3. numpy.linespace</a></li>
+<li><a class="reference internal" href="#numpy-linspace">7.4.3. numpy.linspace</a></li>
 <li><a class="reference internal" href="#numpy-asarray-numpy-array">7.4.4. numpy.asarray() と　numpy.array()</a></li>
 </ul>
 </li>
@@ -167,6 +174,10 @@
                 
   <li>
     <a href="../oop/sec1.html" title="Previous Chapter: 6. Object Oriented Programming"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 6. Object Orient...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../scipy/sec1.html" title="Next Chapter: 8. SciPy"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">8. SciPy &raquo;</span>
     </a>
   </li>
               
@@ -201,7 +212,7 @@
 <li><a class="reference internal" href="#shape-and-dimension">7.4. Shape and Dimension</a><ul>
 <li><a class="reference internal" href="#shape">7.4.1. .shape</a></li>
 <li><a class="reference internal" href="#numpy-array">7.4.2. numpy.array</a></li>
-<li><a class="reference internal" href="#numpy-linespace">7.4.3. numpy.linespace</a></li>
+<li><a class="reference internal" href="#numpy-linspace">7.4.3. numpy.linspace</a></li>
 <li><a class="reference internal" href="#numpy-asarray-numpy-array">7.4.4. numpy.asarray() と　numpy.array()</a></li>
 </ul>
 </li>
@@ -255,7 +266,7 @@
 </div>
 <div class="section" id="numpy-arrays">
 <h2>7.3. NumPy　Arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">¶</a></h2>
-<p>NumPyにおいて，最も重要な&#8217;data type&#8217;は &#8216;array&#8217;です．これは，&#8217;numpy.darray&#8217;と呼ばれます．たとえば，&#8217;numpy.zeros&#8217;は ゼロ0を要素にもった&#8217;numpy.darray&#8217;を返します．</p>
+<p>NumPyにおいて，最も重要な&#8217;data type&#8217;は &#8216;array&#8217;です．これは，&#8217;numpy.ndarray&#8217;と呼ばれます．たとえば，&#8217;numpy.zeros&#8217;は ゼロ0を要素にもった&#8217;numpy.darray&#8217;を返します．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -295,7 +306,7 @@
 <h2>7.4. Shape and Dimension<a class="headerlink" href="#shape-and-dimension" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="shape">
 <h3>7.4.1. .shape<a class="headerlink" href="#shape" title="Permalink to this headline">¶</a></h3>
-<p>次に，shapeというmethodを学んでみましょう．</p>
+<p>次に，shapeというatrributeを学んでみましょう．</p>
 <p>shapeを使うことで，そのnumpy.darrayの次元を確認することが出来ます．</p>
 <dl class="docutils">
 <dt>::</dt>
@@ -314,8 +325,8 @@
 <span class="go">    &gt;&gt;&gt; print(z)</span>
 <span class="go">    [[ 0.]</span>
 <span class="go">     [ 0.]</span>
-<span class="go"> [ 0.]</span>
-<span class="go"> [ 0.]</span>
+<span class="go">     [ 0.]</span>
+<span class="go">     [ 0.]</span>
 <span class="go">     [ 0.]</span>
 <span class="go">     [ 0.]</span>
 <span class="go">     [ 0.]</span>
@@ -360,9 +371,9 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="numpy-linespace">
-<h3>7.4.3. numpy.linespace<a class="headerlink" href="#numpy-linespace" title="Permalink to this headline">¶</a></h3>
-<p>numpy.linespaceは指定した範囲の数字の間を指定した数の数字をつかって
+<div class="section" id="numpy-linspace">
+<h3>7.4.3. numpy.linspace<a class="headerlink" href="#numpy-linspace" title="Permalink to this headline">¶</a></h3>
+<p>numpy.linspaceは指定した範囲の数字の間を指定した数の数字をつかって
 等間隔に並ぶarrayをつくるmethodです．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="go">    &gt;&gt;&gt; na = np.linspace(10, 20, 9)</span>
@@ -380,7 +391,12 @@
 </div>
 <div class="section" id="numpy-asarray-numpy-array">
 <h3>7.4.4. numpy.asarray() と　numpy.array()<a class="headerlink" href="#numpy-asarray-numpy-array" title="Permalink to this headline">¶</a></h3>
-<p>numpy.asarray() は作用させたオブジェクトを書き換えますが，numpy.array()はコピーを生成します．これは，id()をつかうとわかりやすいとおもいます．</p>
+<p><cite>numpy.asarray()</cite> も，<cite>numpy.asarray()</cite> も作用させたオブジェクトをもとにして，<a href="#id1"><span class="problematic" id="id2">`</span></a>ndarray`を作ります．</p>
+<p>この２つの働きが，大きく異なるのは，作用させたオブジェクトが既に`ndarray`だった場合です．</p>
+<p>例えば，<a href="#id3"><span class="problematic" id="id4">`</span></a>d`が`ndarray`に変更可能なオブジェクトである，<a href="#id5"><span class="problematic" id="id6">`</span></a>lis`tならば，<a href="#id7"><span class="problematic" id="id8">`</span></a>numpy.asarry(d)`は`d`を`ndarray`に変換して，返します．</p>
+<p>ですが，<a href="#id9"><span class="problematic" id="id10">`</span></a>d`がすでに`ndarray`であれば，<a href="#id11"><span class="problematic" id="id12">`</span></a>d`そのものを返します．つまり，<a href="#id13"><span class="problematic" id="id14">`</span></a>d = numpy.asarry(d)`としても，<a href="#id15"><span class="problematic" id="id16">`</span></a>d`には変化がありません．</p>
+<p>一方で，<a href="#id17"><span class="problematic" id="id18">`</span></a>numpy.array()`は新たな`ndarray`を生成します．つまり，<a href="#id19"><span class="problematic" id="id20">`</span></a>d`が`ndarray`であっても，<a href="#id21"><span class="problematic" id="id22">`</span></a>d = numpy.asarry(d)`とすると，<a href="#id23"><span class="problematic" id="id24">`</span></a>d`は新しいオブジェクトとして，書き換えられることになります．</p>
+<p>このことを，<a href="#id25"><span class="problematic" id="id26">`</span></a>id()`をつかって確認してみます．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">na</span><span class="p">)</span>
 <span class="go">4377606624</span>
@@ -507,11 +523,11 @@
 <p>行列の積に対しては&#8217;numpy.dot()&#8217;を用います．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
-   <span class="p">[[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]</span>
-   <span class="p">[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]]</span>
-     <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="c">#.dot()を繋げて積をかさねられる</span>
-             <span class="p">[[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]</span>
-             <span class="p">[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]]</span>
+        <span class="p">[[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]</span>
+<span class="p">[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="c">#.dot()を繋げて積をかさねられる</span>
+        <span class="p">[[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]</span>
+        <span class="p">[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]]</span>
 </pre></div>
 </div>
 <p>行列ではなく，ベクトルに対してnumpy.dot()を作用させると，内積を計算できます．</p>
