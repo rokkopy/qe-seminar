@@ -254,8 +254,9 @@
 <p>NumPyは最も使われているPythonの数値計算のためのライブラリです．</p>
 <ul class="simple">
 <li>研究，ファイナンス分野,産業といった分野で広く使用され</li>
-<li>matureで安定して，高速という特徴をもっています</li>
+<li>matureで安定して，高速</li>
 </ul>
+<p>という特徴をもっています</p>
 <p>この章では，NumPyのarrayとその使い方について学習していきます．</p>
 </div>
 <div class="section" id="introduction-to-numpy">
@@ -266,7 +267,7 @@
 </div>
 <div class="section" id="numpy-arrays">
 <h2>7.3. NumPy　Arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">¶</a></h2>
-<p>NumPyにおいて，最も重要な&#8217;data type&#8217;は &#8216;array&#8217;です．これは，&#8217;numpy.ndarray&#8217;と呼ばれます．たとえば，&#8217;numpy.zeros&#8217;は ゼロ0を要素にもった&#8217;numpy.darray&#8217;を返します．</p>
+<p>NumPyにおいて，最も重要な <code class="docutils literal"><span class="pre">data</span> <span class="pre">type</span></code> は <code class="docutils literal"><span class="pre">array</span></code> です．これは， <code class="docutils literal"><span class="pre">numpy.ndarray</span></code> と呼ばれます．たとえば， <code class="docutils literal"><span class="pre">numpy.zeros</span></code> は ゼロ0を要素にもった <code class="docutils literal"><span class="pre">numpy.darray</span></code> を返します．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -346,7 +347,7 @@
 </div>
 <div class="section" id="numpy-array">
 <h3>7.4.2. numpy.array<a class="headerlink" href="#numpy-array" title="Permalink to this headline">¶</a></h3>
-<p>そして，&#8217;numpy.array&#8217;は &#8216;list&#8217;，&#8217;tuples&#8217;，からarrayを作ることが出来ます．</p>
+<p>そして， <code class="docutils literal"><span class="pre">numpy.array</span></code> は <code class="docutils literal"><span class="pre">list</span></code> ， <code class="docutils literal"><span class="pre">tuples</span></code> ，からarrayを作ることが出来ます．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="go">    &gt;&gt;&gt; z = np.array([10, 20])</span>
 <span class="go">    &gt;&gt;&gt; z</span>
@@ -391,12 +392,13 @@
 </div>
 <div class="section" id="numpy-asarray-numpy-array">
 <h3>7.4.4. numpy.asarray() と　numpy.array()<a class="headerlink" href="#numpy-asarray-numpy-array" title="Permalink to this headline">¶</a></h3>
-<p><cite>numpy.asarray()</cite> も，<cite>numpy.asarray()</cite> も作用させたオブジェクトをもとにして，<a href="#id1"><span class="problematic" id="id2">`</span></a>ndarray`を作ります．</p>
-<p>この２つの働きが，大きく異なるのは，作用させたオブジェクトが既に`ndarray`だった場合です．</p>
-<p>例えば，<a href="#id3"><span class="problematic" id="id4">`</span></a>d`が`ndarray`に変更可能なオブジェクトである，<a href="#id5"><span class="problematic" id="id6">`</span></a>lis`tならば，<a href="#id7"><span class="problematic" id="id8">`</span></a>numpy.asarry(d)`は`d`を`ndarray`に変換して，返します．</p>
-<p>ですが，<a href="#id9"><span class="problematic" id="id10">`</span></a>d`がすでに`ndarray`であれば，<a href="#id11"><span class="problematic" id="id12">`</span></a>d`そのものを返します．つまり，<a href="#id13"><span class="problematic" id="id14">`</span></a>d = numpy.asarry(d)`としても，<a href="#id15"><span class="problematic" id="id16">`</span></a>d`には変化がありません．</p>
-<p>一方で，<a href="#id17"><span class="problematic" id="id18">`</span></a>numpy.array()`は新たな`ndarray`を生成します．つまり，<a href="#id19"><span class="problematic" id="id20">`</span></a>d`が`ndarray`であっても，<a href="#id21"><span class="problematic" id="id22">`</span></a>d = numpy.asarry(d)`とすると，<a href="#id23"><span class="problematic" id="id24">`</span></a>d`は新しいオブジェクトとして，書き換えられることになります．</p>
-<p>このことを，<a href="#id25"><span class="problematic" id="id26">`</span></a>id()`をつかって確認してみます．</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">numpy.asarray()</span></code>  も， <code class="docutils literal"><span class="pre">numpy.asarray()</span></code>  も作用させたオブジェクトをもとにして， <code class="docutils literal"><span class="pre">ndarray</span></code> を作ります．</div></blockquote>
+<p>この２つの働きが，大きく異なるのは，作用させたオブジェクトが既に <code class="docutils literal"><span class="pre">ndarray</span></code> だった場合です．</p>
+<p>例えば， <code class="docutils literal"><span class="pre">d</span></code> が <code class="docutils literal"><span class="pre">ndarray</span></code> に変更可能なオブジェクトである， <code class="docutils literal"><span class="pre">list</span></code> ならば， <code class="docutils literal"><span class="pre">numpy.asarry(d)</span></code> は <code class="docutils literal"><span class="pre">d</span></code> を <code class="docutils literal"><span class="pre">ndarray</span></code> に変換して，返します．</p>
+<p>ですが， <code class="docutils literal"><span class="pre">d</span></code> がすでに <code class="docutils literal"><span class="pre">ndarray</span></code> であれば， <code class="docutils literal"><span class="pre">d</span></code> そのものを返します．つまり， <code class="docutils literal"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">numpy.asarry(d)</span></code> としても， <code class="docutils literal"><span class="pre">d</span></code> には変化がありません．</p>
+<p>一方で， <code class="docutils literal"><span class="pre">numpy.array()</span></code> は新たな <code class="docutils literal"><span class="pre">ndarray</span></code> を生成します．つまり， <code class="docutils literal"><span class="pre">d</span></code> が <code class="docutils literal"><span class="pre">ndarray</span></code> であっても， <code class="docutils literal"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">numpy.asarry(d)</span></code> とすると， <code class="docutils literal"><span class="pre">d</span></code> は新しいオブジェクトとして，書き換えられることになります．</p>
+<p>このことを， <code class="docutils literal"><span class="pre">id()</span></code> をつかって確認してみます．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">na</span><span class="p">)</span>
 <span class="go">4377606624</span>
@@ -475,7 +477,7 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c">#転置</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">T</span>
 <span class="go">array([[4, 2],</span>
-<span class="go">  [3, 1]])</span>
+<span class="go">        [3, 1]])</span>
 </pre></div>
 </div>
 <p>ほかにも，serchsortedはその値に一番近い要素のindexを返します．</p>
@@ -508,15 +510,15 @@
 </pre></div>
 </div>
 <p>行列に対しても同じような操作をおこなうことができます，</p>
-<div class="highlight-python"><div class="highlight"><pre>    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
-    <span class="n">array</span><span class="p">([[</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">]])</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
+<span class="n">array</span><span class="p">([[</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">],</span>
+        <span class="p">[</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">]])</span>
 <span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mf">12.</span><span class="p">,</span>  <span class="mf">12.</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mf">12.</span><span class="p">,</span>  <span class="mf">12.</span><span class="p">]])</span>
+        <span class="p">[</span> <span class="mf">12.</span><span class="p">,</span>  <span class="mf">12.</span><span class="p">]])</span>
 </pre></div>
 </div>
 <p>&#8216;*&#8217;は行列の積ではなく要素ごとの積であることに注意してください．</p>
@@ -524,7 +526,7 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
         <span class="p">[[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]</span>
-<span class="p">[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]]</span>
+        <span class="p">[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]]</span>
 <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="c">#.dot()を繋げて積をかさねられる</span>
         <span class="p">[[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]</span>
         <span class="p">[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]]</span>
