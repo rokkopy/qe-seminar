@@ -392,8 +392,7 @@
 </div>
 <div class="section" id="numpy-asarray-numpy-array">
 <h3>7.4.4. numpy.asarray() と　numpy.array()<a class="headerlink" href="#numpy-asarray-numpy-array" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><code class="docutils literal"><span class="pre">numpy.asarray()</span></code>  も， <code class="docutils literal"><span class="pre">numpy.asarray()</span></code>  も作用させたオブジェクトをもとにして， <code class="docutils literal"><span class="pre">ndarray</span></code> を作ります．</div></blockquote>
+<p><code class="docutils literal"><span class="pre">numpy.asarray()</span></code>  も， <code class="docutils literal"><span class="pre">numpy.asarray()</span></code>  も作用させたオブジェクトをもとにして， <code class="docutils literal"><span class="pre">ndarray</span></code> を作ります．</p>
 <p>この２つの働きが，大きく異なるのは，作用させたオブジェクトが既に <code class="docutils literal"><span class="pre">ndarray</span></code> だった場合です．</p>
 <p>例えば， <code class="docutils literal"><span class="pre">d</span></code> が <code class="docutils literal"><span class="pre">ndarray</span></code> に変更可能なオブジェクトである， <code class="docutils literal"><span class="pre">list</span></code> ならば， <code class="docutils literal"><span class="pre">numpy.asarry(d)</span></code> は <code class="docutils literal"><span class="pre">d</span></code> を <code class="docutils literal"><span class="pre">ndarray</span></code> に変換して，返します．</p>
 <p>ですが， <code class="docutils literal"><span class="pre">d</span></code> がすでに <code class="docutils literal"><span class="pre">ndarray</span></code> であれば， <code class="docutils literal"><span class="pre">d</span></code> そのものを返します．つまり， <code class="docutils literal"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">numpy.asarry(d)</span></code> としても， <code class="docutils literal"><span class="pre">d</span></code> には変化がありません．</p>
