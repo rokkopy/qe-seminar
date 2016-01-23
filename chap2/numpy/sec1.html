@@ -27,7 +27,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -41,7 +41,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
     <div class="container">
@@ -267,7 +267,7 @@
 </div>
 <div class="section" id="numpy-arrays">
 <h2>7.3. NumPy　Arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">¶</a></h2>
-<p>NumPyにおいて，最も重要な <code class="docutils literal"><span class="pre">data</span> <span class="pre">type</span></code> は <code class="docutils literal"><span class="pre">array</span></code> です．これは， <code class="docutils literal"><span class="pre">numpy.ndarray</span></code> と呼ばれます．たとえば， <code class="docutils literal"><span class="pre">numpy.zeros</span></code> は ゼロ0を要素にもった <code class="docutils literal"><span class="pre">numpy.darray</span></code> を返します．</p>
+<p>NumPyにおいて，最も重要な <tt class="docutils literal"><span class="pre">data</span> <span class="pre">type</span></tt> は <tt class="docutils literal"><span class="pre">array</span></tt> です．これは， <tt class="docutils literal"><span class="pre">numpy.ndarray</span></tt> と呼ばれます．たとえば， <tt class="docutils literal"><span class="pre">numpy.zeros</span></tt> は ゼロ0を要素にもった <tt class="docutils literal"><span class="pre">numpy.darray</span></tt> を返します．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -347,7 +347,7 @@
 </div>
 <div class="section" id="numpy-array">
 <h3>7.4.2. numpy.array<a class="headerlink" href="#numpy-array" title="Permalink to this headline">¶</a></h3>
-<p>そして， <code class="docutils literal"><span class="pre">numpy.array</span></code> は <code class="docutils literal"><span class="pre">list</span></code> ， <code class="docutils literal"><span class="pre">tuples</span></code> ，からarrayを作ることが出来ます．</p>
+<p>そして， <tt class="docutils literal"><span class="pre">numpy.array</span></tt> は <tt class="docutils literal"><span class="pre">list</span></tt> ， <tt class="docutils literal"><span class="pre">tuples</span></tt> ，からarrayを作ることが出来ます．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="go">    &gt;&gt;&gt; z = np.array([10, 20])</span>
 <span class="go">    &gt;&gt;&gt; z</span>
@@ -392,12 +392,12 @@
 </div>
 <div class="section" id="numpy-asarray-numpy-array">
 <h3>7.4.4. numpy.asarray() と　numpy.array()<a class="headerlink" href="#numpy-asarray-numpy-array" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">numpy.asarray()</span></code>  も， <code class="docutils literal"><span class="pre">numpy.asarray()</span></code>  も作用させたオブジェクトをもとにして， <code class="docutils literal"><span class="pre">ndarray</span></code> を作ります．</p>
-<p>この２つの働きが，大きく異なるのは，作用させたオブジェクトが既に <code class="docutils literal"><span class="pre">ndarray</span></code> だった場合です．</p>
-<p>例えば， <code class="docutils literal"><span class="pre">d</span></code> が <code class="docutils literal"><span class="pre">ndarray</span></code> に変更可能なオブジェクトである， <code class="docutils literal"><span class="pre">list</span></code> ならば， <code class="docutils literal"><span class="pre">numpy.asarry(d)</span></code> は <code class="docutils literal"><span class="pre">d</span></code> を <code class="docutils literal"><span class="pre">ndarray</span></code> に変換して，返します．</p>
-<p>ですが， <code class="docutils literal"><span class="pre">d</span></code> がすでに <code class="docutils literal"><span class="pre">ndarray</span></code> であれば， <code class="docutils literal"><span class="pre">d</span></code> そのものを返します．つまり， <code class="docutils literal"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">numpy.asarry(d)</span></code> としても， <code class="docutils literal"><span class="pre">d</span></code> には変化がありません．</p>
-<p>一方で， <code class="docutils literal"><span class="pre">numpy.array()</span></code> は新たな <code class="docutils literal"><span class="pre">ndarray</span></code> を生成します．つまり， <code class="docutils literal"><span class="pre">d</span></code> が <code class="docutils literal"><span class="pre">ndarray</span></code> であっても， <code class="docutils literal"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">numpy.asarry(d)</span></code> とすると， <code class="docutils literal"><span class="pre">d</span></code> は新しいオブジェクトとして，書き換えられることになります．</p>
-<p>このことを， <code class="docutils literal"><span class="pre">id()</span></code> をつかって確認してみます．</p>
+<p><tt class="docutils literal"><span class="pre">numpy.asarray()</span></tt>  も， <tt class="docutils literal"><span class="pre">numpy.asarray()</span></tt>  も作用させたオブジェクトをもとにして， <tt class="docutils literal"><span class="pre">ndarray</span></tt> を作ります．</p>
+<p>この２つの働きが，大きく異なるのは，作用させたオブジェクトが既に <tt class="docutils literal"><span class="pre">ndarray</span></tt> だった場合です．</p>
+<p>例えば， <tt class="docutils literal"><span class="pre">d</span></tt> が <tt class="docutils literal"><span class="pre">ndarray</span></tt> に変更可能なオブジェクトである， <tt class="docutils literal"><span class="pre">list</span></tt> ならば， <tt class="docutils literal"><span class="pre">numpy.asarry(d)</span></tt> は <tt class="docutils literal"><span class="pre">d</span></tt> を <tt class="docutils literal"><span class="pre">ndarray</span></tt> に変換して，返します．</p>
+<p>ですが， <tt class="docutils literal"><span class="pre">d</span></tt> がすでに <tt class="docutils literal"><span class="pre">ndarray</span></tt> であれば， <tt class="docutils literal"><span class="pre">d</span></tt> そのものを返します．つまり， <tt class="docutils literal"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">numpy.asarry(d)</span></tt> としても， <tt class="docutils literal"><span class="pre">d</span></tt> には変化がありません．</p>
+<p>一方で， <tt class="docutils literal"><span class="pre">numpy.array()</span></tt> は新たな <tt class="docutils literal"><span class="pre">ndarray</span></tt> を生成します．つまり， <tt class="docutils literal"><span class="pre">d</span></tt> が <tt class="docutils literal"><span class="pre">ndarray</span></tt> であっても， <tt class="docutils literal"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">numpy.asarry(d)</span></tt> とすると， <tt class="docutils literal"><span class="pre">d</span></tt> は新しいオブジェクトとして，書き換えられることになります．</p>
+<p>このことを， <tt class="docutils literal"><span class="pre">id()</span></tt> をつかって確認してみます．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">na</span><span class="p">)</span>
 <span class="go">4377606624</span>
@@ -594,10 +594,10 @@
 <h2>7.11. Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="excersise-1">
 <h3>7.11.1. Excersise 1<a class="headerlink" href="#excersise-1" title="Permalink to this headline">¶</a></h3>
-<p>もう何回も出てきている， <code class="docutils literal"><span class="pre">polynominal</span></code> の計算をする関数をつくる問題です．
-以前のExcerciseでは，for loopを使って作成しましたが，NumPyを用いることでより高速な計算を実現しましょう．因みに，ヒントとして <code class="docutils literal"><span class="pre">numpy.cumprod()</span></code> を使いなさいとあります．</p>
+<p>もう何回も出てきている， <tt class="docutils literal"><span class="pre">polynominal</span></tt> の計算をする関数をつくる問題です．
+以前のExcerciseでは，for loopを使って作成しましたが，NumPyを用いることでより高速な計算を実現しましょう．因みに，ヒントとして <tt class="docutils literal"><span class="pre">numpy.cumprod()</span></tt> を使いなさいとあります．</p>
 <p>前回と同じく，関数には基準値xと係数のlistであるcoeffが与えられているものとします．
-解答の方針としては，まず， <code class="docutils literal"><span class="pre">numpy.linespace(x,x,n-1)</span></code> で与えられたxをn-1個もつarrayを作成します．そして，そのarrayの最初に1を追加して，<code class="docutils literal"><span class="pre">numpy.cumprod()</span></code> で累乗していきます．最後は， <code class="docutils literal"><span class="pre">numpy.dot()</span></code> を用いいれば完成です．</p>
+解答の方針としては，まず， <tt class="docutils literal"><span class="pre">numpy.linespace(x,x,n-1)</span></tt> で与えられたxをn-1個もつarrayを作成します．そして，そのarrayの最初に1を追加して，<tt class="docutils literal"><span class="pre">numpy.cumprod()</span></tt> で累乗していきます．最後は， <tt class="docutils literal"><span class="pre">numpy.dot()</span></tt> を用いいれば完成です．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">coeff</span><span class="p">):</span>
    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
    <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">coeff</span><span class="p">)</span>
@@ -611,7 +611,7 @@
 <div class="section" id="excersise-3">
 <h3>7.11.2. Excersise 3<a class="headerlink" href="#excersise-3" title="Permalink to this headline">¶</a></h3>
 <p>この問題も，今までやった問題をNumPyで書きなおしてスピードアップを図る問題です．</p>
-<p>改善させるのはECDFのclassですね． <code class="docutils literal"><span class="pre">--call--</span></code> 部分を書き直せとあります．ここでも元々はfor loopがつかわれているのですが，NumPyで書き直すことでどのくらい高速化出来るのか興味深いところです．</p>
+<p>改善させるのはECDFのclassですね． <tt class="docutils literal"><span class="pre">--call--</span></tt> 部分を書き直せとあります．ここでも元々はfor loopがつかわれているのですが，NumPyで書き直すことでどのくらい高速化出来るのか興味深いところです．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">From Exercises 1</span>
 
@@ -661,7 +661,7 @@
          <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observations</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>解答の方針はこうです，ECDFは与えられた基準値x以下であれば1そうでないなら0を足していく試行をobsevationsに対して全て行い，その合計をobservationsの数で割ったものを返す関数です．この，基準と比べるという操作をNumPyのarray同士で行い，その合計の計算は <code class="docutils literal"><span class="pre">np.sum()</span></code> でおこないます．</p>
+<p>解答の方針はこうです，ECDFは与えられた基準値x以下であれば1そうでないなら0を足していく試行をobsevationsに対して全て行い，その合計をobservationsの数で割ったものを返す関数です．この，基準と比べるという操作をNumPyのarray同士で行い，その合計の計算は <tt class="docutils literal"><span class="pre">np.sum()</span></tt> でおこないます．</p>
 </div>
 </div>
 </div>
@@ -679,7 +679,7 @@
     </p>
     <p>
         &copy; Copyright 2015, akira.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.<br/>
     </p>
   </div>
 </footer>
