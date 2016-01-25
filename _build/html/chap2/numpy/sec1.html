@@ -27,12 +27,13 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="python_kobe 1.0 documentation" href="../../index.html" />
+    <link rel="next" title="8. SciPy" href="../scipy/sec1.html" />
     <link rel="prev" title="6. Object Oriented Programming" href="../oop/sec1.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -40,7 +41,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
     <div class="container">
@@ -89,7 +90,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../preface.html">4. Quantitative Economics with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python_essential/sec1.html">5. Python Essentials(p48)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../python_essential/sec1.html">5. Python Essentials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#data-type">5.1. Data Type</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#import">5.2. import</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#input-and-output">5.3. Input and Output</a></li>
@@ -120,6 +121,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#excercises">7.11. Excercises</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../scipy/sec1.html">8. SciPy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scipy/sec1.html#scipy-versus-numpy">8.1. SciPy versus NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scipy/sec1.html#statistics">8.2. Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scipy/sec1.html#roots-and-fixed-points">8.3. Roots and Fixed Points</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -140,7 +147,7 @@
 <li><a class="reference internal" href="#shape-and-dimension">7.4. Shape and Dimension</a><ul>
 <li><a class="reference internal" href="#shape">7.4.1. .shape</a></li>
 <li><a class="reference internal" href="#numpy-array">7.4.2. numpy.array</a></li>
-<li><a class="reference internal" href="#numpy-linespace">7.4.3. numpy.linespace</a></li>
+<li><a class="reference internal" href="#numpy-linspace">7.4.3. numpy.linspace</a></li>
 <li><a class="reference internal" href="#numpy-asarray-numpy-array">7.4.4. numpy.asarray() と　numpy.array()</a></li>
 </ul>
 </li>
@@ -167,6 +174,10 @@
                 
   <li>
     <a href="../oop/sec1.html" title="Previous Chapter: 6. Object Oriented Programming"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 6. Object Orient...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../scipy/sec1.html" title="Next Chapter: 8. SciPy"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">8. SciPy &raquo;</span>
     </a>
   </li>
               
@@ -201,7 +212,7 @@
 <li><a class="reference internal" href="#shape-and-dimension">7.4. Shape and Dimension</a><ul>
 <li><a class="reference internal" href="#shape">7.4.1. .shape</a></li>
 <li><a class="reference internal" href="#numpy-array">7.4.2. numpy.array</a></li>
-<li><a class="reference internal" href="#numpy-linespace">7.4.3. numpy.linespace</a></li>
+<li><a class="reference internal" href="#numpy-linspace">7.4.3. numpy.linspace</a></li>
 <li><a class="reference internal" href="#numpy-asarray-numpy-array">7.4.4. numpy.asarray() と　numpy.array()</a></li>
 </ul>
 </li>
@@ -243,8 +254,9 @@
 <p>NumPyは最も使われているPythonの数値計算のためのライブラリです．</p>
 <ul class="simple">
 <li>研究，ファイナンス分野,産業といった分野で広く使用され</li>
-<li>matureで安定して，高速という特徴をもっています</li>
+<li>matureで安定して，高速</li>
 </ul>
+<p>という特徴をもっています</p>
 <p>この章では，NumPyのarrayとその使い方について学習していきます．</p>
 </div>
 <div class="section" id="introduction-to-numpy">
@@ -255,7 +267,7 @@
 </div>
 <div class="section" id="numpy-arrays">
 <h2>7.3. NumPy　Arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">¶</a></h2>
-<p>NumPyにおいて，最も重要な&#8217;data type&#8217;は &#8216;array&#8217;です．これは，&#8217;numpy.darray&#8217;と呼ばれます．たとえば，&#8217;numpy.zeros&#8217;は ゼロ0を要素にもった&#8217;numpy.darray&#8217;を返します．</p>
+<p>NumPyにおいて，最も重要な <tt class="docutils literal"><span class="pre">data</span> <span class="pre">type</span></tt> は <tt class="docutils literal"><span class="pre">array</span></tt> です．これは， <tt class="docutils literal"><span class="pre">numpy.ndarray</span></tt> と呼ばれます．たとえば， <tt class="docutils literal"><span class="pre">numpy.zeros</span></tt> は ゼロ0を要素にもった <tt class="docutils literal"><span class="pre">numpy.darray</span></tt> を返します．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -295,7 +307,7 @@
 <h2>7.4. Shape and Dimension<a class="headerlink" href="#shape-and-dimension" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="shape">
 <h3>7.4.1. .shape<a class="headerlink" href="#shape" title="Permalink to this headline">¶</a></h3>
-<p>次に，shapeというmethodを学んでみましょう．</p>
+<p>次に，shapeというatrributeを学んでみましょう．</p>
 <p>shapeを使うことで，そのnumpy.darrayの次元を確認することが出来ます．</p>
 <dl class="docutils">
 <dt>::</dt>
@@ -314,8 +326,8 @@
 <span class="go">    &gt;&gt;&gt; print(z)</span>
 <span class="go">    [[ 0.]</span>
 <span class="go">     [ 0.]</span>
-<span class="go"> [ 0.]</span>
-<span class="go"> [ 0.]</span>
+<span class="go">     [ 0.]</span>
+<span class="go">     [ 0.]</span>
 <span class="go">     [ 0.]</span>
 <span class="go">     [ 0.]</span>
 <span class="go">     [ 0.]</span>
@@ -335,7 +347,7 @@
 </div>
 <div class="section" id="numpy-array">
 <h3>7.4.2. numpy.array<a class="headerlink" href="#numpy-array" title="Permalink to this headline">¶</a></h3>
-<p>そして，&#8217;numpy.array&#8217;は &#8216;list&#8217;，&#8217;tuples&#8217;，からarrayを作ることが出来ます．</p>
+<p>そして， <tt class="docutils literal"><span class="pre">numpy.array</span></tt> は <tt class="docutils literal"><span class="pre">list</span></tt> ， <tt class="docutils literal"><span class="pre">tuples</span></tt> ，からarrayを作ることが出来ます．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="go">    &gt;&gt;&gt; z = np.array([10, 20])</span>
 <span class="go">    &gt;&gt;&gt; z</span>
@@ -360,9 +372,9 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="numpy-linespace">
-<h3>7.4.3. numpy.linespace<a class="headerlink" href="#numpy-linespace" title="Permalink to this headline">¶</a></h3>
-<p>numpy.linespaceは指定した範囲の数字の間を指定した数の数字をつかって
+<div class="section" id="numpy-linspace">
+<h3>7.4.3. numpy.linspace<a class="headerlink" href="#numpy-linspace" title="Permalink to this headline">¶</a></h3>
+<p>numpy.linspaceは指定した範囲の数字の間を指定した数の数字をつかって
 等間隔に並ぶarrayをつくるmethodです．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="go">    &gt;&gt;&gt; na = np.linspace(10, 20, 9)</span>
@@ -380,7 +392,12 @@
 </div>
 <div class="section" id="numpy-asarray-numpy-array">
 <h3>7.4.4. numpy.asarray() と　numpy.array()<a class="headerlink" href="#numpy-asarray-numpy-array" title="Permalink to this headline">¶</a></h3>
-<p>numpy.asarray() は作用させたオブジェクトを書き換えますが，numpy.array()はコピーを生成します．これは，id()をつかうとわかりやすいとおもいます．</p>
+<p><tt class="docutils literal"><span class="pre">numpy.asarray()</span></tt>  も， <tt class="docutils literal"><span class="pre">numpy.asarray()</span></tt>  も作用させたオブジェクトをもとにして， <tt class="docutils literal"><span class="pre">ndarray</span></tt> を作ります．</p>
+<p>この２つの働きが，大きく異なるのは，作用させたオブジェクトが既に <tt class="docutils literal"><span class="pre">ndarray</span></tt> だった場合です．</p>
+<p>例えば， <tt class="docutils literal"><span class="pre">d</span></tt> が <tt class="docutils literal"><span class="pre">ndarray</span></tt> に変更可能なオブジェクトである， <tt class="docutils literal"><span class="pre">list</span></tt> ならば， <tt class="docutils literal"><span class="pre">numpy.asarry(d)</span></tt> は <tt class="docutils literal"><span class="pre">d</span></tt> を <tt class="docutils literal"><span class="pre">ndarray</span></tt> に変換して，返します．</p>
+<p>ですが， <tt class="docutils literal"><span class="pre">d</span></tt> がすでに <tt class="docutils literal"><span class="pre">ndarray</span></tt> であれば， <tt class="docutils literal"><span class="pre">d</span></tt> そのものを返します．つまり， <tt class="docutils literal"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">numpy.asarry(d)</span></tt> としても， <tt class="docutils literal"><span class="pre">d</span></tt> には変化がありません．</p>
+<p>一方で， <tt class="docutils literal"><span class="pre">numpy.array()</span></tt> は新たな <tt class="docutils literal"><span class="pre">ndarray</span></tt> を生成します．つまり， <tt class="docutils literal"><span class="pre">d</span></tt> が <tt class="docutils literal"><span class="pre">ndarray</span></tt> であっても， <tt class="docutils literal"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">numpy.asarry(d)</span></tt> とすると， <tt class="docutils literal"><span class="pre">d</span></tt> は新しいオブジェクトとして，書き換えられることになります．</p>
+<p>このことを， <tt class="docutils literal"><span class="pre">id()</span></tt> をつかって確認してみます．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">na</span><span class="p">)</span>
 <span class="go">4377606624</span>
@@ -459,7 +476,7 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c">#転置</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">T</span>
 <span class="go">array([[4, 2],</span>
-<span class="go">  [3, 1]])</span>
+<span class="go">        [3, 1]])</span>
 </pre></div>
 </div>
 <p>ほかにも，serchsortedはその値に一番近い要素のindexを返します．</p>
@@ -492,26 +509,26 @@
 </pre></div>
 </div>
 <p>行列に対しても同じような操作をおこなうことができます，</p>
-<div class="highlight-python"><div class="highlight"><pre>    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
-    <span class="n">array</span><span class="p">([[</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">]])</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
+<span class="n">array</span><span class="p">([[</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">],</span>
+        <span class="p">[</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">]])</span>
 <span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mf">12.</span><span class="p">,</span>  <span class="mf">12.</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mf">12.</span><span class="p">,</span>  <span class="mf">12.</span><span class="p">]])</span>
+        <span class="p">[</span> <span class="mf">12.</span><span class="p">,</span>  <span class="mf">12.</span><span class="p">]])</span>
 </pre></div>
 </div>
 <p>&#8216;*&#8217;は行列の積ではなく要素ごとの積であることに注意してください．</p>
 <p>行列の積に対しては&#8217;numpy.dot()&#8217;を用います．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
-   <span class="p">[[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]</span>
-   <span class="p">[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]]</span>
-     <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="c">#.dot()を繋げて積をかさねられる</span>
-             <span class="p">[[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]</span>
-             <span class="p">[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]]</span>
+        <span class="p">[[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]</span>
+        <span class="p">[</span> <span class="mf">24.</span>  <span class="mf">24.</span><span class="p">]]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="c">#.dot()を繋げて積をかさねられる</span>
+        <span class="p">[[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]</span>
+        <span class="p">[</span> <span class="mf">144.</span>  <span class="mf">144.</span><span class="p">]]</span>
 </pre></div>
 </div>
 <p>行列ではなく，ベクトルに対してnumpy.dot()を作用させると，内積を計算できます．</p>
@@ -577,10 +594,10 @@
 <h2>7.11. Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="excersise-1">
 <h3>7.11.1. Excersise 1<a class="headerlink" href="#excersise-1" title="Permalink to this headline">¶</a></h3>
-<p>もう何回も出てきている，&#8217;polynominal&#8217;の計算をする関数をつくる問題です．
-以前のExcerciseでは，for loopを使って作成しましたが，NumPyを用いることでより高速な計算を実現しましょう．因みに，ヒントとして&#8217;numpy.cumprod()&#8217;を使いなさいとあります．</p>
+<p>もう何回も出てきている， <tt class="docutils literal"><span class="pre">polynominal</span></tt> の計算をする関数をつくる問題です．
+以前のExcerciseでは，for loopを使って作成しましたが，NumPyを用いることでより高速な計算を実現しましょう．因みに，ヒントとして <tt class="docutils literal"><span class="pre">numpy.cumprod()</span></tt> を使いなさいとあります．</p>
 <p>前回と同じく，関数には基準値xと係数のlistであるcoeffが与えられているものとします．
-解答の方針としては，まず，&#8217;numpy.linespace(x,x,n-1)&#8217;で与えられたxをn-1個もつarrayを作成します．そして，そのarrayの最初に1を追加して，&#8217;numpy.cumprod()&#8217;で累乗していきます．最後は，&#8217;numpy.dot()&#8217;を用いいれば完成です．</p>
+解答の方針としては，まず， <tt class="docutils literal"><span class="pre">numpy.linespace(x,x,n-1)</span></tt> で与えられたxをn-1個もつarrayを作成します．そして，そのarrayの最初に1を追加して，<tt class="docutils literal"><span class="pre">numpy.cumprod()</span></tt> で累乗していきます．最後は， <tt class="docutils literal"><span class="pre">numpy.dot()</span></tt> を用いいれば完成です．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">coeff</span><span class="p">):</span>
    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
    <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">coeff</span><span class="p">)</span>
@@ -594,7 +611,7 @@
 <div class="section" id="excersise-3">
 <h3>7.11.2. Excersise 3<a class="headerlink" href="#excersise-3" title="Permalink to this headline">¶</a></h3>
 <p>この問題も，今までやった問題をNumPyで書きなおしてスピードアップを図る問題です．</p>
-<p>改善させるのはECDFのclassですね．&#8217;&#8211;call&#8211;&#8217;部分を書き直せとあります．ここでも元々はfor loopがつかわれているのですが，NumPyで書き直すことでどのくらい高速化出来るのか興味深いところです．</p>
+<p>改善させるのはECDFのclassですね． <tt class="docutils literal"><span class="pre">--call--</span></tt> 部分を書き直せとあります．ここでも元々はfor loopがつかわれているのですが，NumPyで書き直すことでどのくらい高速化出来るのか興味深いところです．</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">From Exercises 1</span>
 
@@ -644,7 +661,7 @@
          <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observations</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>解答の方針はこうです，ECDFは与えられた基準値x以下であれば1そうでないなら0を足していく試行をobsevationsに対して全て行い，その合計をobservationsの数で割ったものを返す関数です．この，基準と比べるという操作をNumPyのarray同士で行い，その合計の計算は&#8217;np.sum()&#8217;でおこないます．</p>
+<p>解答の方針はこうです，ECDFは与えられた基準値x以下であれば1そうでないなら0を足していく試行をobsevationsに対して全て行い，その合計をobservationsの数で割ったものを返す関数です．この，基準と比べるという操作をNumPyのarray同士で行い，その合計の計算は <tt class="docutils literal"><span class="pre">np.sum()</span></tt> でおこないます．</p>
 </div>
 </div>
 </div>
@@ -662,7 +679,7 @@
     </p>
     <p>
         &copy; Copyright 2015, akira.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.<br/>
     </p>
   </div>
 </footer>

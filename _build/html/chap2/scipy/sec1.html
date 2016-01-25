@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>8. SciPy &mdash; python_kobe 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.3.4/yeti/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="python_kobe 1.0 documentation" href="../../index.html" />
+    <link rel="prev" title="7. NumPy" href="../numpy/sec1.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          ROKKOPY</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://github.com/rokkopy/qe-seminar">Repo</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../notetaking/index.html">1. セミナーノート作成の手引き</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notetaking/index.html#id2">1.1. はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notetaking/index.html#id3">1.2. 使用ツール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notetaking/index.html#git">1.3. Git のワークフロー &amp; 用語集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notetaking/index.html#sphinx">1.4. Sphinx</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chap1/sec2.html">2. Pythonを勉強する周辺環境</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chap1/sec2.html#sphinx">2.1. Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chap1/sec2.html#id2">2.2. テキストエディタについて</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chap1/sec2.html#jupyterrst">2.3. JupyterノートブックをRSTに変換するプログラム</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chap1/sec3.html">3. これまでの取り決めの流れ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chap1/sec3.html#git-hub">3.1. 勉強会でのGit Hubの使用法</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">4. Quantitative Economics with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_essential/sec1.html">5. Python Essentials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#data-type">5.1. Data Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#import">5.2. import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#input-and-output">5.3. Input and Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#iterating">5.4. Iterating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#comparisons-and-logical-operators">5.5. Comparisons and Logical Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#more-functions">5.6. More Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#why-write-functions">5.7. Why Write Functions?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_essential/sec1.html#exercises">5.8. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../oop/sec1.html">6. Object Oriented Programming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../oop/sec1.html#defining-your-own-classes">6.1. Defining Your Own Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oop/sec1.html#special-methods">6.2. Special Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oop/sec1.html#exercises">6.3. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy/sec1.html">7. NumPy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/sec1.html#overview">7.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/sec1.html#introduction-to-numpy">7.2. Introduction to NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/sec1.html#numpy-arrays">7.3. NumPy　Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/sec1.html#shape-and-dimension">7.4. Shape and Dimension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/sec1.html#array-indexing">7.5. Array Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/sec1.html#array-methods">7.6. Array　Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/sec1.html#operations-on-arrays">7.7. Operations on Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/sec1.html#comparisons">7.8. Comparisons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/sec1.html#vectorized-functions">7.9. Vectorized Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/sec1.html#other-numpy-functions">7.10. Other NumPy Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/sec1.html#excercises">7.11. Excercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">8. SciPy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#scipy-versus-numpy">8.1. SciPy versus NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#statistics">8.2. Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#roots-and-fixed-points">8.3. Roots and Fixed Points</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">8. SciPy</a><ul>
+<li><a class="reference internal" href="#scipy-versus-numpy">8.1. SciPy versus NumPy</a></li>
+<li><a class="reference internal" href="#statistics">8.2. Statistics</a><ul>
+<li><a class="reference internal" href="#random-variables-and-distributions">8.2.1. Random Variables and Distributions</a></li>
+<li><a class="reference internal" href="#other-goodies-in-scipy-stats">8.2.2. Other Goodies in scipy.stats</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#roots-and-fixed-points">8.3. Roots and Fixed Points</a><ul>
+<li><a class="reference internal" href="#bisection">8.3.1. Bisection</a></li>
+<li><a class="reference internal" href="#the-newton-raphson-method">8.3.2. The Newton-Raphson Method</a></li>
+<li><a class="reference internal" href="#hybrid-methods">8.3.3. Hybrid Methods</a></li>
+<li><a class="reference internal" href="#fixed-point">8.3.4. Fixed Point</a></li>
+<li><a class="reference internal" href="#optimization">8.3.5. Optimization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../numpy/sec1.html" title="Previous Chapter: 7. NumPy"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 7. NumPy</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">8. SciPy</a><ul>
+<li><a class="reference internal" href="#scipy-versus-numpy">8.1. SciPy versus NumPy</a></li>
+<li><a class="reference internal" href="#statistics">8.2. Statistics</a><ul>
+<li><a class="reference internal" href="#random-variables-and-distributions">8.2.1. Random Variables and Distributions</a></li>
+<li><a class="reference internal" href="#other-goodies-in-scipy-stats">8.2.2. Other Goodies in scipy.stats</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#roots-and-fixed-points">8.3. Roots and Fixed Points</a><ul>
+<li><a class="reference internal" href="#bisection">8.3.1. Bisection</a></li>
+<li><a class="reference internal" href="#the-newton-raphson-method">8.3.2. The Newton-Raphson Method</a></li>
+<li><a class="reference internal" href="#hybrid-methods">8.3.3. Hybrid Methods</a></li>
+<li><a class="reference internal" href="#fixed-point">8.3.4. Fixed Point</a></li>
+<li><a class="reference internal" href="#optimization">8.3.5. Optimization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../../_sources/chap2/scipy/sec1.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="scipy">
+<h1>8. SciPy<a class="headerlink" href="#scipy" title="Permalink to this headline">¶</a></h1>
+<p>SciPy（さいぱぁい）は，FortranにおけるLAPACKやBLASのような工業計算用ライブラリです．この章では，SciPyの主要な部分についての概観を説明します．</p>
+<div class="section" id="scipy-versus-numpy">
+<h2>8.1. SciPy versus NumPy<a class="headerlink" href="#scipy-versus-numpy" title="Permalink to this headline">¶</a></h2>
+<p>SciPyはNumpyライブラリーを内包しています．
+そこで，今回は，Scipyのサブパッケージを <tt class="docutils literal"><span class="pre">import</span></tt> してみましょう．</p>
+<p>SciPy持つ機能の大部分はサブパッケージに入っています．例えば，</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">scipy.optimize</span></tt>, <tt class="docutils literal"><span class="pre">scipy.integrate</span></tt>, <tt class="docutils literal"><span class="pre">scipy.stats</span></tt></li>
+</ul>
+<p>などです</p>
+<p>これらを利用したい時は，別々に <tt class="docutils literal"><span class="pre">import</span></tt> します．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">scipy.optimize</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+</pre></div>
+</div>
+<p>先ほど， <tt class="docutils literal"><span class="pre">SciPy</span></tt> は <tt class="docutils literal"><span class="pre">NumPy</span></tt> を含んでいると述べました．しかし，普通，科学計算を始めるときは，</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>のようにして， <tt class="docutils literal"><span class="pre">NumPy</span></tt> を <tt class="docutils literal"><span class="pre">import</span></tt> しておきます．</p>
+<p>そして，</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">brentq</span>
+</pre></div>
+</div>
+<p>のようにして， <tt class="docutils literal"><span class="pre">SciPy</span></tt> からその機能を，個別に読み込んでいきます．このようにすることで，どの機能がどのパッケージに入っているかを明示的に記述することができます．</p>
+</div>
+<div class="section" id="statistics">
+<h2>8.2. Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
+<p>Pythonには， <tt class="docutils literal"><span class="pre">Pandas</span></tt> のような <tt class="docutils literal"><span class="pre">R</span></tt> ライクなライブラリーも存在しますが， <tt class="docutils literal"><span class="pre">SciPy</span></tt> にも統計学を扱うサブパッケージが存在します．</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">SciPy</span></tt> のサブパッケージ， <tt class="docutils literal"><span class="pre">scipy.stat</span></tt> では</p>
+<ul class="simple">
+<li>密度関数，累積密度関数，乱数(random sampling)などを作成する</li>
+<li>推定</li>
+<li>統計検定</li>
+</ul>
+</div></blockquote>
+<p>などを行うことが出来ます．</p>
+<div class="section" id="random-variables-and-distributions">
+<h3>8.2.1. Random Variables and Distributions<a class="headerlink" href="#random-variables-and-distributions" title="Permalink to this headline">¶</a></h3>
+<p>この小節では，ベータ分布を使ってみます．まず， <tt class="docutils literal"><span class="pre">numy.random.beta</span></tt> でベータ分布に従うランダムな数字をだしてみましょう．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c">#ベータ分布</span>
+<span class="go">array([ 0.5406392 ,  0.25673906,  0.41268416])</span>
+</pre></div>
+</div>
+<p>ところで，ベータ分布とは，以下の様な確率密度関数に従うような分布でした．</p>
+<div class="math">
+\[f(x;a,b)=\frac{x^{(a-1)}(1-x)^{(b-1)}}{\int_0^1 u^{(a-1)}u^{(b-1)}}\]</div>
+<p>この関数の分母にあるのは，ベータ関数ですね．</p>
+<div class="math">
+\[B(a,b) = \int_0^1 u^{(a-1)}u^{(b-1)}\]</div>
+<p>独立に一様分布 <span class="math">\(U(0,1)\)</span> に従う <span class="math">\(p+q-1\)</span> 個の確率変数を大きさの順に並べ替えたとき，小さい方から p 番め（大きい方からは q 番目）の確率変数 X の分布がベータ分布 <span class="math">\(B(p,q)\)</span> となります。</p>
+<p>以上のような，形でベータ分布に従う数字を生成することが出来ますが，特定のパラメータと特定の分布に従うような数字を生成する必要がある場合もあるとおもいます．</p>
+<p>例えば，以下のような，図を出したいときです．</p>
+<a class="reference internal image-reference" href="../../_images/beta_density.png"><img alt="beta_density" src="../../_images/beta_density.png" style="width: 224.4px; height: 153.6px;" /></a>
+<p>黒い実線の曲線はベータ分布の確率密度関数です(理論値)．青い棒グラフのようなものは，先ほどのようにして，ランダムにベータ分布から数字を生成して，プロットしていったものです(観測値)．黒い実線が補助線になっていて，青い観測値がベータ分布にしてがっているような雰囲気を感じることができます．</p>
+<p>このような図を生成するのに用いたコードは以下のようなものです．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">beta</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">hist</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">show</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">beta</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>      <span class="c"># Beta(a, b), with a = b = 5 scipyじゃないと出ない？？？</span>
+<span class="n">obs</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>   <span class="c"># 2000 observations</span>
+<span class="n">hist</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">grid</span><span class="p">),</span> <span class="s">&#39;k-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>このコードの中では， <tt class="docutils literal"><span class="pre">q</span> <span class="pre">=beta(5,</span> <span class="pre">5)</span></tt> で観測値を作る仮定で，いわゆる， <tt class="docutils literal"><span class="pre">rv_frozen</span> <span class="pre">object</span></tt> というものが作られています．</p>
+<p>この <tt class="docutils literal"><span class="pre">frozen</span></tt> を使うことで，分布を固定して，観測値を生成することが出来ます．</p>
+<p>この他にも， <tt class="docutils literal"><span class="pre">q</span> <span class="pre">=</span> <span class="pre">beta(5,5)</span></tt> にたいして， <tt class="docutils literal"><span class="pre">q.cdf()</span></tt> , <tt class="docutils literal"><span class="pre">q.pdf()</span></tt> , <tt class="docutils literal"><span class="pre">q.ppf()</span></tt> , <tt class="docutils literal"><span class="pre">q.mean()</span></tt> などが使うことが出来ます．</p>
+</div>
+<div class="section" id="other-goodies-in-scipy-stats">
+<h3>8.2.2. Other Goodies in scipy.stats<a class="headerlink" href="#other-goodies-in-scipy-stats" title="Permalink to this headline">¶</a></h3>
+<p>今まで説明した以外にも， <tt class="docutils literal"><span class="pre">SciPy</span></tt> には有益な
+機能があります．</p>
+<p>例えば， <tt class="docutils literal"><span class="pre">scipy.stat.linregress</span></tt> では，線形回帰分析を行うことができます．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">linregress</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gradient</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">linregress</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gradient</span><span class="p">,</span> <span class="n">intercept</span>
+<span class="go">(2.0034904702816632, -0.0038496543788882898)</span>
+</pre></div>
+</div>
+<p>と言った具合です．</p>
+</div>
+</div>
+<div class="section" id="roots-and-fixed-points">
+<h2>8.3. Roots and Fixed Points<a class="headerlink" href="#roots-and-fixed-points" title="Permalink to this headline">¶</a></h2>
+<p>次に紹介するのは，根と不動点の見つけ方です．どちらも，経済学では馴染み深い用語です．</p>
+<p>例えば，実数[a,b]を定義域にもつ関数fを考えてみます． <span class="math">\(x \in [0,1]\)</span> がこの関数の根であるとは， <span class="math">\(f(x)=0\)</span> であるということでした．</p>
+<p>これを踏まえて，以下のような関数の根を見つける方法を考えてみましょう．</p>
+<div class="math">
+\[f(x) = sin(4(x-1/4)) + x + x^{20} -1\]</div>
+<p>ただし，xは <span class="math">\(x \in [0,1]\)</span> ．</p>
+<p>以下では，いくつかの方法を使って，根を見つけてみましょう．</p>
+<div class="section" id="bisection">
+<h3>8.3.1. Bisection<a class="headerlink" href="#bisection" title="Permalink to this headline">¶</a></h3>
+<p>Bisection（二分法）とは，以下の様な簡単なアルゴリズムで根を見つける方法です．このアルゴリズムを理解するために，以下の様な簡単なゲームを考えてみましょう．</p>
+<p>プレイヤーAが，プレイヤーBが1から100の間から選んだ数字を当てるゲームをします．この時，以下の様なアルゴリズムでAが数字を特定していったとき，このアルゴリズムをBisectionと呼びます．</p>
+<ul>
+<li><dl class="first docutils">
+<dt>選んだ数字は50以下か？</dt>
+<dd><ul class="first last simple">
+<li>もし50以下なら，それは25以下か</li>
+<li>もし75以下なら，それは75以下か</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>これが，Bisectionです．つまり，解が存在する定義域の範囲を半分にしていって，解を特定していく方法です．この，アルゴリズムは連続な増加関数に対して有効に働きます．</p>
+<p>以下に，このアルゴリズムを実装した関数のコードを掲載します．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">10e-5</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Implements the bisection root finding algorithm, assuming that f is a</span>
+<span class="sd">real-valued function on [a, b] satisfying f(a) &lt; 0 &lt; f(b).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+
+<span class="k">while</span> <span class="n">upper</span> <span class="o">-</span> <span class="n">lower</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="n">middle</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">upper</span> <span class="o">+</span> <span class="n">lower</span><span class="p">)</span>
+        <span class="c"># === if root is between lower and middle === #</span>
+        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">middle</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">lower</span><span class="p">,</span> <span class="n">middle</span>
+        <span class="c"># === if root is between middle and upper  === #</span>
+        <span class="k">else</span><span class="p">:</span>
+        <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">middle</span><span class="p">,</span> <span class="n">uppera</span>
+
+<span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">upper</span> <span class="o">+</span> <span class="n">lower</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ちなみに，関数の引数の中に入っている， <tt class="docutils literal"><span class="pre">tol=10e-5</span></tt>  は許容する誤差の範囲です．Bisectionを繰り返していって，どの程度まで絞り込めたら，根の探索をやめるかをここで指定しています．</p>
+<p>もちろん，PythonにはこのBisectionの関数が備わっています．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">bisect</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.25</span><span class="p">))</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">20</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0.4082935042797544</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-newton-raphson-method">
+<h3>8.3.2. The Newton-Raphson Method<a class="headerlink" href="#the-newton-raphson-method" title="Permalink to this headline">¶</a></h3>
+<p>次に説明するのは，The Newton-Raphson Method（一般的に，ニュートン法と呼ばれているようです）です．この，手法も頻繁に用いられる方法です． <tt class="docutils literal"><span class="pre">SciPy</span></tt> では <tt class="docutils literal"><span class="pre">scipy.newton</span></tt> として用います．Bisectionとは異なり，The Newton-Raphson Methodは，根を探す関数の傾きを使って根を求めます．</p>
+<p>The Newton-Raphson Methodは諸刃の剣のような性質を持っています．The Newton-Raphson Methodは，関数が根を探す範囲で微分可能であれば，Bisectionよりも早く根を見つける事ができます．しかし，例えば，不連続な点や，微分不可能で傾きが求められない場合，根を見つける事ができません．</p>
+<p>では，このThe Newton-Raphson Methodをつかって，Bisectionでやった時と同じ関数の根を見つけてみましょう．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">newton</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="go">0.408293504279</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="go">0.70017</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hybrid-methods">
+<h3>8.3.3. Hybrid Methods<a class="headerlink" href="#hybrid-methods" title="Permalink to this headline">¶</a></h3>
+<p>前小節でみたように，The Newton-Ranpson methodは速く根を求める事ができますが，用いることが出来ない場合もあります(non-robast)．一方で，Bisectionは，比較的適用できる関数が多くあります(robast)．</p>
+<p>なので，実際の場面では，このどちらかの２つを状況に合わせて使い分けるのがいいでしょう．つまり，最初に速い手法を試して，その結果を確認し，それが正しくないと判断できたら，よりロバストな手法を適用すればいいわけです.</p>
+<p>実際, <tt class="docutils literal"><span class="pre">scipy.optimize</span></tt> の <tt class="docutils literal"><span class="pre">brentq</span></tt> ではこのようなhybrid-methodが用いられています．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">brentq</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">brentq</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0.408293504279</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fixed-point">
+<h3>8.3.4. Fixed Point<a class="headerlink" href="#fixed-point" title="Permalink to this headline">¶</a></h3>
+<p>Scipyを用いて，不動点を探すことも出来ます．</p>
+<p>試してみましょう，</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fixed_point</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fixed_point</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>  <span class="c"># 10.0 is an initial guess</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="optimization">
+<h3>8.3.5. Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h3>
+<p>Scipyを用いて最小値を求める事もできます．同様に，最大値も求めることが出来ます．なぜなら，ある関数fの最小値が求まるということは，-fの最小値も求めることもでき，その値はfの最大値でもあるからです．</p>
+<p>この最小化は，根の探索とよく似ています．つまり，滑らかな関数であれば，その関数の最適な値を求めるということはその関数の１階微分の根を探すことと同じだからです．</p>
+<p>特に，目的関数に関する情報を持ってないのであれば，hybrid-methodを用いるのが良いでしょう.スカラー関数の，制約付き最適化問題の場合，hybrid-methodである <tt class="docutils literal"><span class="pre">fminbound</span></tt> が便利です．</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fminbound</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fminbound</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c"># Search in [-1, 2]</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, akira.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
